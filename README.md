@@ -65,14 +65,14 @@ Login/Logout | Funcionando
     </tr>
     <tr>
         <td align="center">
-            <a href="https://github.com/icaro2222">
-                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+            <a href="https://github.com/sazuked">
+                <img width="150" src="https://avatars.githubusercontent.com/u/57505518?v=4"/>
                 <br/>
                 <b>Cloves</b>
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/icaro2222">
+            <a href="https://github.com/TorquatoSt">
                 <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
                 <br/>
                 <b>Samara Trindade</b>
