@@ -50,7 +50,7 @@ Login/Logout | Funcionando
     <tr>
         <td align="center">
             <a href="https://github.com/icaro2222">
-                <img width="150" src="https://avatars.githubusercontent.com/u/71037296?s=96&v=4"/>
+                <img width="150" src="https://avatars.githubusercontent.com/u/71037296?v=4"/>
                 <br/>
                 <b>Ícaro Dias</b>
             </a>
