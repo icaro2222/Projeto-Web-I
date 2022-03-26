@@ -1,3 +1,3 @@
 <?php
-    echo     <title>SysGymIf</title>;
+    echo   '<title>SysGymIf</title>';
 ?>
