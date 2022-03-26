@@ -52,14 +52,46 @@ Login/Logout | Funcionando
             <a href="https://github.com/icaro2222">
                 <img width="150" src="https://avatars.githubusercontent.com/u/71037296?s=96&v=4"/>
                 <br/>
-                <b>Iury Fernandes</b>
+                <b>Ícaro Dias</b>
+            </a>
+        </td>
+        <td align="center">
+            <a href="https://github.com/Caroline-An">
+                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+                <br/>
+                <b>Ana Carol(Loly)</b>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <a href="https://github.com/icaro2222">
+                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+                <br/>
+                <b>Cloves</b>
+            </a>
+        </td>
+        <td align="center">
+            <a href="https://github.com/icaro2222">
+                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+                <br/>
+                <b>Samara Trindade</b>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <a href="https://github.com/GiliardeRP">
+                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+                <br/>
+                <b>Rei Giliarde</b>
             </a>
         </td>
     </tr>
 </table>
 
 ### Link do sistema <h3>
-Acesse http://lojaroupasweb.store/web/
+Acesse http://SysGymIf.pg/
 
 Dados de login (Esse login não possui acesso total ao sistema):
 
