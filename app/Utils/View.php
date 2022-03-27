@@ -11,9 +11,9 @@ class View{
      * @return string
      */
 
-    private static function getContentVieww($view){
+    private static function getContentView($view){
 
-        $file = __DIR__.'/../../resources/view/'.$view.'.httml';
+        $file = __DIR__.'/../../resources/view/'.$view.'.html';
         return file_exists($file) ? file_get_contents($file) : '';
     }
 
@@ -24,6 +24,11 @@ class View{
      */
 
     public static function render($view){
+        // Coteúdo da view
+
+        $contentView = self::getContentView($view);
+
+        return $contentView;
 
     }
 
