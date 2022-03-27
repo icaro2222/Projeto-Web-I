@@ -3,7 +3,7 @@
 namespace App\Controller\Pages;
 
 use \App\Utils\View;
-class Home{
+class Home extends Page{
 
     /**
      *  Método responsável por retornar o conteúdo da home.
@@ -11,7 +11,13 @@ class Home{
      */
 
      public static function getHome(){
-         return View::render('pages/home');
+         $content = View::render('pages/home',[
+             'name' => 'sys gym',
+             'teste' => 'teste'
+         ]);
+         $title = 'SYSGYM';
+
+         return parent::getPage($title, $content);
      }
 
 }

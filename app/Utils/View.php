@@ -20,15 +20,21 @@ class View{
     /**
      * Metodo de return de Views
      * @param string
+     * @param array
      * @return string
      */
 
-    public static function render($view){
+    public static function render($view, $vars = []){
         // Coteúdo da view
 
         $contentView = self::getContentView($view);
 
-        return $contentView;
+        $keys  = array_keys($vars);
+        $keys  = array_map(function ($item){
+            return '{{'.$item.'}}';
+        },$keys);
+
+        return str_replace($keys, array_values($vars), $contentView);
 
     }
 
