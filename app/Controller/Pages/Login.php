@@ -11,7 +11,11 @@ class Login{
      */
 
      public static function getLogin(){
-         return View::render('pages/login');
+        return View::render('pages/login',[
+            'name' => 'sys gym',
+            'teste' => 'teste'
+        ]);
+        
      }
 
 }
