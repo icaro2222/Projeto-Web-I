@@ -91,7 +91,7 @@ Login/Logout | Funcionando
 </table>
 
 ### Link do sistema <h3>
-Acesse https://introblack.000webhostapp.com/Projeto-Web-I/resolsse/View/Login/Login.php
+Acesse: https://introblack.000webhostapp.com/Projeto-Web-I/
     
 Dados de login (Esse login não possui acesso total ao sistema):
 
