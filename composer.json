@@ -1,0 +1,8 @@
+{
+    "name": "sysgym/if",
+    "autoload": {
+        "psr-4":{
+            "App\\":"app/"
+        }
+    }
+} 
