@@ -7,7 +7,7 @@ use \App\Controller\Pages\Home;
 use App\classe\Usuario;
 use \App\Controller\Pages\Login;
 
-if(Usuario::Logar()){
+if(true){
     echo Home::getHome();
     
 }else{

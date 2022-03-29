@@ -4,7 +4,7 @@
 	// Classe Usuario
 	class Usuario{
 		// Metodo Logar criado
-		public function Logar($email, $senha){
+		public static function Logar($email, $senha){
 			// Recebe a variavel global $conexao do arquivo conexao.php
 			global $conexao;
 			// Verifica se o funcionario e a coluna de email existem no banco de dados
