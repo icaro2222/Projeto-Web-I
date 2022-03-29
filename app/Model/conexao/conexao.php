@@ -5,8 +5,8 @@
 	// Variaveis que definem a conexao do banco
 	$host = 'localhost';
 	$banco = 'sysgym';
-	$usuario = 'root';
-	$senha = '';
+	$usuario = 'icaro';
+	$senha = 'tatakae';
 
 	// Se for possivel realizar a conexao
 	try {

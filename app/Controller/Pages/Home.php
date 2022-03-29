@@ -15,7 +15,6 @@ class Home extends Page{
 
         $obOrganizaation = new Organization;
 
-        print_r($obOrganizaation);
 
          $content = View::render('pages/home',[
              'name' => $obOrganizaation->name,
