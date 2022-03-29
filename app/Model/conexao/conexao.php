@@ -4,7 +4,7 @@
 
 	// Variaveis que definem a conexao do banco
 	$host = 'localhost';
-	$banco = 'sysgym';
+	$banco = 'SysGymIf';
 	$usuario = 'icaro';
 	$senha = 'tatakae';
 
@@ -13,6 +13,7 @@
 
 		// PDO e extensao do PHP para conectar com o banco de dados
 		$conexao = new PDO("mysql:host=$host;dbname=$banco;charset=utf8",$usuario,$senha);
+		echo "Sucesso na conexão do banco";
 
 	// Se nao for possivel fazer a conexao pelo PDO
 	} catch (PDOException $falha_conexao) {
