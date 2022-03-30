@@ -11,12 +11,12 @@ class Home extends Page{
      * @return string
      */
 
-     public static function getHome(){
+    public static function getHome2(){
 
         $obOrganizaation = new Organization;
 
 
-         $content = View::render('pages/home',[
+         $content = View::render('pages/home2',[
              'name' => $obOrganizaation->name,
              'teste' => $obOrganizaation->description
          ]);
@@ -24,5 +24,23 @@ class Home extends Page{
 
          return parent::getPage($title, $content);
      }
+     /**
+      *  Método responsável por retornar o conteúdo da home.
+      * @return string
+      */
+ 
+      public static function getHome(){
+ 
+         $obOrganizaation = new Organization;
+ 
+ 
+          $content = View::render('pages/home',[
+              'name' => $obOrganizaation->name,
+              'teste' => $obOrganizaation->description
+          ]);
+          $title = 'SYSGYM';
+ 
+          return parent::getPage($title, $content);
+      }
 
 }

@@ -12,6 +12,8 @@ if(false){
     
 }else if(false){
     echo Login::getLogin();
-}else{
+}else if(false){
     echo Login::getLogin2();
+}else if(true){
+    echo Home::getHome2();
 }
