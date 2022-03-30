@@ -10,12 +10,10 @@ class Login{
      * @return string
      */
 
-     public static function getLogin(){
-        return View::render('pages/login',[
+    public static function getLogin2(){
+        return View::render('pages/login2',[
             'name' => 'sys gym',
             'teste' => 'teste'
         ]);
-        
      }
-
 }

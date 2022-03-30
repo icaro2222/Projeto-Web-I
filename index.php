@@ -7,9 +7,11 @@ use \App\Controller\Pages\Home;
 use App\classe\Usuario;
 use \App\Controller\Pages\Login;
 
-if(true){
+if(false){
     echo Home::getHome();
     
-}else{
+}else if(false){
     echo Login::getLogin();
+}else{
+    echo Login::getLogin2();
 }
