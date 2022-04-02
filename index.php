@@ -12,7 +12,7 @@ if(false){
     
 }else if(false){
     echo Login::getLogin();
-}else if(false){
+}else if(true){
     echo Login::getLogin2();
 }else if(true){
     echo Home::getHome2();
