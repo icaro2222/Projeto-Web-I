@@ -1,10 +1,11 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
-	<link rel="shortcut icon" href="public/img/icons/favicon1.png" type="image/x-icon">
-    <meta charset="UTF-8">
-	<title>Login</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
         }
         
         body {
-            background-image: url(public/img/gymIf.png);
+            background-image: url(img/fundo_login.webp);
             background-size: 100%;
             border-radius: 15px;
             height: 260px;
@@ -76,14 +77,22 @@
 
 <body>
 
-    <form method="post">
-
-        <h3>Login 
-			<img src="public/img/If.png" alt="">
-		</h3>
-        <input type="text" id="email" name="email" placeholder="Digite seu email">
+    <form action="login.php" method="POST">
+        <h3>Login</h3>
+        <?php
+         if(isset($_SESSION['nao_autenticado'])):
+        ?>
+        <div class="notification is danger">
+            <p>ERRO! usuario ou senha incorreta</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['nao_autenticado']);
+        ?>
+        <input type="text" id="email" name="usuario" placeholder="Digite seu email">
         <input type="password" id="password" name="senha" placeholder="Digite sua senha">
-        <input type="submit" name="acao" value="enviar">
+        
+        <input type="submit"  value="enviar">
     </form>
 
 </body>
