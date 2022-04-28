@@ -17,3 +17,6 @@ if(false){
 }else if(true){
     echo Home::getHome2();
 }
+
+/text
+    
