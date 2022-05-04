@@ -57,7 +57,7 @@ Login/Logout | Funcionando
         </td>
         <td align="center">
             <a href="https://github.com/Caroline-An">
-                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+                <img width="150" src="https://suap.ifbaiano.edu.br/media/alunos/2710.B3ipZni1Ceik.jpg"/>
                 <br/>
                 <b>Ana Carol(Loly)</b>
             </a>
@@ -73,7 +73,7 @@ Login/Logout | Funcionando
         </td>
         <td align="center">
             <a href="https://github.com/TorquatoSt">
-                <img width="150" src="https://avatars.githubusercontent.com/u/91376805?v=4"/>
+                <img width="150" src="https://suap.ifbaiano.edu.br/media/alunos/2732.ThWm3ILzr0um.jpg"/>
                 <br/>
                 <b>Samara Trindade</b>
             </a>
