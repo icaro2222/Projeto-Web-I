@@ -57,7 +57,7 @@ Login/Logout | Funcionando
         </td>
         <td align="center">
             <a href="https://github.com/Caroline-An">
-                <img width="150" src="https://suap.ifbaiano.edu.br/media/alunos/2710.B3ipZni1Ceik.jpg"/>
+                <img width="150" src="https://avatars.githubusercontent.com/u/91372093?v=4"/>
                 <br/>
                 <b>Ana Carol(Loly)</b>
             </a>
