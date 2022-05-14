@@ -12,11 +12,11 @@ CREATE TABLE usuario(
 );
 
 
-CREATE TABLE Discente(
+CREATE TABLE discente(
 	idDiscente int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45),
 	senha VARCHAR(45),
-	numMatricula VARCHAR(14),
+	matricula VARCHAR(14),
 	peso FLOAT,
 	sexo VARCHAR(20),
 	idade INT,
@@ -24,39 +24,39 @@ CREATE TABLE Discente(
 	bloqueado BOOLEAN
 );
 
-CREATE TABLE Disponibilidade(
+CREATE TABLE disponibilidade(
 	idDisponibilidade int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	dia date,
 	hora time,
 	livre BOOLEAN
 );
 
-CREATE TABLE Agendamento(
+CREATE TABLE agendamento(
 	idAgendamento int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	fkTutor INT,
 	fkDiscente INT,
 	fkDisponibilidade INT
 );
 
-CREATE TABLE Anotacoes(
+CREATE TABLE anotacoes(
 	idAnotacoes int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	descricao TEXT
 );
 
-CREATE TABLE Bloqueio(
+CREATE TABLE bloqueio(
 	idBloqueio int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	idDiscente INT,
 	idTutor INT
 	
 );
 
-ALTER TABLE Agendamento ADD CONSTRAINT `fk_Agendamento_idTutor` 
-FOREIGN KEY (fkTutor) REFERENCES Usuario(idUsuario);
+ALTER TABLE agendamento ADD CONSTRAINT `fk_Agendamento_idTutor` 
+FOREIGN KEY (fkTutor) REFERENCES usuario(idUsuario);
 
-ALTER TABLE Agendamento ADD CONSTRAINT `fk_Agendamento_idDisponivel` 
-FOREIGN KEY (fkDisponibilidade) REFERENCES Disponibilidade(idDisponibilidade);
+ALTER TABLE agendamento ADD CONSTRAINT `fk_Agendamento_idDisponivel` 
+FOREIGN KEY (fkDisponibilidade) REFERENCES disponibilidade(idDisponibilidade);
 
 
-ALTER TABLE Agendamento ADD CONSTRAINT `fk_Agendamento_idDiscente` 
-FOREIGN KEY (fkDiscente) REFERENCES Discente(idDiscente);
+ALTER TABLE agendamento ADD CONSTRAINT `fk_Agendamento_idDiscente` 
+FOREIGN KEY (fkDiscente) REFERENCES discente(idDiscente);
 
