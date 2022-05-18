@@ -93,7 +93,7 @@ Login/Logout | Funcionando
 ### Link do sistema <h3>
 Acesse: https://introblack.000webhostapp.com/Projeto-Web-I/
     
-Dados de login (Esse login não possui acesso total ao sistema):
+Dados de login:
 
-* E-mail: convidado1@convidado.com
-* Senha: Convidado0123
+* Usuario: admin
+* Senha: lute
