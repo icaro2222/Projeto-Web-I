@@ -6,17 +6,9 @@ USE IFhealth;
 
 CREATE TABLE usuario(
 	idUsuario int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(45),
+	usuario VARCHAR(45),
 	senha VARCHAR(45),
-	num_registro INT(14)
-);
-
-
-CREATE TABLE discente(
-	idDiscente int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(45),
-	senha VARCHAR(45),
-	matricula VARCHAR(14),
+	num_registro INT(14),
 	peso FLOAT,
 	sexo VARCHAR(20),
 	idade INT,
@@ -58,5 +50,5 @@ FOREIGN KEY (fkDisponibilidade) REFERENCES disponibilidade(idDisponibilidade);
 
 
 ALTER TABLE agendamento ADD CONSTRAINT `fk_Agendamento_idDiscente` 
-FOREIGN KEY (fkDiscente) REFERENCES discente(idDiscente);
+FOREIGN KEY (fkDiscente) REFERENCES usuario(idusuario);
 

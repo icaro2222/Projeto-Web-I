@@ -24,7 +24,7 @@ $altura = mysqli_real_escape_string($conexao, $_POST['altura']);
 $peso = mysqli_real_escape_string($conexao, $_POST['peso']);
 
 
-$sql = "INSERT INTO Discente (nome, senha, nummatricula, 
+$sql = "INSERT INTO usuario (usuario, senha, num_registro, 
 idade, sexo, altura, peso)
  VALUES ('{$nome}', md5('{$senha}'), '{$matricula}',
   '{$idade}', '{$sexo}', '{$altura}', '{$peso}')";

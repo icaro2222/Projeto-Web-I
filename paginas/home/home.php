@@ -29,14 +29,14 @@
         </tr>
         <?php
         include('db/conexao.php');
-        $query = " SELECT * FROM discente";
+        $query = " SELECT * FROM usuario";
         $result = mysqli_query($conexao, $query) or die("Erro ao execultar consulta de contatos" . mysqli_error($conexao));
         while ($discentes = mysqli_fetch_assoc($result)) {
 
         ?>
             <tr>
-                <td><?= $discentes['nome'] ?></td>
-                <td><?= $discentes['matricula'] ?></td>
+                <td><?= $discentes['usuario'] ?></td>
+                <td><?= $discentes['num_registro'] ?></td>
                 <td><?= $discentes['idade'] ?></td>
                 <?php
                 if ($discentes['sexo'] == 'M') { ?>
