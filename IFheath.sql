@@ -50,5 +50,5 @@ FOREIGN KEY (fkDisponibilidade) REFERENCES disponibilidade(idDisponibilidade);
 
 
 ALTER TABLE agendamento ADD CONSTRAINT `fk_Agendamento_idDiscente` 
-FOREIGN KEY (fkDiscente) REFERENCES discente(idDiscente);
+FOREIGN KEY (fkDiscente) REFERENCES usuario(idusuario);
 
