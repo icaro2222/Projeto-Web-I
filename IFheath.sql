@@ -6,7 +6,7 @@ USE IFhealth;
 
 CREATE TABLE usuario(
 	idUsuario int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(45),
+	usuario VARCHAR(45),
 	senha VARCHAR(45),
 	num_registro INT(14),
 	peso FLOAT,
