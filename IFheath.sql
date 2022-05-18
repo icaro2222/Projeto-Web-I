@@ -8,15 +8,7 @@ CREATE TABLE usuario(
 	idUsuario int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45),
 	senha VARCHAR(45),
-	num_registro INT(14)
-);
-
-
-CREATE TABLE discente(
-	idDiscente int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(45),
-	senha VARCHAR(45),
-	matricula VARCHAR(14),
+	num_registro INT(14),
 	peso FLOAT,
 	sexo VARCHAR(20),
 	idade INT,
