@@ -1,6 +1,6 @@
 <?php
 
-include_once "./model/CrudUsuario.php";
+include_once "../../model/CrudUsuario.php";
 
 class Usuario extends CrudUsuario{
     protected $tabela = 'usuario';
@@ -34,7 +34,7 @@ class Usuario extends CrudUsuario{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (nome, endereco) VALUES (:nome, :endereco)";
+        $sql = "INSERT INTO $this->tabela (usuario, endereco) VALUES (:nome, :endereco)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':nome', $this->nome);
         $stm->bindParam(':endereco', $this->endereco);
