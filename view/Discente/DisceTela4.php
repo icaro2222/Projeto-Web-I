@@ -2,7 +2,9 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-include_once '../../../controller/Aviso.php';
+
+require_once('../../app/controller/Aviso.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -55,9 +57,11 @@ include_once '../../../controller/Aviso.php';
 				
 			<?php
 				$aviso = new Aviso;
-
-				?>
+				foreach($aviso->findAll() as $index => $value){?>
 					<p>pppppppppppppppppppppppp</p>
+				<?php
+				}
+				?>
 			</div><!--notas-->
 		</div><!--container-->
 	</section>

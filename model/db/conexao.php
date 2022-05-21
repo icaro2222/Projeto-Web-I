@@ -9,7 +9,7 @@ class DB {
 
         if(!isset(self::$instance)){
             try {
-                self::$instance = new PDO('mysql:host='.HOST.';dbname'.BASE.USER.PASS);
+                self::$instance = new PDO('mysql:host='.HOST.';dbname='.BASE.USER.PASS);
             } catch (PDOException $menssagen) {
                 echo $menssagen->getMessage();
             }

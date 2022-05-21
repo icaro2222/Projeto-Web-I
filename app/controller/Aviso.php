@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../model/CrudAviso.php';
+include_once '../../model/CrudAviso.php';
 
 class Aviso extends CrudAviso {
     protected $tabela = 'anotacoes';
