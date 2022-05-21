@@ -1,9 +1,8 @@
 <?php
 
-require_once('../../model/CrudDiscente.php');
+include_once "./model/CrudDiscente.php";
 
-class Discente extends CrudDiscente {
-
+class Discente extends CrudDiscente{
     protected $tabela = 'usuario';
 
    
@@ -27,6 +26,8 @@ class Discente extends CrudDiscente {
     public function findkey() {
         $sql = "SELECT usuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
         $stm = DB::prepare($sql);
+        $stm->bindParam(':usuario', $this->getNome());
+        $stm->bindParam(':senha', $this->getSenha());
         $stm->execute();
         return $stm->fetch();
     }

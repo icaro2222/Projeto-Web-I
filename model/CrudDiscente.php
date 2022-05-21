@@ -5,14 +5,15 @@ require_once 'db/conexao.php';
 abstract class CrudDiscente extends DB{
 
     protected $tabela;
-    public $nome;
+    public $usuario;
+    public $senha;
     public $endereco;
     
     public function setNome($nome) {
-        $this->nome = $nome;
+        $this->usuario = $nome;
     }
     public function getNome() {
-        return $this->nome;
+        return $this->usuario;
     }
     
     
@@ -23,5 +24,10 @@ abstract class CrudDiscente extends DB{
         return $this->endereco;
     }
     
-}
-?>
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+    public function getSenha() {
+        return $this->senha;
+    }
+}?>

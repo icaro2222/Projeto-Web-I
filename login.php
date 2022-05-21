@@ -4,7 +4,6 @@ ini_set("display_errors", 1);
 
 session_start();
 
-include('model/db/conexao.php');
 require_once('./app/controller/Discente.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])){
@@ -12,16 +11,13 @@ if(empty($_POST['usuario']) || empty($_POST['senha'])){
     exit();
 }
 
-$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
-$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-$senha = md5($senha);
+$usuario = new Discente;
+$usuario->setNome($_POST['usuario']);
+$usuario->setSenha($_POST['senha']);
 
-$query = "select usuario from usuario where usuario = '{$usuario}'";
-$result = mysqli_query($conexao,$query);
-$row = mysqli_num_rows($result);
+$row = $usuario->findkey();
 
-
-if(2==1){
+if($row==1){
     $_SESSION['usuario']= $usuario;
     header('location:view/Discente/DisceTela1.php');
     exit();
