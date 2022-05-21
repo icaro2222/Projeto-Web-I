@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../model/CrudDiscente.php';
+include_once('../../model/CrudDiscente.php');
 
 class Discente extends CrudDiscente {
 
@@ -25,7 +25,7 @@ class Discente extends CrudDiscente {
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT * FROM $this->tabela WHERE usuario = :usuario AND senha = :senha";
+        $sql = "SELECT usuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
         $stm = DB::prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
