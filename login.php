@@ -17,7 +17,7 @@ $row = mysqli_num_rows($result);
 
 if(1==1){
     $_SESSION['usuario']= '$usuario';
-    header('location:index_admin.php');
+    header('location:view/Discente/DisceTela1.php');
     exit();
 }else{
     $_SESSION['nao_autenticado']=true;
