@@ -4,15 +4,15 @@ session_start();
 <!DOCTYPE html>
 
 <html lang="pt-br">
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="../../style.css" />
 <title>login</title>
 <header id="header">
     
-    <img id="logo" src="img/logo if.png">
+    <img id="logo" src="../../public/img/logo if.png">
 </header>
 <body>
 
-    <form action="login.php" method="POST">
+    <form action="index.php" method="POST">
         <!-- <h3>Login</h3> -->
         <?php
         if (isset($_SESSION['nao_autenticado'])) :

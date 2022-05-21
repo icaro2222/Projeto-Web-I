@@ -1,10 +1,19 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
+require_once('../../app/controller/Aviso.php');
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AdmTela1</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
+	<title>AdmTela3</title>
+	<link rel="stylesheet" type="text/css" href="css/styleTela3.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -26,6 +35,19 @@
 		</div><!--contaiver-->
 	</header>
 
+
+	<?php    
+      $aviso = new Aviso;
+      if(isset($_POST['adicionar'])):
+            $descricao = $_POST['descricao'];
+
+            $aviso->setDescricao($descricao);
+
+            if($aviso->insert()){
+                $inserido = TRUE;
+            }
+      endif;
+    ?>
 	<section>
 		<div class="container">
 			<div class="academiaDoCampus">
@@ -33,45 +55,52 @@
 			</div><!--academiaDoCampus-->
 
 			<div class="painelDeEscolha">
-				<input type="submit" name="Regulamento" value="Regulamento">
-				<input type="submit" name="Agendamento" value="Agendamento">
-				<input type="submit" name="Notas" value="Notas">
-				<input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor">
+				<a href="AdmTela1.php"><input type="submit" name="Regulamento" value="Regulamento"></a>
+				<a href="AdmTela2.php"><input type="submit" name="Agendamento" value="Agendamento"></a>
+				<a href="AdmTela3.php"><input type="submit" name="Notas" value="Notas"></a>
+				<a href="AdmTela4.php"><input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor"></a>
 
 			</div><!--painelDeEscolha-->
 		</div><!--container-->
 	</section>
 	<section>
 		<div class="container">
-			<div class="regulamento">
-				<h1>Regulamento</h1>
-				<p>* A bobrinha 1: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 2: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 3: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 4: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
+			<div class="notas">
+				<h1>Notas</h1>
+				
+			<?php
+				$aviso = new Aviso;
+				foreach($aviso->findAll() as $index => $value){?>
+					<p><?php echo $value->descricao;?></p>
+				<?php
+				}
+				?>
 			</div><!--notas-->
 		</div><!--container-->
 	</section>
 
 	<section>
 		<div class="container">
-			<div class="editar-regulamento">
-				<h1>Editar regulamento:</h1>
-				<div class="adicionar-regulamento">
+			<div class="editar-nota">
+				<h1>Editar as notas:</h1>
+				<div class="adicionar-nota">
 					<h2>Adicionar:</h2>
-					<div class="texto-add-regulamento">
-						<textarea></textarea>
-						<div class="tad-btt">
-							<input type="submit" name="Adicionar" value="Adicionar">
-						</div>
-						
-					</div><!--texto-add-nota-->
+					<form action="" method="POST">
+						<div class="texto-add-nota">
+							<input type="text" name="descricao">
+							<textarea></textarea>
+							<div class="tad-btt">
+								<input type="submit" name="adicionar" value="Adicionar">
+							</div>
+							
+						</div><!--texto-add-nota-->
+					</form>
 				</div><!--adicionar-nota-->
 
 				<div class="apagar-edd">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
-						<p>Selecione o regulamento:</p>
+						<p>Selecione a nota:</p>
 						<select><option>1</option><option>2</option></select>
 					</div><!--apagar1-->
 					<div class="apagar2">

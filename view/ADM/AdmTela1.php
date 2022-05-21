@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AdmTela3</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela3.css">
+	<title>AdmTela1</title>
+	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -33,18 +33,18 @@
 			</div><!--academiaDoCampus-->
 
 			<div class="painelDeEscolha">
-				<input type="submit" name="Regulamento" value="Regulamento">
-				<input type="submit" name="Agendamento" value="Agendamento">
-				<input type="submit" name="Notas" value="Notas">
-				<input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor">
+				<a href="AdmTela1.php"><input type="submit" name="Regulamento" value="Regulamento"></a>
+				<a href="AdmTela2.php"><input type="submit" name="Agendamento" value="Agendamento"></a>
+				<a href="AdmTela3.php"><input type="submit" name="Notas" value="Notas"></a>
+				<a href="AdmTela4.php"><input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor"></a>
 
 			</div><!--painelDeEscolha-->
 		</div><!--container-->
 	</section>
 	<section>
 		<div class="container">
-			<div class="notas">
-				<h1>Notas</h1>
+			<div class="regulamento">
+				<h1>Regulamento</h1>
 				<p>* A bobrinha 1: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
 				<p>* A bobrinha 2: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
 				<p>* A bobrinha 3: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
@@ -55,11 +55,11 @@
 
 	<section>
 		<div class="container">
-			<div class="editar-nota">
-				<h1>Editar as notas:</h1>
-				<div class="adicionar-nota">
+			<div class="editar-regulamento">
+				<h1>Editar regulamento:</h1>
+				<div class="adicionar-regulamento">
 					<h2>Adicionar:</h2>
-					<div class="texto-add-nota">
+					<div class="texto-add-regulamento">
 						<textarea></textarea>
 						<div class="tad-btt">
 							<input type="submit" name="Adicionar" value="Adicionar">
@@ -71,7 +71,7 @@
 				<div class="apagar-edd">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
-						<p>Selecione a nota:</p>
+						<p>Selecione o regulamento:</p>
 						<select><option>1</option><option>2</option></select>
 					</div><!--apagar1-->
 					<div class="apagar2">

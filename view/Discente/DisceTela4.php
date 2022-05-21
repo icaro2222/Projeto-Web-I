@@ -42,10 +42,10 @@ require_once('../../app/controller/Aviso.php');
 			</div><!--academiaDoCampus-->
 
 			<div class="painelDeEscolha">
-				<a href="./DisceTela1.html"><input type="submit" name="Regulamento" value="Regulamento"></a>
-				<a href="./DisceTela2.html"><input type="submit" name="Horários" value="Horários"></a>
-				<a href="./DisceTela3.html"><input type="submit" name="Agendamento" value="Agendamento"></a>
-				<a href="./DisceTela4.html"><input type="submit" name="Notas" value="Notas"></a>
+				<a href="./DisceTela1.php"><input type="submit" name="Regulamento" value="Regulamento"></a>
+				<a href="./DisceTela2.php"><input type="submit" name="Horários" value="Horários"></a>
+				<a href="./DisceTela3.php"><input type="submit" name="Agendamento" value="Agendamento"></a>
+				<a href="./DisceTela4.php"><input type="submit" name="Notas" value="Notas"></a>
 
 			</div><!--painelDeEscolha-->
 		</div><!--container-->
@@ -58,7 +58,7 @@ require_once('../../app/controller/Aviso.php');
 			<?php
 				$aviso = new Aviso;
 				foreach($aviso->findAll() as $index => $value){?>
-					<p>pppppppppppppppppppppppp</p>
+					<p><?php echo $value->descricao;?></p>
 				<?php
 				}
 				?>
