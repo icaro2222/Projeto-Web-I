@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(!$_SESSION['usuario']) {
+	header('Location: ../../index.php');
+	exit();
+}else{};
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
+require_once('../../app/controller/Usuario.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +30,7 @@
 					<div class="cabecariopt2">
 						<h3>Instituto Federal de Educação, Ciência e Tecnologia Baiano</h1>
 						<h1>Campus Guanambi</h1>
-						<input type="submit" name="Entrar" value="Entrar">
+						<a href="../../logout.php"><input type="submit" name="Sair" value="Sair"></a>
 						<div class="borda-cabe">
 						</div><!--borda-cabe-->
 			
@@ -41,21 +54,39 @@
 			</div><!--painelDeEscolha-->
 		</div><!--container-->
 	</section>
+	
+
+	<?php    
+      $usuario = new Usuario;
+      if(isset($_POST['cadastrar'])):
+		$nome = $_POST['nome'];
+		$endereco = $_POST['nome'];
+
+		$usuario->setNome($nome);
+		$usuario->setEndereco($endereco);
+
+            if($usuario->insert()){
+                $inserido = TRUE;
+            }
+      endif;
+    ?>
 	<section>
 		<div class="container">
+			<form action="" method="POST">
 			<div class="add-tutor">
 				<h1>Adicionar tutor:</h1>
-				<div class="add-tutor-cadast">
-					<div class="cap1"><p>Nome:</p>
-					<textarea></textarea></div>
-					<div class="cap2"><p>Matricula:</p>
-					<textarea></textarea></div>
-					<div class="cap3"><p>Digite o usuário:</p>
-					<textarea></textarea></div>
-					<div class="cap4"><p>Digite a senha:</p>
-					<textarea></textarea></div>
-					
-				</div><!--add-tutor-cadast-->
+					<div class="add-tutor-cadast">
+							<div class="cap1">
+								<p>Nome:</p>
+							<textarea name="nome"></textarea>
+							</div>
+							<div class="cap2"><p>Matricula:</p>
+							<textarea name="matricula"></textarea></div>
+							<div class="cap3"><p>Digite o usuário:</p>
+							<textarea name="usuario"></textarea></div>
+							<div class="cap4"><p>Digite a senha:</p>
+							<textarea name="senha"></textarea></div>
+						</div><!--add-tutor-cadast-->
 				<h2>Selecione os horarios do instrutor:</h2>
 				<div class="add-tutor-horari">
 					<div class="select">
@@ -71,8 +102,9 @@
 						<option>2</option></select><p>Minuto:</p></div><!--select-min-->
 				</div><!--select-->
 				<div class="botão-agendamento">
-					<input type="submit" name="Cadastrar" value="Cadastrar">
+					<input type="submit" name="cadastrar" value="Cadastrar">
 					</div><!--botão-agendamento-->
+					</form>
 				</div><!--add-tutor-horari-->
 			</div><!--add-tutor-->
 		</div><!--container-->

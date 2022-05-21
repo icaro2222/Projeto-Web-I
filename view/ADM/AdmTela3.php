@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!$_SESSION['usuario']) {
+	header('Location: ../../index.php');
+	exit();
+}else{};
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
@@ -26,7 +32,7 @@ require_once('../../app/controller/Aviso.php');
 					<div class="cabecariopt2">
 						<h3>Instituto Federal de Educação, Ciência e Tecnologia Baiano</h1>
 						<h1>Campus Guanambi</h1>
-						<input type="submit" name="Entrar" value="Entrar">
+						<a href="../../logout.php"><input type="submit" name="Sair" value="Sair"></a>
 						<div class="borda-cabe">
 						</div><!--borda-cabe-->
 			

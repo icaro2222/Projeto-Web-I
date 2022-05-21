@@ -1,8 +1,8 @@
 <?php
 
-include_once "./model/CrudDiscente.php";
+include_once "./model/CrudUsuario.php";
 
-class Discente extends CrudDiscente{
+class Usuario extends CrudUsuario{
     protected $tabela = 'usuario';
 
    
@@ -34,7 +34,7 @@ class Discente extends CrudDiscente{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (nome, endereco) VALUES (:nome, :endereco)";
+        $sql = "INSERT INTO $this->tabela (usuario, endereco) VALUES (:nome, :endereco)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':nome', $this->nome);
         $stm->bindParam(':endereco', $this->endereco);
