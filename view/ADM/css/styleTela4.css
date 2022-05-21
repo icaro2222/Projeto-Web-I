@@ -21,7 +21,7 @@ html,body{
 }
 
 .logo-topo{
-	background-image: url('../../../img/logo if.png');
+	background-image: url('../../../public/img/logo if.png');
 	background-size: 100% 100%;
 	height: 100%;
 	width: 174px;
@@ -271,7 +271,7 @@ footer .segundoRodaPe .p{
 footer .segundoRodaPe .img-footer1, footer .segundoRodaPe .img-footer2{
 	width: 164.6px;
 	height: 46.3px;
-	background-image: url('../../../img/logo-gov.png');
+	background-image: url('../../../public/img/logo-gov.png');
 	background-size: 100% 100%;
 }
 
