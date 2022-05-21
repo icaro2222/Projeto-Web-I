@@ -1,7 +1,7 @@
 <?php
 define('HOST','localhost');
-define('USUARIO','icaro');
-define('SENHA','tatakae');
+define('USUARIO','root');
+define('SENHA','');
 define('DB','IFhealth');
  global $pdo;
 ?>
