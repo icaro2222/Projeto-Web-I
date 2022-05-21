@@ -7,7 +7,7 @@ class Usuario{
         $sql = "SELECT * FROM usuario WHERE login = :login and senha = :senha";
         $sql = $pdo->prepare($sql);
         $sql->bindValue('login',$login);
-        $sql->bindValue('senha',$senha);
+        $sql->bindValue('senha',md5($senha));
         $sql->execute();
 
         if ($sql->rowCount() > 0 ) {
