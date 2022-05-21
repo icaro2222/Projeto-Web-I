@@ -1,0 +1,172 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+
+}
+html,body{
+	height: 100%;
+}
+.container{
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.cabecario{
+	display: flex;
+	width: 100%;
+	height: 160px;	
+	flex-direction: row;
+}
+
+.logo-topo{
+	background-image: url('../../../img/logo if.png');
+	background-size: 100% 100%;
+	height: 100%;
+	width: 174px;
+}
+.cabecariopt2{
+	display: flex;
+	flex-direction: column;
+	background-color: #0A5517;
+	width: 100%;
+
+}
+.borda-cabe{
+	background-color: #01420B;
+	height: 42px;
+	width: 100%;
+	border-top: 1px solid black;
+}
+
+.cabecariopt2 h3{
+	color: white;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+.cabecariopt2 h1{
+	color: white;
+	top: 10px;
+	padding-left: 28px;
+	padding-top: 20px;
+
+}
+.cabecariopt2 input{
+	position: relative;
+	bottom: 30px;
+	left: 87%;
+	color: white;
+	background-color: #0A5517;
+	width: 100px;
+	border: 0;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.academiaDoCampus{
+	position: relative;
+	top: 10px;
+	height: 80px;
+	background-color: #ECF1EC;
+	padding: 24px;
+	border: 2px solid #B6B8B6;
+}
+.academiaDoCampus h2{
+	color: #0A5517;
+	text-align: center;
+}
+.painelDeEscolha{
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+	width: 100%;
+}
+.painelDeEscolha input{
+	position: relative;
+	top: 20px;
+	width: 100%;
+	color: black;
+	background-color: #ECF1EC;
+	border: 2px solid #B6B8B6;
+	cursor: pointer;
+	font-size: 18px;
+}
+.painelDeEscolha input:nth-of-type(4){
+	background-color: #A0A0A0;
+
+}
+
+.notas{
+	position: relative;
+	top: 30px;
+	width: 100%;
+	background-color: #ECF1EC;
+	padding: 24px;
+	border: 2px solid #B6B8B6;
+}
+.notas h1{
+	padding-left:10px ;
+	padding-bottom: 20px;
+	font-size: 35px;
+}
+.notas p{
+	font-size: 20px;
+	color: black;
+	padding: 10px 10px 20px 10px;
+}
+footer .primeiroRodaPe{
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	top: 45px;
+	width: 100%;
+	height: 100px;
+	background-color: #0A5517 ;
+}
+footer .primeiroRodaPe p{
+	width: 50%;
+	padding: 28px 15px 15px 15px ;
+	color: white;
+	font-size: 15px;
+	text-align: center;
+}
+footer .container-segundoRodaPe{
+	position: relative;
+	top: 45px;
+	width: 100%;
+	height: 100px;
+}
+footer .segundoRodaPe{
+	display: flex;
+	flex-direction: row;
+	background-color: #01420B ;
+	padding: 25px;
+
+}
+
+footer .segundoRodaPe .p{
+	width: 76%;
+	color: white;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 15px;
+
+}
+footer .segundoRodaPe .img-footer1, footer .segundoRodaPe .img-footer2{
+	width: 164.6px;
+	height: 46.3px;
+	background-image: url('../../../img/logo-gov.png');
+	background-size: 100% 100%;
+}
+
+@media screen and (max-width: 1130px){
+	footer .primeiroRodaPe{
+		height: 140px;
+	}
+	.cabecariopt2 input{
+		left: 80%;
+		
+	}
+}
