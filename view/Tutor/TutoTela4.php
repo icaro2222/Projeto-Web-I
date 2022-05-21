@@ -33,10 +33,10 @@
 			</div><!--academiaDoCampus-->
 
 			<div class="painelDeEscolha">
-				<a href=".//TutoTela1.html"><input type="submit" name="Regulamento" value="Regulamento"></a>
-				<a href="./TutoTela2.html"><input type="submit" name="Horários" value="Horários"></a>
-				<a href="./TutoTela3.html"><input type="submit" name="Agendamento" value="Agendamento"></a>
-				<a href="./TutoTela4.html"><input type="submit" name="Notas" value="Notas"></a>
+				<a href="./TutoTela1.php"><input type="submit" name="Regulamento" value="Regulamento"></a>
+				<a href="./TutoTela2.php"><input type="submit" name="Horários" value="Horários"></a>
+				<a href="./TutoTela3.php"><input type="submit" name="Agendamento" value="Agendamento"></a>
+				<a href="./TutoTela4.php"><input type="submit" name="Notas" value="Notas"></a>
 
 			</div><!--painelDeEscolha-->
 		</div><!--container-->
