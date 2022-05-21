@@ -16,7 +16,7 @@ $result = mysqli_query($conexao,$query);
 $row = mysqli_num_rows($result);
 
 if(1==1){
-    $_SESSION['usuario']= $usuario;
+    $_SESSION['usuario']= '$usuario';
     header('location:index_admin.php');
     exit();
 }else{
