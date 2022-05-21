@@ -3,8 +3,9 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 session_start();
+
 include('model/db/conexao.php');
-include_once('app/controller/Discente.php');
+require_once('./app/controller/Discente.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])){
     header('location:index.php');
@@ -19,10 +20,8 @@ $query = "select usuario from usuario where usuario = '{$usuario}'";
 $result = mysqli_query($conexao,$query);
 $row = mysqli_num_rows($result);
 
-$usuario = new Discente;
-$row = $usuario->findkey();
 
-if(1==1){
+if(2==1){
     $_SESSION['usuario']= $usuario;
     header('location:view/Discente/DisceTela1.php');
     exit();

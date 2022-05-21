@@ -1,6 +1,6 @@
 <?php
 
-include_once('../../model/CrudDiscente.php');
+require_once('../../model/CrudDiscente.php');
 
 class Discente extends CrudDiscente {
 
@@ -9,7 +9,7 @@ class Discente extends CrudDiscente {
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE id = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE idUsuario = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -28,7 +28,7 @@ class Discente extends CrudDiscente {
         $sql = "SELECT usuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
         $stm = DB::prepare($sql);
         $stm->execute();
-        return $stm->fetchAll();
+        return $stm->fetch();
     }
     
      //faz insert   
@@ -52,7 +52,7 @@ class Discente extends CrudDiscente {
     
 //deleta  1 item
     public function delete($id) {
-        $sql = "DELETE FROM $this->tabela WHERE id = :id";
+        $sql = "DELETE FROM $this->tabela WHERE idUsuario = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         return $stm->execute();
