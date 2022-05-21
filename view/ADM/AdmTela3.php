@@ -1,4 +1,9 @@
 <?php
+if(!$_SESSION['usuario']) {
+	header('Location: ../../index.php');
+	exit();
+}else{};
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 

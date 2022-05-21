@@ -17,7 +17,7 @@ $usuario->setSenha($_POST['senha']);
 
 $row = $usuario->findkey();
 
-if($row==1){
+if($row>0){
     $_SESSION['usuario']= $usuario;
     header('location:view/Discente/DisceTela1.php');
     exit();
