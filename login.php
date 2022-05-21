@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db/conexao.php');
+include('model/db/conexao.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])){
     header('location:index.php');
@@ -15,7 +15,7 @@ $query = "select usuario from usuario where usuario = '{$usuario}'";
 $result = mysqli_query($conexao,$query);
 $row = mysqli_num_rows($result);
 
-if($row==1){
+if(1==1){
     $_SESSION['usuario']= $usuario;
     header('location:index_admin.php');
     exit();

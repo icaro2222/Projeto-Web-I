@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DisceTela3</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela3.css">
+	<title>AdmTela2</title>
+	<link rel="stylesheet" type="text/css" href="css/styleTela2.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body>
 	<header>
@@ -32,12 +33,26 @@
 			</div><!--academiaDoCampus-->
 
 			<div class="painelDeEscolha">
-				<a href="./DisceTela1.html"><input type="submit" name="Regulamento" value="Regulamento"></a>
-				<a href="./DisceTela2.html"><input type="submit" name="Horários" value="Horários"></a>
-				<a href="./DisceTela3.html"><input type="submit" name="Agendamento" value="Agendamento"></a>
-				<a href="./DisceTela4.html"><input type="submit" name="Notas" value="Notas"></a>
+				<a href="AdmTela1.php"><input type="submit" name="Regulamento" value="Regulamento"></a>
+				<a href="AdmTela2.php"><input type="submit" name="Agendamento" value="Agendamento"></a>
+				<a href="AdmTela3.php"><input type="submit" name="Notas" value="Notas"></a>
+				<a href="AdmTela4.php"><input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor"></a>
 
 			</div><!--painelDeEscolha-->
+		</div><!--container-->
+	</section>
+
+		<section>
+		<div class="container">
+			<div class="bloquear-agendamento">
+				<h1>Bloquer agendamento:</h1>
+				<div class="texto1-bt">
+					<h2>Agendamento:</h2>
+					<input type="submit" name="on/off" value="Ligado/Desligado">
+
+				</div><!--texto1-->
+							
+			</div><!--bloquear-agendamento-->
 		</div><!--container-->
 	</section>
 
@@ -67,6 +82,51 @@
 			</div><!--agendamento-->
 		</div><!--container-->
 	</section>
+
+
+<section>
+		<div class="container">
+			<div class="bloquear-aluno">
+				<div class="texto1">
+					<h1>Bloquear aluno:</h1>
+					<p>Selecione o aluno:</p>
+				</div><!--texto1-->
+				<div class="select-bloqueio">
+					<div class="select-bloqueio-aluno">
+						<select name="Aluno"><option>Aluno</option>
+						<option>2</option></select>
+											
+				</div><!--select-bloqueio-aluno-->
+				<p>Tempo:</p>
+				<div class="select-tempo-bloqueio">
+						<select name="tempo-bloqueio"><option>Dias:</option>
+						<option>2</option></select>
+				
+					<input type="submit" name="Agendar" value="Bloquear">
+			</div><!--agendamento-->
+		</div><!--container-->
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="desbloquear-aluno">
+				<div class="texto2">
+					<h1>Desbloquear aluno:</h1>
+					<p>Selecione o aluno:</p>
+				</div><!--texto1-->
+				<div class="select-desbloqueio">
+					<div class="select-desbloqueio-aluno">
+						<select name="Aluno"><option>Aluno</option>
+						<option>2</option></select>
+
+						<input type="submit" name="Agendar" value="Desloquear">
+											
+				</div><!--select-bloqueio-aluno-->
+					
+			</div><!--agendamento-->
+		</div><!--container-->
+	</section>
+
 
 	<footer>
 		<div class="container">
