@@ -12,7 +12,7 @@ if (!isset($_SESSION)) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Academy</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
+	<link rel="stylesheet" type="text/css" href="public/css/styleTela1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
