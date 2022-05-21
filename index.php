@@ -12,7 +12,7 @@ session_start();
 </header>
 <body>
 
-    <form action="login.php" method="POST">
+    <form action="view/login/login.php" method="POST">
         <!-- <h3>Login</h3> -->
         <?php
         if (isset($_SESSION['nao_autenticado'])) :
