@@ -12,7 +12,7 @@ session_start();
 </header>
 <body>
 
-    <form action="login.php" method="POST">
+    <form action="view/login/logar.php" method="POST">
         <!-- <h3>Login</h3> -->
         <?php
         if (isset($_SESSION['nao_autenticado'])) :
@@ -24,7 +24,7 @@ session_start();
         endif;
         unset($_SESSION['nao_autenticado']);
         ?>
-        <input type="text" id="email" name="usuario" placeholder="Digite seu email">
+        <input type="text" id="email" name="login" placeholder="Digite seu email">
         <input type="password" id="password" name="senha" placeholder="Digite sua senha">
 
         <input type="submit" value="entrar">

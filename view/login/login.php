@@ -4,7 +4,7 @@ ini_set("display_errors", 1);
 
 session_start();
 
-require_once('./app/controller/Usuario.php');
+require_once('./../../app/controller/Usuario.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])){
     header('location:index.php');
@@ -19,7 +19,7 @@ $row = $usuario->findkey();
 
 if($row>0){
     $_SESSION['usuario']= $usuario;
-    header('location:view/Discente/DisceTela1.php');
+    header('location:./../Discente/DisceTela1.php');
     exit();
 }else{
     $_SESSION['nao_autenticado']=true;
