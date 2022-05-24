@@ -2,6 +2,6 @@
 define('HOST','localhost');
 define('USUARIO','root');
 define('SENHA','');
-define('DB','IFhealth');
+define('DB',' ifhealth');
  global $pdo;
 ?>
