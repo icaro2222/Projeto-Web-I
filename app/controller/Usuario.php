@@ -34,10 +34,11 @@ class Usuario extends CrudUsuario{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (usuario, senha) VALUES (:nome, :senha)";
+        $sql = "INSERT INTO $this->tabela (login, senha, nivel) VALUES (:nome, :senha, :nivel)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':nome', $this->nome);
         $stm->bindParam(':senha', $this->senha);
+        $stm->bindParam(':nivel', $this->nivel);
         return $stm->execute();
     }
     

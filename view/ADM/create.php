@@ -25,12 +25,13 @@ require_once('../../app/controller/Usuario.php');
             $senha = $_POST['senha'];
 
             $usuario->setNome($nome);
-            $usuario->setSenha($senha);
+            $usuario->setSenha(md5($senha));
             $usuario->setNivel(2);
-
+			
             if($usuario->insert()){
                 echo "Aluno ". $nome. " inserido com sucesso";
             }
+			
       endif;
     ?>
 
