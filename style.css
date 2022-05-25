@@ -84,7 +84,11 @@ form div {
 }
 
 body {
+<<<<<<< HEAD
+    background-image: url('public/img/academia.jpg');
+=======
     background-image: url('img/academia.jpg');
+>>>>>>> c90636cf419e9767e7e6f77af274391944bbca0a
     background-size: 100%;
     border-radius: 15px;
     height: 260px;
