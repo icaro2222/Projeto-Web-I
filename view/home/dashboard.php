@@ -57,12 +57,11 @@ require '../login/verificalogin.php';
 				<!--painelDeEscolha-->
 		</div>
 		<!--container-->
-	</section>
-	<section>
+	
 		<div class="container">
 			<div class="notas">
 
-			<?php
+				<?php
 
 				# code...
 				$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
@@ -84,11 +83,38 @@ require '../login/verificalogin.php';
 						// 	include('paginas/discente/update_env.php');
 						// 	break;
 				}
-			} else {
-			}
-			?>
-			</div>
-			<!--notas-->
+			} elseif ($nivel == 2) {
+				# code...
+			} else { ?>
+				<div class="painelDeEscolha">
+					<li><a href="../home/dashboard.php?menuop=home">Regulamento</a></li>
+					<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
+					<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
+					
+				</div>
+				<!--painelDeEscolha-->
+				</div>
+				<?php
+				$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
+				switch ($menuop) {
+
+					case 'home':
+						include '../Discente/regulamento.php';
+						break;
+					case 'agendamento':
+						include '../Discente/agendamento.php';
+						break;
+					case 'noticias':
+						include '../discente/noticias.php';
+						break;
+						// case 'update_env':
+						// 	include('paginas/discente/update_env.php');
+						// 	break;
+				}
+				?>
+			<?php } ?>
+		</div>
+		<!--notas-->
 		</div>
 		<!--container-->
 	</section>
