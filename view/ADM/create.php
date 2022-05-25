@@ -20,7 +20,10 @@ require_once('../../app/controller/Usuario.php');
 
 <?php
 	$usuario = new Usuario;
-	if(isset($_POST['Cadastrar'])):
+	if(isset($_POST['Cadastrar']) &&
+		$_POST['nome'] != '' &&
+		$_POST['senha'] != '' &&
+		$_POST['usuario'] != ''):
 		$nome = $_POST['nome'];
 		$senha = $_POST['senha'];
 
@@ -41,13 +44,13 @@ require_once('../../app/controller/Usuario.php');
 				<h1>Adicionar tutor:</h1>
 				<div class="add-tutor-cadast">
 					<div class="cap1"><p>Nome:</p>
-					<textarea></textarea>
+					<textarea name="nome"></textarea>
 				</div>
 					<div class="cap2"><p>Matricula:</p>
 					<textarea></textarea>
 				</div>
 					<div class="cap3"><p>Digite o usuário:</p>
-					<textarea name="nome"></textarea>
+					<textarea name="usuario"></textarea>
 				</div>
 					<div class="cap4">
 						<p>Digite a senha:</p>
