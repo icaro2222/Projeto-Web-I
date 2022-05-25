@@ -19,34 +19,39 @@ require_once('../../app/controller/Usuario.php');
 <body>
 
 <?php    
-    //   $usuario = new Usuario;
-    //   if(isset($_POST['Cadastrar'])):
-    //         $nome = $_POST['nome'];
-    //         $endereco = $_POST['endereco'];
+      $usuario = new Usuario;
+      if(isset($_POST['Cadastrar'])):
+            $nome = $_POST['nome'];
+            $senha = $_POST['senha'];
 
-    //         $usuario->setNome($nome);
-    //         $usuario->setEndereco($endereco);
+            $usuario->setNome($nome);
+            $usuario->setSenha($senha);
 
-    //         if($usuario->insert()){
-    //             echo "Aluno ". $nome. " inserido com sucesso";
-    //         }
-    //   endif;
+            if($usuario->insert()){
+                echo "Aluno ". $nome. " inserido com sucesso";
+            }
+      endif;
     ?>
 
 	<section>
 		<div class="container">
+			<form action="" method="POST">
 			<div class="add-tutor">
 				<h1>Adicionar tutor:</h1>
 				<div class="add-tutor-cadast">
 					<div class="cap1"><p>Nome:</p>
-					<textarea></textarea></div>
+					<textarea></textarea>
+				</div>
 					<div class="cap2"><p>Matricula:</p>
-					<textarea></textarea></div>
+					<textarea></textarea>
+				</div>
 					<div class="cap3"><p>Digite o usuário:</p>
-					<textarea></textarea></div>
-					<div class="cap4"><p>Digite a senha:</p>
-					<textarea></textarea></div>
-					
+					<textarea name="nome"></textarea>
+				</div>
+					<div class="cap4">
+						<p>Digite a senha:</p>
+						<textarea name="senha"></textarea>
+					</div>
 				</div><!--add-tutor-cadast-->
 				<h2>Selecione os horarios do instrutor:</h2>
 				<div class="add-tutor-horari">
@@ -67,6 +72,7 @@ require_once('../../app/controller/Usuario.php');
 					</div><!--botão-agendamento-->
 				</div><!--add-tutor-horari-->
 			</div><!--add-tutor-->
+			</form>
 		</div><!--container-->
 	</section>
 
