@@ -19,18 +19,18 @@ require_once('../../app/controller/Usuario.php');
 <body>
 
 <?php    
-      $usuario = new Usuario;
-      if(isset($_POST['Cadastrar'])):
-            $nome = $_POST['nome'];
-            $endereco = $_POST['endereco'];
+    //   $usuario = new Usuario;
+    //   if(isset($_POST['Cadastrar'])):
+    //         $nome = $_POST['nome'];
+    //         $endereco = $_POST['endereco'];
 
-            $usuario->setNome($nome);
-            $usuario->setEndereco($endereco);
+    //         $usuario->setNome($nome);
+    //         $usuario->setEndereco($endereco);
 
-            if($usuario->insert()){
-                echo "Aluno ". $nome. " inserido com sucesso";
-            }
-      endif;
+    //         if($usuario->insert()){
+    //             echo "Aluno ". $nome. " inserido com sucesso";
+    //         }
+    //   endif;
     ?>
 
 	<section>
