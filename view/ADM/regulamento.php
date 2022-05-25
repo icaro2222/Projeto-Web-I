@@ -1,3 +1,10 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once('../../app/controller/Regulamento.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +15,31 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+	<?php
+		$regulamento = new Regulamento;
+		if(isset($_POST['Adicionar'])){
+	
+			$descricao = $_POST['descricao'];
+	
+			$regulamento->setDescricao($descricao);
+			
+			if($regulamento->insert()){
+				echo "regulamento ". $descricao. " inserido com sucesso";
+			}
+		}
+		?>
 	<section>
 		<div class="container">
 			<div class="regulamento">
 				<h1>Regulamento</h1>
-				<p>* A bobrinha 1: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 2: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 3: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 4: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
+                <?php
+                $regulamentos = $regulamento->findAll();
+                foreach ($regulamentos as $key => $value) {?>
+                    <p><?php echo $value->descricao;?></p>
+                <?php
+                }
+                ?>
 			</div><!--notas-->
 		</div><!--container-->
 	</section>
@@ -26,13 +50,14 @@
 				<h1>Editar regulamento:</h1>
 				<div class="adicionar-regulamento">
 					<h2>Adicionar:</h2>
+					<form action="" method="POST">
 					<div class="texto-add-regulamento">
-						<textarea></textarea>
+						<textarea name="descricao"></textarea>
 						<div class="tad-btt">
 							<input type="submit" name="Adicionar" value="Adicionar">
 						</div>
-						
 					</div><!--texto-add-nota-->
+					</form>
 				</div><!--adicionar-nota-->
 
 				<div class="apagar-edd">
