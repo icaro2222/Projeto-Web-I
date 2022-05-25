@@ -1,6 +1,5 @@
 # Projeto-Web-I
 Projeto desenvolvido para matéria de  Laboratório de Programação Web I
-
 --
 estarenos usando PHP com mysql e modelo MVC
 <img src="https://www.educabras.com/media/faculdades/image/ifbaiano.png">
@@ -38,7 +37,7 @@ Gerenciamento de vendas | Funcionando
 Gerenciamento de devoluções | Funcionando
 Fluxo de caixa | Funcionando
 Configurações | Funcionando
-Login/Logout | Funcionando
+Login/Logout | Funcionando.
 
 ### Próximos passos <h3>
 - [ ] Finalizar layouts 
@@ -93,7 +92,7 @@ Login/Logout | Funcionando
 ### Link do sistema <h3>
 Acesse: https://introblack.000webhostapp.com/Projeto-Web-I/
     
-Dados de login (Esse login não possui acesso total ao sistema):
+Dados de login:
 
-* E-mail: convidado1@convidado.com
-* Senha: Convidado0123
+* Usuario: admin
+* Senha: lute
