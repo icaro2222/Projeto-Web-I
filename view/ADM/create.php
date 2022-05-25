@@ -1,3 +1,12 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once('../../app/controller/Usuario.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +17,22 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<?php    
+      $usuario = new Usuario;
+      if(isset($_POST['Cadastrar'])):
+            $nome = $_POST['nome'];
+            $endereco = $_POST['endereco'];
+
+            $usuario->setNome($nome);
+            $usuario->setEndereco($endereco);
+
+            if($usuario->insert()){
+                echo "Aluno ". $nome. " inserido com sucesso";
+            }
+      endif;
+    ?>
+
 	<section>
 		<div class="container">
 			<div class="add-tutor">
