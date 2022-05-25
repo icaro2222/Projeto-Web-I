@@ -5,7 +5,7 @@
 <title>login</title>
 <header id="header">
     
-    <img id="logo" src="./img/logo if.png">
+    <img id="logo" src="./public/img/logo if.png">
 </header>
 <body>
 
