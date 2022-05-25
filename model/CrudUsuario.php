@@ -9,6 +9,7 @@ abstract class CrudUsuario extends DB{
     public $login;
     public $senha;
     public $endereco;
+    public $nivel;
     
     public function setNome($nome) {
         $this->usuario = $nome;
@@ -23,6 +24,14 @@ abstract class CrudUsuario extends DB{
     }
     public function getLogin() {
         return $this->login;
+    }
+       
+    
+    public function setNivel($nivel) {
+        $this->nivel = $nivel;
+    }
+    public function getNivel() {
+        return $this->nivel;
     }
     
     

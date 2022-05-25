@@ -26,6 +26,7 @@ require_once('../../app/controller/Usuario.php');
 
             $usuario->setNome($nome);
             $usuario->setSenha($senha);
+            $usuario->setNivel(2);
 
             if($usuario->insert()){
                 echo "Aluno ". $nome. " inserido com sucesso";
