@@ -6,7 +6,6 @@ abstract class CrudUsuario extends DB{
 
     protected $tabela;
     public $usuario;
-    public $login;
     public $senha;
     public $endereco;
     
@@ -15,14 +14,6 @@ abstract class CrudUsuario extends DB{
     }
     public function getNome() {
         return $this->usuario;
-    }
-    
-    
-    public function setLogin($login) {
-        $this->login = $login;
-    }
-    public function getLogin() {
-        return $this->login;
     }
     
     
