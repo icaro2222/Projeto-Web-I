@@ -13,10 +13,7 @@
 			<div class="regulamento">
 				<h1>Regulamento</h1>
 				<p>* A bobrinha 1: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 2: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 3: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 4: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-			</div><!--notas-->
+				</div><!--notas-->
 		</div><!--container-->
 	</section>
 
@@ -29,25 +26,25 @@
 					<div class="texto-add-regulamento">
 						<textarea></textarea>
 						<div class="tad-btt">
-							<input type="submit" name="Adicionar" value="Adicionar">
+							<input type="submit" name="Editar" value="Editar">
 						</div>
 						
 					</div><!--texto-add-nota-->
 				</div><!--adicionar-nota-->
 
-				<div class="apagar-edd">
+				<!-- <div class="apagar-edd">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
 						<p>Selecione o regulamento:</p>
 						<select><option>1</option><option>2</option></select>
-					</div><!--apagar1-->
-					<div class="apagar2">
+					</div>apagar1-->
+					<!-- <div class="apagar2">
 						<textarea></textarea>
 						<div class="apagar3">
 						<input type="submit" name="Remover" value="Remover">
 						<input type="submit" name="salvar" value="Salvar">
 					</div>
-					</div><!--apagar2-->
+					</div>apagar2 -->
 					
 				</div><!--apagar-edd-->
 				

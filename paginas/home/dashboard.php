@@ -84,7 +84,54 @@ require '../login/verificalogin.php';
 						// 	include('paginas/discente/update_env.php');
 						// 	break;
 				}
-			} else {
+			}elseif($nivel==2){?>
+				<div class="painelDeEscolha">
+				<li><a href="../home/dashboard.php?menuop=home">Regulamento</a></li>
+				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
+				<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
+				<li><a href="../home/dashboard.php?menuop=create">Cadastro</a></li>
+
+			</div>
+			<div class="container">
+			<div class="notas">
+
+			<?php 
+			$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
+			switch ($menuop) {
+				case 'home':
+					include '../ADM/regulamento.php';
+					break;
+				case 'create':
+					include '../ADM/create.php';
+					break;
+				case 'agendamento':
+					include '../ADM/agendamento.php';
+					break;
+				case 'noticias':
+					include '../ADM/noticias.php';
+					break;
+			}
+			}else{
+				$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "noticias";
+				?>
+						<div class="painelDeEscolha">
+				
+							<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
+				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
+				
+
+			</div>
+			<div class="container">
+			<div class="notas">
+			<?php 
+			switch ($menuop) {
+				case 'noticias':
+					include '../ADM/noticias.php';
+					break;
+					case 'agendamento':
+						include '../ADM/agendamento.php';
+						break;
+			}
 			}
 			?>
 			</div>
