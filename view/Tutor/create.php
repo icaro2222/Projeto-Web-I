@@ -66,7 +66,7 @@ require_once('../../app/controller/Usuario.php');
 		<div class="container">
 			<form action="" method="POST">
 			<div class="notas">
-				<h1>Adicionar tutor:</h1>
+				<h1>Adicionar Discente:</h1>
 				<div class="add-tutor-cadast">
 					<div class="cap1"><p>Nome:</p>
 					<textarea name="nome"></textarea>
@@ -109,8 +109,8 @@ require_once('../../app/controller/Usuario.php');
 		<div class="container">
 			<div class="notas">
 				<div class="texto2">
-					<h1>Apagar Tutor:</h1>
-					<p>Selecione o tutor:</p>
+					<h1>Apagar Discente:</h1>
+					<p>Selecione o discente:</p>
 				</div><!--texto1-->
 				<div class="select-apagar">
 					<form action="" method="POST">
