@@ -82,20 +82,6 @@ require_once('../../app/controller/Usuario.php');
 						<input type="password" name="senha">
 					</div>
 				</div><!--add-tutor-cadast-->
-				<h2>Selecione os horarios do instrutor:</h2>
-				<div class="add-tutor-horari">
-					<div class="select">
-					<div class="select-data">
-						<select name="Data"><option>1</option>
-						<option>2</option></select>
-						<p>Data:</p></div><!--select-data-->
-					<div class="select-hora">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Hora:</p></div><!--select-hora-->
-					<div class="select-min">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Minuto:</p></div><!--select-min-->
-				</div><!--select-->
 				<div class="botão-agendamento">
 					<input type="submit" name="Cadastrar" value="Cadastrar">
 					</div><!--botão-agendamento-->
