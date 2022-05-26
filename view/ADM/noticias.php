@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once('../../app/controller/Aviso.php');
+require_once('../../app/controller/Noticia.php');
 
 ?>
 
@@ -20,17 +20,37 @@ require_once('../../app/controller/Aviso.php');
 <body>
     
 <?php
-	$aviso = new Aviso;
+	$Noticia = new Noticia;
 	if(isset($_POST['Adicionar'])){
 
         $descricao = $_POST['descricao'];
 
-		$aviso->setDescricao($descricao);
+		$Noticia->setDescricao($descricao);
 		
-		if($aviso->insert()){
-			echo "Aviso ". $descricao. " inserido com sucesso";
+		if($Noticia->insert()){
+			echo "Noticia ". $descricao. " inserido com sucesso";
 		}
     }
+	if(isset($_POST['Remover'])){
+		$idNoticia = $_POST['idNoticia'];
+
+		$Noticia->setNoticia($idNoticia);
+		
+		if($Noticia->delete()){
+			echo "Noticia ". $idNoticia. " excluido com sucesso";
+		}
+	}
+	if(isset($_POST['Salvar'])){
+		$descricao = $_POST['descricao'];
+		$idNoticia = $_POST['idNoticia'];
+
+		$Noticia->setNoticia($idNoticia);
+		$Noticia->setDescricao($descricao);
+		
+		if($Noticia->update()){
+			echo "Noticia ". $descricao. " atualizado com sucesso";
+		}
+	}
     ?>
 
     <section>
@@ -38,8 +58,8 @@ require_once('../../app/controller/Aviso.php');
             <div class="notas">
                 <h1>Notas</h1>
                 <?php
-                $avisos = $aviso->findAll();
-                foreach ($avisos as $key => $value) {?>
+                $Noticias = $Noticia->findAll();
+                foreach ($Noticias as $key => $value) {?>
                     <p><?php echo $value->descricao;?></p>
                 <?php
                 }
@@ -67,19 +87,27 @@ require_once('../../app/controller/Aviso.php');
 				</div><!--adicionar-nota-->
 
 				<div class="apagar-edd">
+					<form action="" method="POST">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
 						<p>Selecione a nota:</p>
-						<select><option>1</option><option>2</option></select>
+						<select name="idNoticia" id="idNoticia">
+							<?php
+							$Noticias = $Noticia->findAll();
+							foreach ($Noticias as $key => $value) {?>
+								<option><?php echo $value->idNoticia;?></option>
+							<?php
+							}?>
+						</select>
 					</div><!--apagar1-->
 					<div class="apagar2">
 						<textarea></textarea>
 						<div class="apagar3">
 						<input type="submit" name="Remover" value="Remover">
-						<input type="submit" name="salvar" value="Salvar">
+						<input type="submit" name="Salvar" value="Salvar">
 					</div>
 					</div><!--apagar2-->
-					
+					</form>
 				</div><!--apagar-edd-->
 				
 			</div><!--editar-nota-->

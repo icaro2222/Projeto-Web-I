@@ -2,8 +2,8 @@
 
 include_once '../../model/CrudAviso.php';
 
-class Aviso extends CrudAviso {
-    protected $tabela = 'anotacoes';
+class Noticia extends CrudNoticia {
+    protected $tabela = 'noticia';
 
    
       
@@ -32,19 +32,19 @@ class Aviso extends CrudAviso {
     }
     
     //update de itens
-    public function update($id) {
-        $sql = "UPDATE $this->tabela SET descricao = :descricao WHERE id = :id";
+    public function update() {
+        $sql = "UPDATE $this->tabela SET descricao = :descricao WHERE idNoticia = :id";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':id', $id, PDO::PARAM_INT);
+        $stm->bindParam(':id', $this->idNoticia, PDO::PARAM_INT);
         $stm->bindParam(':descricao', $this->descricao);
         return $stm->execute();
     }
     
 //deleta  1 item
-    public function delete($id) {
-        $sql = "DELETE FROM $this->tabela WHERE id = :id";
+    public function delete() {
+        $sql = "DELETE FROM $this->tabela WHERE idNoticia = :id";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':id', $id, PDO::PARAM_INT);
+        $stm->bindParam(':id', $this->idNoticia, PDO::PARAM_INT);
         return $stm->execute();
     }
     
