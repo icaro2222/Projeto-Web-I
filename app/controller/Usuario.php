@@ -34,9 +34,10 @@ class Usuario extends CrudUsuario{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (login, nome, senha, nivel) VALUES (:nome, :nome, :senha, :nivel)";
+        $sql = "INSERT INTO $this->tabela (login, usuario, senha, nivel) VALUES (:nome, :usuario, :senha, :nivel)";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':nome', $this->nome);
+        $stm->bindParam(':nome', $this->login);
+        $stm->bindParam(':usuario', $this->usuario);
         $stm->bindParam(':senha', $this->senha);
         $stm->bindParam(':nivel', $this->nivel);
         return $stm->execute();
@@ -53,10 +54,10 @@ class Usuario extends CrudUsuario{
     }
     
 //deleta  1 item
-    public function delete($id) {
+    public function delete() {
         $sql = "DELETE FROM $this->tabela WHERE idUsuario = :id";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':id', $id, PDO::PARAM_INT);
+        $stm->bindParam(':id', $this->idUsuario, PDO::PARAM_INT);
         return $stm->execute();
     }
     
