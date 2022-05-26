@@ -101,7 +101,7 @@ require_once('../../app/controller/Noticia.php');
 						</select>
 					</div><!--apagar1-->
 					<div class="apagar2">
-						<textarea></textarea>
+						<textarea name="descricao"></textarea>
 						<div class="apagar3">
 						<input type="submit" name="Remover" value="Remover">
 						<input type="submit" name="Salvar" value="Salvar">
