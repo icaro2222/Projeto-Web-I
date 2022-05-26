@@ -34,7 +34,7 @@ require_once('../../app/controller/Noticia.php');
 	if(isset($_POST['Remover'])){
 		$idNoticia = $_POST['idNoticia'];
 
-		$Noticia->setNoticia($idNoticia);
+		$Noticia->setIdNoticia($idNoticia);
 		
 		if($Noticia->delete()){
 			echo "Noticia ". $idNoticia. " excluido com sucesso";
@@ -44,7 +44,7 @@ require_once('../../app/controller/Noticia.php');
 		$descricao = $_POST['descricao'];
 		$idNoticia = $_POST['idNoticia'];
 
-		$Noticia->setNoticia($idNoticia);
+		$Noticia->setIdNoticia($idNoticia);
 		$Noticia->setDescricao($descricao);
 		
 		if($Noticia->update()){
@@ -56,11 +56,11 @@ require_once('../../app/controller/Noticia.php');
     <section>
         <div class="container">
             <div class="notas">
-                <h1>Notas</h1>
+                <h1>Notícias</h1>
                 <?php
                 $Noticias = $Noticia->findAll();
                 foreach ($Noticias as $key => $value) {?>
-                    <p><?php echo $value->descricao;?></p>
+                    <p><?php echo "Noticia ".$value->idNoticia." : ".$value->descricao;?></p>
                 <?php
                 }
                 ?>
@@ -73,7 +73,7 @@ require_once('../../app/controller/Noticia.php');
 	<section>
 		<div class="container">
 			<div class="editar-nota">
-				<h1>Editar as notas:</h1>
+				<h1>Editar as notícia:</h1>
 				<div class="adicionar-nota">
 					<h2>Adicionar:</h2>
                     <form action="" method="POST">
@@ -90,7 +90,7 @@ require_once('../../app/controller/Noticia.php');
 					<form action="" method="POST">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
-						<p>Selecione a nota:</p>
+						<p>Selecione a notícia:</p>
 						<select name="idNoticia" id="idNoticia">
 							<?php
 							$Noticias = $Noticia->findAll();
