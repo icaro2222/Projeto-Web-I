@@ -23,7 +23,7 @@ require_once('../../app/controller/Usuario.php');
 	if(isset($_POST['Cadastrar']) &&
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
-		$_POST['usuario'] != ''):
+		$_POST['usuario'] != ''){
 		$nome = $_POST['nome'];
 		$senha = $_POST['senha'];
 
@@ -34,7 +34,29 @@ require_once('../../app/controller/Usuario.php');
 		if($usuario->insert()){
 			echo "Aluno ". $nome. " inserido com sucesso";
 		}
-	endif;
+	}
+	
+	if(isset($_POST['Remove r'])){
+		$idNoticia = $_POST['idNoticia'];
+
+		$Noticia->setIdNoticia($idNoticia);
+		
+		if($Noticia->delete()){
+			echo "Noticia ". $idNoticia. " excluido com sucesso";
+		}
+	}
+
+	if(isset($_POST['Salva r'])){
+		$descricao = $_POST['descricao'];
+		$idNoticia = $_POST['idNoticia'];
+
+		$Noticia->setIdNoticia($idNoticia);
+		$Noticia->setDescricao($descricao);
+		
+		if($Noticia->update()){
+			echo "Noticia ". $descricao. " atualizado com sucesso";
+		}
+	}
     ?>
 
 	<section>
@@ -80,9 +102,32 @@ require_once('../../app/controller/Usuario.php');
 		</div><!--container-->
 	</section>
 
+	<section>
+		<div class="container">
+			<div class="apagar-tutor">
+				<div class="texto2">
+					<h1>Apagar Tutor:</h1>
+					<p>Selecione o tutor:</p>
+				</div><!--texto1-->
+				<div class="select-apagar">
+					<div class="select-apagar-tutor">
+						<select name="Tutor">
+							<?php
+							$usuarios = $usuario->findAll();
+							foreach ($usuarios as $key => $value) {
+							if ($value->usuario !=  '' && $value->nivel ==  2) {?>
+							<option><?php echo $value->usuario;?></option>
+							<?php
+							}}?>
+						</select>
 
-
-
+						<input type="submit" name="Apagar" value="Apagar">
+											
+				</div><!--select-bloqueio-aluno-->
+					
+			</div><!--agendamento-->
+		</div><!--container-->
+	</section>
 
 </body>
 </html>

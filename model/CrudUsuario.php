@@ -5,9 +5,16 @@ require_once 'DB/conexao.php';
 abstract class CrudUsuario extends DB{
 
     protected $tabela;
+    public $idUsuario;
     public $usuario;
     public $login;
+    public $num_registro;
     public $senha;
+    public $peso;
+    public $idade;
+    public $sexo;
+    public $altura;
+    public $broqueado;
     public $endereco;
     public $nivel;
     
@@ -48,4 +55,12 @@ abstract class CrudUsuario extends DB{
     public function getSenha() {
         return $this->senha;
     }
+
+    public function setIdUsuario($id) {
+        $this->idUsuario = $id;
+    }
+    public function getIdUsuario() {
+        return $this->idUsuario;
+    }
+
 }?>
