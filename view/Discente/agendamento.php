@@ -4,6 +4,7 @@ ini_set("display_errors", 1);
 
 require_once('../../app/controller/Agendamento.php');
 require_once('../../app/controller/Usuario.php');
+require_once('../../app/controller/Disponibilidade.php');
 
 ?>
 
@@ -40,12 +41,17 @@ require_once('../../app/controller/Usuario.php');
 		$hora = $_POST['hora'];
 		$idUsuario = $_POST['idTutor'];
 
+		$disponibilidade = new Disponibilidade;
+
+		$disponibilidade->setDia($dia);
+		$disponibilidade->setHora($hora);
+		$disponibilidade->setLivre(2);
+
 		$agendamento->setDia($dia);
 		$agendamento->setHora($hora);
 		$agendamento->setLivre(2);
-		$agendamento-
 		
-		if($agendamento->insert()){
+		if($disponibilidade->insert()){
 			echo "Tutor ". $hora. " inserido com sucesso</div>";
 		}
 	}

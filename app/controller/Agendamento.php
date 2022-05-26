@@ -4,7 +4,6 @@ include_once "../../model/CrudAgendamento.php";
 
 class Agendamento extends CrudAgendamento{
     protected $tabela = 'disponibilidade';
-
    
     //busca 1 item
     public function findUnit($id) {
@@ -34,11 +33,11 @@ class Agendamento extends CrudAgendamento{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (dia, hora, livre) VALUES (:dia, :hora, :livre)";
+        $sql = "INSERT INTO $this->tabela (fkTutor, fkDiscente, fkDisponibilidade) VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':dia', $this->dia);
-        $stm->bindParam(':hora', $this->hora);
-        $stm->bindParam(':livre', $this->livre);
+        $stm->bindParam(':fkTutor', $this->fkTutor);
+        $stm->bindParam(':fkDiscente', $this->fkDiscente);
+        $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
         return $stm->execute();
     }
     

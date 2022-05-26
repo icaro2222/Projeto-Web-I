@@ -2,20 +2,20 @@
 
 require_once 'DB/conexao.php';
 
-abstract class CrudAgendamento extends DB{
+abstract class CrudDisponibilidade extends DB{
 
     protected $tabela;
-    public $idagendamento;
-    public $agendamento;
+    public $idDisponibilidade;
+    public $disponibilidade;
     public $dia;
     public $hora;
     public $livre;
 
     public function setNome($nome) {
-        $this->agendamento = $nome;
+        $this->disponibilidade = $nome;
     }
     public function getNome() {
-        return $this->agendamento;
+        return $this->disponibilidade;
     }
     
     
