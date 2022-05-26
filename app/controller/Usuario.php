@@ -34,10 +34,11 @@ class Usuario extends CrudUsuario{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (usuario, endereco) VALUES (:nome, :endereco)";
+        $sql = "INSERT INTO $this->tabela (login, senha, nivel) VALUES (:nome, :senha, :nivel)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':nome', $this->nome);
-        $stm->bindParam(':endereco', $this->endereco);
+        $stm->bindParam(':senha', $this->senha);
+        $stm->bindParam(':nivel', $this->nivel);
         return $stm->execute();
     }
     
@@ -59,5 +60,37 @@ class Usuario extends CrudUsuario{
         return $stm->execute();
     }
     
+    public function login($login,$senha){
+        global $pdo;
+        
+        $sql = "SELECT * FROM usuario WHERE login = :login and senha = :senha";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue('login',$login);
+        $sql->bindValue('senha',md5($senha));
+        $sql->execute();
+
+        if ($sql->rowCount() > 0 ) {
+            $dado = $sql->fetch();
+            $_SESSION['idUsuario']=$dado['idUsuario'];
+            return true;   
+        }else{
+            return false;
+        }
+    }
+    // exibir nome ou qualquer coisa
+    public function logged($id){
+        global $pdo;
+
+        $array = array();
+
+        $sql = "SELECT nivel FROM usuario WHERE idUsuario = :idUsuario";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue("idUsuario",$id);
+        $sql->execute();
+        if ($sql->rowCount()>0) {
+            $array= $sql->fetch();
+        }
+        return $array;
+    }
 }
 ?>

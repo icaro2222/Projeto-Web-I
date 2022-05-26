@@ -2,9 +2,10 @@
 
 require_once 'DB/conexao.php';
 
-abstract class CrudAviso extends DB{
+abstract class CrudNoticia extends DB{
 
     protected $tabela;
+    public $idNoticia;
     public $descricao;
 
     public function getDescricao(){
@@ -13,6 +14,14 @@ abstract class CrudAviso extends DB{
 
     public function setDescricao($descricao){
         $this->descricao = $descricao;
+    }
+
+    public function getIdNoticia(){
+        return $this->idNoticia;
+    }
+
+    public function setIdNoticia($id){
+        $this->idNoticia = $id;
     }
 }
 

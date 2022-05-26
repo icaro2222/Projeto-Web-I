@@ -1,3 +1,10 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once('../../app/controller/Regulamento.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +15,50 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+	<?php
+		$regulamento = new Regulamento;
+		if(isset($_POST['Adicionar'])){
+			$descricao = $_POST['descricao'];
+	
+			$regulamento->setDescricao($descricao);
+			
+			if($regulamento->insert()){
+				echo "regulamento ". $descricao. " inserido com sucesso";
+			}
+		}
+		if(isset($_POST['Remover'])){
+			$idRegulamento = $_POST['idRegulamento'];
+	
+			$regulamento->setRegulamento($idRegulamento);
+			
+			if($regulamento->delete()){
+				echo "regulamento ". $idRegulamento. " excluido com sucesso";
+			}
+		}
+		if(isset($_POST['Salvar'])){
+			$descricao = $_POST['descricao'];
+			$idRegulamento = $_POST['idRegulamento'];
+	
+			$regulamento->setRegulamento($idRegulamento);
+			$regulamento->setDescricao($descricao);
+			
+			if($regulamento->update()){
+				echo "regulamento ". $descricao. " atualizado com sucesso";
+			}
+		}
+		?>
 	<section>
 		<div class="container">
 			<div class="regulamento">
 				<h1>Regulamento</h1>
-				<p>* A bobrinha 1: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 2: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 3: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
-				<p>* A bobrinha 4: Proin vulputate tellus urna, ac tempus orci auctor vel. Proin viverra sagittis porta. Quisque eget rhoncus est. Nunc ac nisi eu eros sollicitudin semper. Aenean feugiat ante non nisl semper, non aliquet elit ornare. Morbi pharetra nec justo sed vehicula.</p>
+                <?php
+                $regulamentos = $regulamento->findAll();
+                foreach ($regulamentos as $key => $value) {?>
+                    <p><?php echo $value->descricao;?></p>
+                <?php
+                }
+                ?>
 			</div><!--notas-->
 		</div><!--container-->
 	</section>
@@ -26,29 +69,38 @@
 				<h1>Editar regulamento:</h1>
 				<div class="adicionar-regulamento">
 					<h2>Adicionar:</h2>
+					<form action="" method="POST">
 					<div class="texto-add-regulamento">
-						<textarea></textarea>
+						<textarea name="descricao"></textarea>
 						<div class="tad-btt">
 							<input type="submit" name="Adicionar" value="Adicionar">
 						</div>
-						
 					</div><!--texto-add-nota-->
+					</form>
 				</div><!--adicionar-nota-->
 
 				<div class="apagar-edd">
+					<form action="" method="POST">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
 						<p>Selecione o regulamento:</p>
-						<select><option>1</option><option>2</option></select>
+						<select name="idRegulamento" id="idRegulamento">
+							<?php
+							$regulamentos = $regulamento->findAll();
+							foreach ($regulamentos as $key => $value) {?>
+								<option><?php echo $value->idRegulamento;?></option>
+							<?php
+							}?>
+						</select>
 					</div><!--apagar1-->
-					<div class="apagar2">
-						<textarea></textarea>
-						<div class="apagar3">
-						<input type="submit" name="Remover" value="Remover">
-						<input type="submit" name="salvar" value="Salvar">
-					</div>
-					</div><!--apagar2-->
-					
+						<div class="apagar2">
+							<textarea name="descricao"></textarea>
+							<div class="apagar3">
+								<input type="submit" name="Remover" value="Remover">
+								<input type="submit" name="Salvar" value="Salvar">
+						</div>
+						</div><!--apagar2-->
+					</form>
 				</div><!--apagar-edd-->
 				
 			</div><!--editar-nota-->
