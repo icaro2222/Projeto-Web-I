@@ -8,7 +8,7 @@ require '../login/verificalogin.php';
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Academy</title>
+	<title>IFHealth</title>
 	<link rel="stylesheet" type="text/css" href="../../public/css/styleTela1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>

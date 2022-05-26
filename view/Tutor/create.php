@@ -66,7 +66,7 @@ require_once('../../app/controller/Usuario.php');
 		<div class="container">
 			<form action="" method="POST">
 			<div class="notas">
-				<h1>Adicionar tutor:</h1>
+				<h1>Adicionar Discente:</h1>
 				<div class="add-tutor-cadast">
 					<div class="cap1"><p>Nome:</p>
 					<textarea name="nome"></textarea>
@@ -82,20 +82,6 @@ require_once('../../app/controller/Usuario.php');
 						<input type="password" name="senha">
 					</div>
 				</div><!--add-tutor-cadast-->
-				<h2>Selecione os horarios do instrutor:</h2>
-				<div class="add-tutor-horari">
-					<div class="select">
-					<div class="select-data">
-						<select name="Data"><option>1</option>
-						<option>2</option></select>
-						<p>Data:</p></div><!--select-data-->
-					<div class="select-hora">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Hora:</p></div><!--select-hora-->
-					<div class="select-min">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Minuto:</p></div><!--select-min-->
-				</div><!--select-->
 				<div class="botão-agendamento">
 					<input type="submit" name="Cadastrar" value="Cadastrar">
 					</div><!--botão-agendamento-->
@@ -109,8 +95,8 @@ require_once('../../app/controller/Usuario.php');
 		<div class="container">
 			<div class="notas">
 				<div class="texto2">
-					<h1>Apagar Tutor:</h1>
-					<p>Selecione o tutor:</p>
+					<h1>Apagar Discente:</h1>
+					<p>Selecione o discente:</p>
 				</div><!--texto1-->
 				<div class="select-apagar">
 					<form action="" method="POST">

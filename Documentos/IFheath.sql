@@ -7,6 +7,8 @@ USE IFhealth;
 CREATE TABLE usuario(
 	idUsuario int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	usuario VARCHAR(45),
+	login VARCHAR(45),
+	nivel int),
 	senha VARCHAR(45),
 	num_registro INT(14),
 	peso FLOAT,
@@ -28,6 +30,11 @@ CREATE TABLE agendamento(
 	fkTutor INT,
 	fkDiscente INT,
 	fkDisponibilidade INT
+);
+
+CREATE TABLE anotacoes(
+	idAnotacoes int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	descricao TEXT
 );
 
 CREATE TABLE anotacoes(
