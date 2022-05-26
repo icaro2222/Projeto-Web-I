@@ -97,7 +97,7 @@ html,body{
 	background-color: #A0A0A0;
 }
 .notas{
-	position: relative;
+	position: static;
 	top: 30px;
 	width: 100%;
 	background-color: #ECF1EC;
