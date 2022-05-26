@@ -72,7 +72,7 @@ Login/Logout | Funcionando.
         </td>
         <td align="center">
             <a href="https://github.com/TorquatoSt">
-                <img width="150" src="https://suap.ifbaiano.edu.br/media/alunos/2732.ThWm3ILzr0um.jpg"/>
+                <img width="150" src="https://avatars.githubusercontent.com/u/91499584?v=4"/>
                 <br/>
                 <b>Samara Trindade</b>
             </a>
