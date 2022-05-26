@@ -19,13 +19,32 @@ require_once('../../app/controller/Regulamento.php');
 	<?php
 		$regulamento = new Regulamento;
 		if(isset($_POST['Adicionar'])){
-	
 			$descricao = $_POST['descricao'];
 	
 			$regulamento->setDescricao($descricao);
 			
 			if($regulamento->insert()){
 				echo "regulamento ". $descricao. " inserido com sucesso";
+			}
+		}
+		if(isset($_POST['Remover'])){
+			$idRegulamento = $_POST['idRegulamento'];
+	
+			$regulamento->setRegulamento($idRegulamento);
+			
+			if($regulamento->delete()){
+				echo "regulamento ". $idRegulamento. " excluido com sucesso";
+			}
+		}
+		if(isset($_POST['Salvar'])){
+			$descricao = $_POST['descricao'];
+			$idRegulamento = $_POST['idRegulamento'];
+	
+			$regulamento->setRegulamento($idRegulamento);
+			$regulamento->setDescricao($descricao);
+			
+			if($regulamento->update()){
+				echo "regulamento ". $descricao. " atualizado com sucesso";
 			}
 		}
 		?>
@@ -61,19 +80,27 @@ require_once('../../app/controller/Regulamento.php');
 				</div><!--adicionar-nota-->
 
 				<div class="apagar-edd">
+					<form action="" method="POST">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>
 						<p>Selecione o regulamento:</p>
-						<select><option>1</option><option>2</option></select>
+						<select name="idRegulamento" id="idRegulamento">
+							<?php
+							$regulamentos = $regulamento->findAll();
+							foreach ($regulamentos as $key => $value) {?>
+								<option><?php echo $value->idRegulamento;?></option>
+							<?php
+							}?>
+						</select>
 					</div><!--apagar1-->
-					<div class="apagar2">
-						<textarea></textarea>
-						<div class="apagar3">
-						<input type="submit" name="Remover" value="Remover">
-						<input type="submit" name="salvar" value="Salvar">
-					</div>
-					</div><!--apagar2-->
-					
+						<div class="apagar2">
+							<textarea name="descricao"></textarea>
+							<div class="apagar3">
+								<input type="submit" name="Remover" value="Remover">
+								<input type="submit" name="Salvar" value="Salvar">
+						</div>
+						</div><!--apagar2-->
+					</form>
 				</div><!--apagar-edd-->
 				
 			</div><!--editar-nota-->
