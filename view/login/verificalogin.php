@@ -3,9 +3,9 @@
  
  if(isset($_SESSION['idUsuario']) && !empty($_SESSION['idUsuario'])){
 	require_once('../../app/controller/Usuario.php');
-	$u = new Usuario();
+	$usuario = new Usuario();
 
-	$listlogged = $u->logged($_SESSION['idUsuario']);
+	$listlogged = $usuario->logged($_SESSION['idUsuario']);
 	$nivel = $listlogged['nivel'];
  }else{
 
