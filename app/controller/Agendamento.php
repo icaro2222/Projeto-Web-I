@@ -3,7 +3,7 @@
 include_once "../../model/CrudAgendamento.php";
 
 class Agendamento extends CrudAgendamento{
-    protected $tabela = 'disponibilidade';
+    protected $tabela = 'agendamento';
    
     //busca 1 item
     public function findUnit($id) {

@@ -47,11 +47,11 @@ require_once('../../app/controller/Disponibilidade.php');
 		$disponibilidade->setHora($hora);
 		$disponibilidade->setLivre(2);
 
-		$agendamento->setDia($dia);
-		$agendamento->setHora($hora);
-		$agendamento->setLivre(2);
+		$agendamento->fkTutor = 12;
+		$agendamento->fkDiscente = 12;
+		$agendamento->fkDiscponibilidade = 1;
 		
-		if($disponibilidade->insert()){
+		if($disponibilidade->insert() && $agendamento->insert()){
 			echo "Tutor ". $hora. " inserido com sucesso</div>";
 		}
 	}
