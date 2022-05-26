@@ -9,23 +9,9 @@
 
 </head>
 
-		<section>
-		<div class="container">
-			<div class="bloquear-agendamento">
-				<h1>Bloquer agendamento:</h1>
-				<div class="texto1-bt">
-					<h2>Agendamento:</h2>
-					<input type="submit" name="on/off" value="Ligado/Desligado">
-
-				</div><!--texto1-->
-							
-			</div><!--bloquear-agendamento-->
-		</div><!--container-->
-	</section>
-
 	<section>
 		<div class="container">
-			<div class="agendamento">
+			<div class="notas">
 				<div class="texto1">
 					<h1>Agende seu horário:</h1>
 					<p>Data e hora do agendamento:</p>

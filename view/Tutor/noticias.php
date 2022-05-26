@@ -72,9 +72,9 @@ require_once('../../app/controller/Noticia.php');
 
 	<section>
 		<div class="container">
-			<div class="editar-nota">
+			<div class="notas">
 				<h1>Editar as notícia:</h1>
-				<div class="adicionar-nota">
+				<div class="notas">
 					<h2>Adicionar:</h2>
                     <form action="" method="POST">
 					<div class="texto-add-nota">
@@ -86,7 +86,7 @@ require_once('../../app/controller/Noticia.php');
 					</form>
 				</div><!--adicionar-nota-->
 
-				<div class="apagar-edd">
+				<div class="notas">
 					<form action="" method="POST">
 					<div class="apagar1">
 						<h2>Apagar ou editar:</h1>

@@ -32,7 +32,7 @@ require_once('../../app/controller/Usuario.php');
 		$usuario->setNome($nome);
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
-		$usuario->setNivel(2);
+		$usuario->setNivel(3);
 		
 		if($usuario->insert()){
 			echo "Tutor ". $nome. " inserido com sucesso";
@@ -65,7 +65,7 @@ require_once('../../app/controller/Usuario.php');
 	<section>
 		<div class="container">
 			<form action="" method="POST">
-			<div class="add-tutor">
+			<div class="notas">
 				<h1>Adicionar tutor:</h1>
 				<div class="add-tutor-cadast">
 					<div class="cap1"><p>Nome:</p>
@@ -79,7 +79,7 @@ require_once('../../app/controller/Usuario.php');
 				</div>
 					<div class="cap4">
 						<p>Digite a senha:</p>
-						<textarea name="senha"></textarea>
+						<input type="password" name="senha">
 					</div>
 				</div><!--add-tutor-cadast-->
 				<h2>Selecione os horarios do instrutor:</h2>
@@ -107,7 +107,7 @@ require_once('../../app/controller/Usuario.php');
 
 	<section>
 		<div class="container">
-			<div class="apagar-tutor">
+			<div class="notas">
 				<div class="texto2">
 					<h1>Apagar Tutor:</h1>
 					<p>Selecione o tutor:</p>
@@ -119,7 +119,7 @@ require_once('../../app/controller/Usuario.php');
 							<?php
 							$usuarios = $usuario->findAll();
 							foreach ($usuarios as $key => $value) {
-							if ($value->usuario !=  '' && $value->nivel ==  2) {?>
+							if ($value->usuario !=  '' && $value->nivel ==  3) {?>
 							<option value="<?php echo $value->idUsuario;?>"><?php echo $value->usuario;?></option>
 							<?php
 							}}?>

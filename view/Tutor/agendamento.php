@@ -11,7 +11,7 @@
 
 		<section>
 		<div class="container">
-			<div class="bloquear-agendamento">
+			<div class="notas">
 				<h1>Bloquer agendamento:</h1>
 				<div class="texto1-bt">
 					<h2>Agendamento:</h2>
@@ -25,7 +25,7 @@
 
 	<section>
 		<div class="container">
-			<div class="agendamento">
+			<div class="notas">
 				<div class="texto1">
 					<h1>Agende seu horário:</h1>
 					<p>Data e hora do agendamento:</p>
@@ -41,8 +41,8 @@
 					<div class="select-min">
 						<select name="Hora"><option>1</option>
 						<option>2</option></select><p>Minuto:</p></div><!--select-min-->
-				</div><!--select-->
 				<p>*Nesse horario  estará presente o seguinte tutor: XXXXX</p>
+				</div><!--select-->
 				<div class="botão-agendamento">
 					<input type="submit" name="Agendar" value="Agendar">
 					</div><!--botão-agendamento-->

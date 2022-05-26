@@ -18,7 +18,7 @@ require_once('../../app/controller/Regulamento.php');
 
 	<section>
 		<div class="container">
-			<div class="regulamento">
+			<div class="notas">
 				<h1>Regulamento</h1>
                 <?php
 				$regulamento = new Regulamento;
