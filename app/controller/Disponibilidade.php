@@ -1,13 +1,14 @@
 <?php
 
-include_once "../../model/CrudAgendamento.php";
+include_once "../../model/CrudDisponibilidade.php";
 
-class Agendamento extends CrudAgendamento{
-    protected $tabela = 'agendamento';
+class Disponibilidade extends CrudDisponibilidade{
+    protected $tabela = 'disponibilidade';
+
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE idagendamento = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE iddisponibilidade = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -23,9 +24,9 @@ class Agendamento extends CrudAgendamento{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT agendamento FROM $this->tabela WHERE agendamento = :agendamento AND senha = :senha LIMIT 1";
+        $sql = "SELECT disponibilidade FROM $this->tabela WHERE disponibilidade = :disponibilidade AND senha = :senha LIMIT 1";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':agendamento', $this->getNome());
+        $stm->bindParam(':disponibilidade', $this->getNome());
         $stm->bindParam(':senha', $this->getSenha());
         $stm->execute();
         return $stm->fetch();
@@ -33,11 +34,11 @@ class Agendamento extends CrudAgendamento{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (fkTutor, fkDiscente, fkDisponibilidade) VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
+        $sql = "INSERT INTO $this->tabela (dia, hora, livre) VALUES (:dia, :hora, :livre)";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':fkTutor', $this->fkTutor);
-        $stm->bindParam(':fkDiscente', $this->fkDiscente);
-        $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
+        $stm->bindParam(':dia', $this->dia);
+        $stm->bindParam(':hora', $this->hora);
+        $stm->bindParam(':livre', $this->livre);
         return $stm->execute();
     }
     
@@ -53,16 +54,16 @@ class Agendamento extends CrudAgendamento{
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE idagendamento = :id";
+        $sql = "DELETE FROM $this->tabela WHERE iddisponibilidade = :id";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':id', $this->idagendamento, PDO::PARAM_INT);
+        $stm->bindParam(':id', $this->iddisponibilidade, PDO::PARAM_INT);
         return $stm->execute();
     }
     
     public function login($login,$senha){
         global $pdo;
         
-        $sql = "SELECT * FROM agendamento WHERE login = :login and senha = :senha";
+        $sql = "SELECT * FROM disponibilidade WHERE login = :login and senha = :senha";
         $sql = $pdo->prepare($sql);
         $sql->bindValue('login',$login);
         $sql->bindValue('senha',md5($senha));
@@ -70,7 +71,7 @@ class Agendamento extends CrudAgendamento{
 
         if ($sql->rowCount() > 0 ) {
             $dado = $sql->fetch();
-            $_SESSION['idagendamento']=$dado['idagendamento'];
+            $_SESSION['iddisponibilidade']=$dado['iddisponibilidade'];
             return true;   
         }else{
             return false;
@@ -82,9 +83,9 @@ class Agendamento extends CrudAgendamento{
 
         $array = array();
 
-        $sql = "SELECT nivel FROM agendamento WHERE idagendamento = :idagendamento";
+        $sql = "SELECT nivel FROM disponibilidade WHERE iddisponibilidade = :iddisponibilidade";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("idagendamento",$id);
+        $sql->bindValue("iddisponibilidade",$id);
         $sql->execute();
         if ($sql->rowCount()>0) {
             $array= $sql->fetch();

@@ -11,7 +11,7 @@ if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['senha']) 
 
   if($usuario->login($login,$senha)==true){
       if(isset($_SESSION['idUsuario'])){
-
+        $usuario->findkey();
           header('Location: ../home/dashboard.php');
 
       }else{

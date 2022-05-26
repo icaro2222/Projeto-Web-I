@@ -1,3 +1,13 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once('../../app/controller/Agendamento.php');
+require_once('../../app/controller/Usuario.php');
+require_once('../../app/controller/Disponibilidade.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,30 +19,77 @@
 
 </head>
 
+<?php
+	
+	$usuario = new Usuario;
+	$agendamento = new Agendamento;
+	if(isset($_POST['Buscar'])){
+
+		$dia= $_POST['dia'];
+		$hora = $_POST['hora'];
+
+		$agendamento->setDia($dia);
+		$agendamento->setHora($hora);
+		$agendamento->setLivre(1);
+		
+		echo "Tutor ". $hora. " inserido com sucesso</div>";
+	}
+	
+	if(isset($_POST['Agendar'])){
+
+		$dia= $_POST['dia'];
+		$hora = $_POST['hora'];
+		$idUsuario = $_POST['idTutor'];
+
+		$disponibilidade = new Disponibilidade;
+
+		$disponibilidade->setDia($dia);
+		$disponibilidade->setHora($hora);
+		$disponibilidade->setLivre(2);
+
+		$agendamento->fkTutor = 12;
+		$agendamento->fkDiscente = 12;
+		$agendamento->fkDiscponibilidade = 1;
+		
+		if($disponibilidade->insert() && $agendamento->insert()){
+			echo "Tutor ". $hora. " inserido com sucesso</div>";
+		}
+	}
+	
+    ?>
 	<section>
 		<div class="container">
 			<div class="notas">
 				<div class="texto1">
 					<h1>Agende seu horário:</h1>
-					<p>Data e hora do agendamento:</p>
 				</div><!--texto1-->
-				<div class="select">
-					<div class="select-data">
-						<select name="Data"><option>1</option>
-						<option>2</option></select>
-						<p>Data:</p></div><!--select-data-->
-					<div class="select-hora">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Hora:</p></div><!--select-hora-->
-					<div class="select-min">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Minuto:</p></div><!--select-min-->
-				</div><!--select-->
-				<p>*Nesse horario  estará presente o seguinte tutor: XXXXX</p>
-				<div class="botão-agendamento">
-					<input type="submit" name="Agendar" value="Agendar">
-					</div><!--botão-agendamento-->
-			</div><!--agendamento-->
+				<form action="" method="POST">
+					<div class="notas">
+					<p>Data e hora do agendamento:</p>
+						<div class="select-data">
+							<input type="date" name="dia" id="" value="<?php echo $agendamento->dia?>">
+							<input type="time" name="hora" id="" value="<?php echo $agendamento->hora?>">
+						</div><!--select-->
+					<div class="botão-agendamento">
+						<input type="submit" name="Buscar" value="Buscar Tutor disponível">
+						</div><!--botão-agendamento-->
+					</div><!--agendamento-->
+					<div class="notas">
+					<p>* Nesse horario  estará presente o seguinte tutor:</p>
+					<select name="idTutor">
+							<?php
+							$usuarios = $usuario->findAll();
+							foreach ($usuarios as $key => $value) {
+							if ($value->usuario !=  '' && $value->nivel ==  2) {?>
+							<option value="<?php echo $value->idUsuario;?>">
+							<?php echo $value->usuario;?></option>
+							<?php
+							}}?>
+						</select>
+
+						<input type="submit" name="Agendar" value="Agendar">
+					</div>
+				</form>
 		</div><!--container-->
 	</section>
 
