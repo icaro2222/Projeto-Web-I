@@ -23,18 +23,43 @@ require_once('../../app/controller/Usuario.php');
 	if(isset($_POST['Cadastrar']) &&
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
-		$_POST['usuario'] != ''):
+		$_POST['login'] != ''){
+
 		$nome = $_POST['nome'];
 		$senha = $_POST['senha'];
+		$login = $_POST['login'];
 
 		$usuario->setNome($nome);
+		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(2);
 		
 		if($usuario->insert()){
-			echo "Aluno ". $nome. " inserido com sucesso";
+			echo "Tutor ". $nome. " inserido com sucesso";
 		}
-	endif;
+	}
+	
+	if(isset($_POST['Apagar'])){
+		$idTutor = $_POST['idTutor'];
+
+		$usuario->setIdUsuario($idTutor);
+		
+		if($usuario->delete()){
+			echo "Tutor ". $usuario->getIdUsuario(). " excluido com sucesso";
+		}
+	}
+
+	if(isset($_POST['Salvar'])){
+		$descricao = $_POST['descricao'];
+		$idTutor = $_POST['idTutor'];
+
+		$Tutor->setIdTutor($idTutor);
+		$Tutor->setDescricao($descricao);
+		
+		if($Tutor->update()){
+			echo "Tutor ". $descricao. " atualizado com sucesso";
+		}
+	}
     ?>
 
 	<section>
@@ -47,10 +72,10 @@ require_once('../../app/controller/Usuario.php');
 					<textarea name="nome"></textarea>
 				</div>
 					<div class="cap2"><p>Matricula:</p>
-					<textarea></textarea>
+					<textarea name="matricula"></textarea>
 				</div>
-					<div class="cap3"><p>Digite o usuário:</p>
-					<textarea name="usuario"></textarea>
+					<div class="cap3"><p>Digite o Login:</p>
+					<textarea name="login"></textarea>
 				</div>
 					<div class="cap4">
 						<p>Digite a senha:</p>
@@ -80,9 +105,33 @@ require_once('../../app/controller/Usuario.php');
 		</div><!--container-->
 	</section>
 
+	<section>
+		<div class="container">
+			<div class="apagar-tutor">
+				<div class="texto2">
+					<h1>Apagar Tutor:</h1>
+					<p>Selecione o tutor:</p>
+				</div><!--texto1-->
+				<div class="select-apagar">
+					<form action="" method="POST">
+					<div class="select-apagar-tutor">
+						<select name="idTutor">
+							<?php
+							$usuarios = $usuario->findAll();
+							foreach ($usuarios as $key => $value) {
+							if ($value->usuario !=  '' && $value->nivel ==  2) {?>
+							<option value="<?php echo $value->idUsuario;?>"><?php echo $value->usuario;?></option>
+							<?php
+							}}?>
+						</select>
 
-
-
+						<input type="submit" name="Apagar" value="Apagar">
+											
+				</div><!--select-bloqueio-aluno-->
+				</form>	
+			</div><!--agendamento-->
+		</div><!--container-->
+	</section>
 
 </body>
 </html>
