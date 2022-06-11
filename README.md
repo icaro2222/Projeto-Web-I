@@ -40,9 +40,10 @@ Configurações | Funcionando
 Login/Logout | Funcionando.
 
 ### Próximos passos <h3>
-- [ ] Finalizar layouts 
-- [ ] Desenvolver front-end do sistema
-- [ ] Aplicar correções no sistema
+- [ ] Corrigir CSS
+- [ ] Realizar testes de sistema
+- [ ] Finalizar documentação de correção de bugs
+    
 
 ### Equipe <h3>
 <table align="center">
@@ -71,7 +72,7 @@ Login/Logout | Funcionando.
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/TorquatoSt">
+      <a href="https://github.com/TorquatoSt">
                 <img width="150" src="https://avatars.githubusercontent.com/u/91499584?v=4"/>
                 <br/>
                 <b>Samara Trindade</b>
@@ -90,9 +91,9 @@ Login/Logout | Funcionando.
 </table>
 
 ### Link do sistema <h3>
-Acesse: https://introblack.000webhostapp.com/Projeto-Web-I/
+Acesse: https://introblack.000webhostapp.com/IFHelth/
     
 Dados de login:
 
 * Usuario: admin
-* Senha: lute
+* Senha: 2222

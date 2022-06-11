@@ -6,16 +6,17 @@ abstract class CrudDisponibilidade extends DB{
 
     protected $tabela;
     public $idDisponibilidade;
-    public $disponibilidade;
+    public $idTutor;
     public $dia;
-    public $hora;
+    public $horaInicial;
+    public $horaFinal;
     public $livre;
 
-    public function setNome($nome) {
-        $this->disponibilidade = $nome;
+    public function setIdTutor($idTutor) {
+        $this->idTutor = $idTutor;
     }
-    public function getNome() {
-        return $this->disponibilidade;
+    public function getIdTutor() {
+        return $this->idTutor;
     }
     
     
@@ -27,11 +28,21 @@ abstract class CrudDisponibilidade extends DB{
     }
        
     
-    public function setHora($hora) {
-        $this->hora = $hora;
+    public function setHoraInicial($hora) {
+        $this->horaInicial = $hora;
     }
-    public function getHora() {
-        return $this->hora;
+    public function getHoraInicial() {
+        return $this->horaInicial;
+    }
+
+    
+       
+    
+    public function setHoraFinal($hora) {
+        $this->horaFinal = $hora;
+    }
+    public function getHoraFinal() {
+        return $this->horaFinal;
     }
 
     

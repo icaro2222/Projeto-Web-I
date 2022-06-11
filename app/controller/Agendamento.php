@@ -23,10 +23,9 @@ class Agendamento extends CrudAgendamento{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT agendamento FROM $this->tabela WHERE agendamento = :agendamento AND senha = :senha LIMIT 1";
+        $sql = "SELECT fkDisponibilidade FROM $this->tabela WHERE fkDiscente = :fkDiscente LIMIT 1";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':agendamento', $this->getNome());
-        $stm->bindParam(':senha', $this->getSenha());
+        $stm->bindParam(':fkDiscente', $this->fkDiscente);
         $stm->execute();
         return $stm->fetch();
     }

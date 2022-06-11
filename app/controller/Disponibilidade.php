@@ -12,7 +12,7 @@ class Disponibilidade extends CrudDisponibilidade{
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
-        return $stm->fetch();
+        return $stm->fetchall();
     }
     //busca todos os itens
     public function findAll() {
@@ -24,20 +24,22 @@ class Disponibilidade extends CrudDisponibilidade{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT disponibilidade FROM $this->tabela WHERE disponibilidade = :disponibilidade AND senha = :senha LIMIT 1";
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN horaInicial AND horaFinal) LIMIT 1";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':disponibilidade', $this->getNome());
-        $stm->bindParam(':senha', $this->getSenha());
+        $stm->bindParam(':date', $this->dia);
+        $stm->bindParam(':hora', $this->horaInicial);
         $stm->execute();
         return $stm->fetch();
     }
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (dia, hora, livre) VALUES (:dia, :hora, :livre)";
+        $sql = "INSERT INTO $this->tabela (dia, horaInicial, horaFinal, idTutor, livre) VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':dia', $this->dia);
-        $stm->bindParam(':hora', $this->hora);
+        $stm->bindParam(':horaInicial', $this->horaInicial);
+        $stm->bindParam(':horaFinal', $this->horaFinal);
+        $stm->bindParam(':idTutor', $this->idTutor);
         $stm->bindParam(':livre', $this->livre);
         return $stm->execute();
     }

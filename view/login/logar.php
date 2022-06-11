@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_erros",1);
+
 if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
     
     require_once('../../model/db/conexao.php');

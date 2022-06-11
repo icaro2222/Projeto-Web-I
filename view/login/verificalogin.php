@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_erros",1);
  require_once('../../model/db/conexao.php');
  
  if(isset($_SESSION['idUsuario']) && !empty($_SESSION['idUsuario'])){

@@ -18,24 +18,31 @@ require_once('../../app/controller/Usuario.php');
 </head>
 <body>
 
+	<section>
 <?php
 	$usuario = new Usuario;
 	if(isset($_POST['Cadastrar']) &&
 		$_POST['nome'] != '' &&
+		$_POST['matricula'] != '' &&
 		$_POST['senha'] != '' &&
 		$_POST['login'] != ''){
 
 		$nome = $_POST['nome'];
+		$matricula = $_POST['matricula'];
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
 
 		$usuario->setNome($nome);
+		$usuario->setNumMatricula($matricula);
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(3);
 		
-		if($usuario->insert()){
-			echo "Tutor ". $nome. " inserido com sucesso";
+		if($usuario->insert()){?>
+			<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+		<?php
 		}
 	}
 	
@@ -62,8 +69,7 @@ require_once('../../app/controller/Usuario.php');
 	}
     ?>
 
-	<section>
-		<div class="container">
+<div class="container">
 			<form action="" method="POST">
 			<div class="notas">
 				<h1>Adicionar Discente:</h1>

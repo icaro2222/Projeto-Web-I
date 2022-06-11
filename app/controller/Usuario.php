@@ -12,7 +12,7 @@ class Usuario extends CrudUsuario{
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
-        return $stm->fetch();
+        return $stm->fetchAll();
     }
     //busca todos os itens
     public function findAll() {
@@ -20,6 +20,16 @@ class Usuario extends CrudUsuario{
         $stm = DB::prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
+    }
+    
+    //busca todos os itens
+    public function findAtual() {
+        $sql = "SELECT idUsuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':usuario', $this->usuario);
+        $stm->bindParam(':senha', $this->senha);
+        $stm->execute();
+        return $stm->fetch();
     }
     
     //busca senha
@@ -34,10 +44,13 @@ class Usuario extends CrudUsuario{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (login, usuario, senha, nivel) VALUES (:nome, :usuario, :senha, :nivel)";
+        $sql = "INSERT INTO $this->tabela (login, usuario, num_registro, endereco, senha, nivel) 
+                    VALUES (:login, :usuario, :num_registro, :endereco, :senha, :nivel)";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':nome', $this->login);
+        $stm->bindParam(':login', $this->login);
         $stm->bindParam(':usuario', $this->usuario);
+        $stm->bindParam(':num_registro', $this->num_registro);
+        $stm->bindParam(':endereco', $this->endereco);
         $stm->bindParam(':senha', $this->senha);
         $stm->bindParam(':nivel', $this->nivel);
         return $stm->execute();

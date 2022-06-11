@@ -26,6 +26,14 @@ abstract class CrudUsuario extends DB{
     }
     
     
+    public function setNumMatricula($matricula) {
+        $this->num_registro= $matricula;
+    }
+    public function getNumMatricula() {
+        return $this->num_registro;
+    }
+    
+    
     public function setLogin($login) {
         $this->login = $login;
     }

@@ -10,88 +10,125 @@ require_once('../../app/controller/Disponibilidade.php');
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AdmTela2</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela2.css">
+	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
 <?php
-	
-	$usuario = new Usuario;
-	$agendamento = new Agendamento;
-	if(isset($_POST['Buscar'])){
 
-		$dia= $_POST['dia'];
+$usuario = new Usuario;
+$agendamento = new Agendamento;
+$disponibilidade = new Disponibilidade;
+
+if (isset($_POST['Buscar']) &&
+	isset($_POST['dia']) &&
+	$_POST['dia'] != "" &&
+	$_POST['hora'] != "" &&
+	isset($_POST['hora']))
+{
+
+	$dia = $_POST['dia'];
+	$hora = $_POST['hora'];
+
+	$disponibilidade->setDia($dia);
+	$disponibilidade->setHoraInicial($hora);
+
+	$DisponibilidadeIdTutor = $disponibilidade->findkey();
+}else{
+	echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!";
+}
+
+if (isset($_POST['Agendar'])){
+
+	if(isset($_POST['idTutor'])){
+		$dia = $_POST['dia'];
 		$hora = $_POST['hora'];
-
-		$agendamento->setDia($dia);
-		$agendamento->setHora($hora);
-		$agendamento->setLivre(1);
-		
-		echo "Tutor ". $hora. " inserido com sucesso</div>";
-	}
+		$idTutorSelecionado = $_POST['idTutor'];
 	
-	if(isset($_POST['Agendar'])){
-
-		$dia= $_POST['dia'];
-		$hora = $_POST['hora'];
-		$idUsuario = $_POST['idTutor'];
-
-		$disponibilidade = new Disponibilidade;
-
 		$disponibilidade->setDia($dia);
-		$disponibilidade->setHora($hora);
-		$disponibilidade->setLivre(2);
-
-		$agendamento->fkTutor = 12;
-		$agendamento->fkDiscente = 12;
-		$agendamento->fkDiscponibilidade = 1;
+		$disponibilidade->setHoraInicial($hora);
+		$disponibilidade->setLivre(1);
 		
-		if($disponibilidade->insert() && $agendamento->insert()){
-			echo "Tutor ". $hora. " inserido com sucesso</div>";
-		}
-	}
+		$DisponibilidadeIdTutor = $disponibilidade->findkey();
 	
-    ?>
-	<section>
-		<div class="container">
-			<div class="notas">
-				<div class="texto1">
-					<h1>Agende seu horário:</h1>
-				</div><!--texto1-->
-				<form action="" method="POST">
-					<div class="notas">
-					<p>Data e hora do agendamento:</p>
-						<div class="select-data">
-							<input type="date" name="dia" id="" value="<?php echo $agendamento->dia?>">
-							<input type="time" name="hora" id="" value="<?php echo $agendamento->hora?>">
-						</div><!--select-->
-					<div class="botão-agendamento">
-						<input type="submit" name="Buscar" value="Buscar Tutor disponível">
-						</div><!--botão-agendamento-->
-					</div><!--agendamento-->
-					<div class="notas">
-					<p>* Nesse horario  estará presente o seguinte tutor:</p>
-					<select name="idTutor">
-							<?php
-							$usuarios = $usuario->findAll();
-							foreach ($usuarios as $key => $value) {
-							if ($value->usuario !=  '' && $value->nivel ==  2) {?>
-							<option value="<?php echo $value->idUsuario;?>">
-							<?php echo $value->usuario;?></option>
-							<?php
-							}}?>
-						</select>
+		$agendamento->fkTutor = $idTutorSelecionado;
+		$agendamento->fkDiscente = 14;
+		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
+	
+		if ($agendamento->insert()) {?>
+		<style>
+		.modal img{
+			display: block;
+			}
+		</style>
+		<?php 
+		sleep(2);
+		?>
+		<style>
+		.modal img{
+			display: block;
+			}
+		</style>
+		<?php	
+	}
+	}else{
+		echo "<br>Seleione um tutor!!!!";
+	}
+}
 
-						<input type="submit" name="Agendar" value="Agendar">
+?>
+
+	<div class="modal">
+		<img src="../../public/img/sucess.gif" alt="" srcset="">
+	</div>
+<section>
+	<div class="container">
+		<div class="notas">
+			<div class="texto1">
+				<h1>Agende seu horário:</h1>
+			</div>
+			<!--texto1-->
+			<form action="" method="POST">
+				<div class="notas">
+					<p>Data e hora do agendamento:</p>
+					<div class="select-data">
+						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>">
+						<input type="time" name="hora" id="" value="<?php echo $disponibilidade->horaInicial ?>">
 					</div>
-				</form>
-		</div><!--container-->
-	</section>
+					<!--select-->
+					<div class="botão-agendamento">
+						<input type="submit" name="Buscar" value="Busca Tutor disponível">
+					</div>
+					<!--botão-agendamento-->
+				</div>
+				<!--agendamento-->
+				<div class="notas">
+					<p>* Nesse horario estará presente o seguinte tutor:</p>
+					<select name="idTutor">
+						<?php
+						$usuarios = $usuario->findUnit($DisponibilidadeIdTutor->idTutor);
+						foreach ($usuarios as $key => $value) {
+							if ($value->usuario !=  '' && $value->nivel ==  2) { ?>
+								<option value="<?php echo $value->idUsuario; ?>">
+									<?php echo $value->usuario; ?></option>
+						<?php
+							}
+						} ?>
+					</select>
+
+					<input type="submit" name="Agendar" value="Agendar">
+				</div>
+			</form>
+		</div>
+		<!--container-->
+</section>
 
 </body>
+
 </html>

@@ -30,7 +30,7 @@ require_once('../../app/controller/Regulamento.php');
 		if(isset($_POST['Remover'])){
 			$idRegulamento = $_POST['idRegulamento'];
 	
-			$regulamento->setRegulamento($idRegulamento);
+			$regulamento->setIdRegulamento($idRegulamento);
 			
 			if($regulamento->delete()){
 				echo "regulamento ". $idRegulamento. " excluido com sucesso";
@@ -40,7 +40,7 @@ require_once('../../app/controller/Regulamento.php');
 			$descricao = $_POST['descricao'];
 			$idRegulamento = $_POST['idRegulamento'];
 	
-			$regulamento->setRegulamento($idRegulamento);
+			$regulamento->setIdRegulamento($idRegulamento);
 			$regulamento->setDescricao($descricao);
 			
 			if($regulamento->update()){

@@ -30,25 +30,22 @@
 					<h1>Agende seu horário:</h1>
 					<p>Data e hora do agendamento:</p>
 				</div><!--texto1-->
-				<div class="select">
+					<div class="select">
 					<div class="select-data">
-						<select name="Data"><option>1</option>
-						<option>2</option></select>
-						<p>Data:</p></div><!--select-data-->
-					<div class="select-hora">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Hora:</p></div><!--select-hora-->
-					<div class="select-min">
-						<select name="Hora"><option>1</option>
-						<option>2</option></select><p>Minuto:</p></div><!--select-min-->
-				<p>*Nesse horario  estará presente o seguinte tutor: XXXXX</p>
+						<p>Dia:</p>
+						<input type="date" name="date" id="">
+						<p>Hora Inicial:</p>
+						<input type="time" name="timeInicial" id="">
+						<p>Hora Final:</p>
+						<input type="time" name="timeFinal" id="">
+					</div><!--select-min-->
 				</div><!--select-->
+				<p>*Nesse horario  estará presente o seguinte tutor: XXXXX</p>
 				<div class="botão-agendamento">
 					<input type="submit" name="Agendar" value="Agendar">
 					</div><!--botão-agendamento-->
 			</div><!--agendamento-->
 		</div><!--container-->
 	</section>
-
 </body>
 </html>

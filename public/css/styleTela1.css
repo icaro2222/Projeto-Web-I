@@ -184,3 +184,24 @@ footer .segundoRodaPe .img-footer1, footer .segundoRodaPe .img-footer2{
 		
 	}
 }
+
+/* ---------  Ícaro     ----------- */
+
+.modal img{
+    background-color: #ECF1EC;
+    position: absolute;
+	display: none;
+	right: 40%;
+	z-index: 1;
+	justify-content: space-between;
+	border-radius: 150px;
+	transform: translate(-50%,-50%);
+	animation: animate; 
+	animation-duration: 800ms; 
+}
+
+@keyframes animate{
+
+    from{opacity: 1;}
+    from{opacity: 0;}
+}
