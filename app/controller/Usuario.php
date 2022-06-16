@@ -97,7 +97,7 @@ class Usuario extends CrudUsuario{
 
         $array = array();
 
-        $sql = "SELECT nivel FROM usuario WHERE idUsuario = :idUsuario";
+        $sql = "SELECT nivel FROM usuario WHERE 'idUsuario' = :idUsuario";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("idUsuario",$id);
         $sql->execute();

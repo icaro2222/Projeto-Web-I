@@ -5,7 +5,7 @@ session_start();
 
 require_once("config.php");
 try {
-    $pdo = new PDO('mysql:host=' . HOST . '; dbname=' . BASE, USER, PASS);
+    $pdo = new PDO('pgsql:host=' . HOST . '; dbname=' . BASE, USER, PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
 } catch (PDOException $e) {
