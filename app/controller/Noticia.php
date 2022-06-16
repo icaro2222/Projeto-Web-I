@@ -33,7 +33,8 @@ class Noticia extends CrudNoticia {
     
     //update de itens
     public function update() {
-        $sql = "UPDATE $this->tabela SET descricao = :descricao WHERE idNoticia = :id";
+        $id = '"idNoticia"';
+        $sql = "UPDATE $this->tabela SET descricao = :descricao WHERE $id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idNoticia, PDO::PARAM_INT);
         $stm->bindParam(':descricao', $this->descricao);
@@ -42,7 +43,8 @@ class Noticia extends CrudNoticia {
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE idNoticia = :id";
+        $id = '"idNoticia"';
+        $sql = "DELETE FROM $this->tabela WHERE $id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idNoticia, PDO::PARAM_INT);
         return $stm->execute();

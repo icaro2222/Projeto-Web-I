@@ -8,7 +8,7 @@ class Disponibilidade extends CrudDisponibilidade{
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE iddisponibilidade = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE idDisponibilidade = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -56,7 +56,7 @@ class Disponibilidade extends CrudDisponibilidade{
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE iddisponibilidade = :id";
+        $sql = "DELETE FROM $this->tabela WHERE idDisponibilidade = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->iddisponibilidade, PDO::PARAM_INT);
         return $stm->execute();
@@ -65,7 +65,7 @@ class Disponibilidade extends CrudDisponibilidade{
     public function login($login,$senha){
         global $pdo;
         
-        $sql = "SELECT * FROM disponibilidade WHERE login = :login and senha = :senha";
+        $sql = "SELECT * FROM disDonibilidade WHERE login = :login and senha = :senha";
         $sql = $pdo->prepare($sql);
         $sql->bindValue('login',$login);
         $sql->bindValue('senha',md5($senha));
@@ -73,7 +73,7 @@ class Disponibilidade extends CrudDisponibilidade{
 
         if ($sql->rowCount() > 0 ) {
             $dado = $sql->fetch();
-            $_SESSION['iddisponibilidade']=$dado['iddisponibilidade'];
+            $_SESSION['idDisponibilidade']=$dado['idDisponibilidade'];
             return true;   
         }else{
             return false;

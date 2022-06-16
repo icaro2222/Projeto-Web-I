@@ -30,10 +30,12 @@ require_once('../../app/controller/Regulamento.php');
 		}
 	}
 	if (isset($_POST['Remover'])) {
+
 		$idRegulamento = $_POST['idRegulamento'];
 
 		$regulamento->setIdRegulamento($idRegulamento);
 
+		echo "<br>";
 		if ($regulamento->delete()) {
 			echo "regulamento " . $idRegulamento . " excluido com sucesso";
 		}

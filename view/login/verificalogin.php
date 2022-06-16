@@ -8,7 +8,7 @@ ini_set("display_erros",1);
 	$usuario = new Usuario();
 
 	$nivel = $usuario->logged($_SESSION['idUsuario']);
-
+	
  }else{
 
 	 header('location: ../../index.php');
