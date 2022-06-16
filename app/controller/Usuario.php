@@ -95,16 +95,15 @@ class Usuario extends CrudUsuario{
     public function logged($id){
         global $pdo;
 
-        $array = array();
-
-        $sql = "SELECT nivel FROM usuario WHERE 'idUsuario' = :idUsuario";
+        $sql = 'SELECT * FROM usuario WHERE "idUsuario" = :idUsuario';
         $sql = $pdo->prepare($sql);
         $sql->bindValue("idUsuario",$id);
         $sql->execute();
         if ($sql->rowCount()>0) {
-            $array= $sql->fetch();
+            $dado= $sql->fetch();
+            $nivel = $dado['nivel'];
         }
-        return $array;
+        return $nivel;
     }
 }
 ?>

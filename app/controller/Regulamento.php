@@ -42,7 +42,7 @@ class Regulamento extends CrudRegulamento {
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE idRegulamento = :id";
+        $sql = 'DELETE FROM $this->tabela WHERE "idRegulamento" = :id';
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idRegulamento, PDO::PARAM_INT);
         return $stm->execute();
