@@ -1,6 +1,6 @@
 <?php
 
-include_once "../../model/CrudDisponibilidade.php";
+require_once("../../model/CrudDisponibilidade.php");
 
 class Disponibilidade extends CrudDisponibilidade{
     protected $tabela = 'disponibilidade';

@@ -148,3 +148,15 @@ form input[type=text]:focus {
 form input[type=password]:focus {
     outline: 0;
 }
+
+
+
+
+/* Para Hospedar */
+
+
+.disclaimer {
+
+    display: none;
+}
+

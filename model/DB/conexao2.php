@@ -2,9 +2,10 @@
 error_reporting(E_ALL);
 ini_set("display_erros",1);
 session_start();
-require_once("/home/icaro/Documentos/Estudos/Densenvolvimento/Projeto_Web_I_Oficial/IFHelth/model/DB/config.php");
+
+require_once("config.php");
 try {
-    $pdo = new PDO( 'mysql:host=' . HOST . ';dbname='.DB, USUARIO, SENHA );
+    $pdo = new PDO('mysql:host=' . HOST . '; dbname=' . BASE, USER, PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
 } catch (PDOException $e) {

@@ -14,8 +14,8 @@ require_once('../../app/controller/Disponibilidade.php');
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AdmTela2</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
+	<title>Discente3</title>
+	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 </head>
@@ -26,12 +26,13 @@ $usuario = new Usuario;
 $agendamento = new Agendamento;
 $disponibilidade = new Disponibilidade;
 
-if (isset($_POST['Buscar']) &&
+if (
+	isset($_POST['Buscar']) &&
 	isset($_POST['dia']) &&
 	$_POST['dia'] != "" &&
 	$_POST['hora'] != "" &&
-	isset($_POST['hora']))
-{
+	isset($_POST['hora'])
+) {
 
 	$dia = $_POST['dia'];
 	$hora = $_POST['hora'];
@@ -40,62 +41,63 @@ if (isset($_POST['Buscar']) &&
 	$disponibilidade->setHoraInicial($hora);
 
 	$DisponibilidadeIdTutor = $disponibilidade->findkey();
-}else{
+} else {
 	echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!";
 }
 
-if (isset($_POST['Agendar'])){
+if (isset($_POST['Agendar'])) {
 
-	if(isset($_POST['idTutor'])){
+	if (isset($_POST['idTutor'])) {
 		$dia = $_POST['dia'];
 		$hora = $_POST['hora'];
 		$idTutorSelecionado = $_POST['idTutor'];
-	
+
 		$disponibilidade->setDia($dia);
 		$disponibilidade->setHoraInicial($hora);
 		$disponibilidade->setLivre(1);
-		
+
 		$DisponibilidadeIdTutor = $disponibilidade->findkey();
-	
+
 		$agendamento->fkTutor = $idTutorSelecionado;
 		$agendamento->fkDiscente = 14;
 		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
-	
-		if ($agendamento->insert()) {?>
-		<style>
-		.modal img{
-			display: block;
-			}
-		</style>
-		<?php 
-		sleep(2);
-		?>
-		<style>
-		.modal img{
-			display: block;
-			}
-		</style>
-		<?php	
-	}
-	}else{
+
+		if ($agendamento->insert()) { ?>
+			<style>
+				.modal img {
+					display: block;
+				}
+			</style>
+			<?php
+			sleep(2);
+			?>
+			<style>
+				.modal img {
+					display: block;
+				}
+			</style>
+<?php
+		}
+	} else {
 		echo "<br>Seleione um tutor!!!!";
 	}
 }
 
 ?>
 
-	<div class="modal">
-		<img src="../../public/img/sucess.gif" alt="" srcset="">
-	</div>
+<div class="modal">
+	<img src="../../public/img/sucess.gif" alt="" srcset="">
+</div>
 <section>
 	<div class="container">
-		<div class="notas">
+		<div class="agendamento">
 			<div class="texto1">
 				<h1>Agende seu horário:</h1>
 			</div>
 			<!--texto1-->
 			<form action="" method="POST">
-				<div class="notas">
+				<!--ALTERARRRARARARA-->
+				<div class="select">
 					<p>Data e hora do agendamento:</p>
 					<div class="select-data">
 						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>">
@@ -108,7 +110,8 @@ if (isset($_POST['Agendar'])){
 					<!--botão-agendamento-->
 				</div>
 				<!--agendamento-->
-				<div class="notas">
+				<div class="agendamento">
+					<!--ALTERAR--->
 					<p>* Nesse horario estará presente o seguinte tutor:</p>
 					<select name="idTutor">
 						<?php

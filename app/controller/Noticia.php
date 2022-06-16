@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../model/CrudNoticia.php';
+require_once('../../model/CrudNoticia.php');
 
 class Noticia extends CrudNoticia {
     protected $tabela = 'noticia';

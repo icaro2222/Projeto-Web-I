@@ -1,6 +1,6 @@
 <?php
 
-include_once "../../model/CrudUsuario.php";
+require_once("../../model/CrudUsuario.php");
 
 class Usuario extends CrudUsuario{
     protected $tabela = 'usuario';

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'DB/conexao.php';
+require_once('DB/conexao.php');
 
 abstract class CrudUsuario extends DB{
 

@@ -1,5 +1,5 @@
 <?php
-include('verificalogin.php');
+require_once('verificalogin.php');
 if (!isset($_SESSION)) {
 	session_start();
 }

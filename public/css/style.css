@@ -44,3 +44,12 @@ th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+/* Para Hospedar */
+
+
+.disclaimer {
+
+    display: none;
+}
+

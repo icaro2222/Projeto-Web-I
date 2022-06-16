@@ -1,6 +1,6 @@
 <?php
 
-include_once "./model/CrudDiscente.php";
+require_once("./model/CrudDiscente.php");
 
 class Discente extends CrudDiscente{
     protected $tabela = 'usuario';

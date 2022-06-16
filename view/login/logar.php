@@ -4,7 +4,7 @@ ini_set("display_erros",1);
 
 if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
     
-    require_once('../../model/db/conexao.php');
+  require_once('../../model/DB/conexao2.php');
     require_once('../../app/controller/Usuario.php');
 
     $usuario = new Usuario();

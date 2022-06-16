@@ -97,3 +97,10 @@ Dados de login:
 
 * Usuario: admin
 * Senha: 2222
+
+* Usuario: icaro-tutor
+* Senha: ifbaiano
+
+* Usuario: discente
+* Senha: discente
+
