@@ -8,7 +8,8 @@ class Usuario extends CrudUsuario{
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE idUsuario = :id";
+        $id = '"idUsuario"';
+        $sql = "SELECT * FROM $this->tabela WHERE $id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -68,7 +69,8 @@ class Usuario extends CrudUsuario{
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE idUsuario = :id";
+        $id = '"idUsuario"';
+        $sql = "DELETE FROM $this->tabela WHERE $id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idUsuario, PDO::PARAM_INT);
         return $stm->execute();
