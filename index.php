@@ -2,7 +2,7 @@
 
 <html lang="pt-br">
 <link rel="stylesheet" href="./style.css" />
-	<link rel="shortcut icon" href="./public/img/ifhealth.jpg" type="image/x-icon">
+	<link rel="shortcut icon" href="./public/img/ifealth.png" type="image/x-icon">
 <title>login</title>
 <header id="header">
     
