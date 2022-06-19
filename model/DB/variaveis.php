@@ -1,20 +1,5 @@
 <?php
 
-// define('HOST','localhost');
-
-// // ------------ Banco Crud --------------
-
-// define('USER', 'root');
-// define('PASS', '');
-// define('BASE', 'ifhealth');
-
-
-// ------------ Banco Para Hospedar no Mysql --------------
-
-// define('USER','id17504595_if');
-// define('PASS','YhR-nOB8l&K+/M9Y');
-// define('BASE','id17504595_ifhealth');
-
 // ------------ Banco Para Hospedar no Pgsql --------------
 
 define('HOST','ec2-52-72-56-59.compute-1.amazonaws.com');
