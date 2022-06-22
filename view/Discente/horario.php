@@ -53,7 +53,7 @@ require_once('../../app/controller/Disponibilidade.php');
 						<?php
 						}
 						?>
-						<img src="../../public/img/calendario.png" alt="" srcset="">
+						
 					</div>
 					<!--calendario-->
 				</div>

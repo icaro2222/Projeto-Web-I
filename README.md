@@ -31,13 +31,7 @@ Programação Web I feito no semestre de 2021.2 no Instituto Federal de Educaç�
 Funcionalidade | Status
 ------------ | -------------
 Gerenciamento de clientes | Funcionando
-Gerenciamento de funcionários | Funcionando
-Gerenciamento de fornecedores | Funcionando
-Gerenciamento de produtos | Funcionando
-Gerenciamento de compras | Funcionando
-Gerenciamento de vendas | Funcionando
 Gerenciamento de devoluções | Funcionando
-Fluxo de caixa | Funcionando
 Configurações | Funcionando
 Login/Logout | Funcionando.
 

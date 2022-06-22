@@ -126,9 +126,13 @@ footer *.container {
 
 }
 
-section:nth-of-type(2) {
+section section {
 	position: relative;
 	top: 30px;
+}
+
+.modal {
+	display: none;
 }
 
 .agendamento {
@@ -149,9 +153,17 @@ section:nth-of-type(2) {
 	font-weight: 900;
 }
 
+.agendamento2 {
+	width: 100%;
+	background-color: #ECF1EC;
+	border: 2px solid #B6B8B6;
+	position: relative;
+	top: 25px;
+}
+
 .select {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	padding: 50px;
 }
 
@@ -160,10 +172,10 @@ section:nth-of-type(2) {
 	height: 30px;
 }
 
-.select-data,
-.select-hora,
-.select-min {
-	padding: 10px;
+.select-data {
+	padding-top: 20px;
+	padding-left: 31px;
+
 }
 
 .botão-agendamento {
@@ -181,6 +193,42 @@ section:nth-of-type(2) {
 	color: white;
 	left: 50px;
 	top: 40px;
+	font-size: 15px;
+}
+
+.botão-agendamento2 {
+	height: 130px;
+}
+
+.botão-agendamento2 input {
+	position: relative;
+	cursor: pointer;
+	width: 180px;
+	height: 30px;
+	background: #0A5517;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	color: white;
+	left: 32px;
+	top: 40px;
+	font-size: 15px;
+}
+
+.select-tutor {
+	padding-top: 50px;
+	padding-left: 70px;
+	padding-bottom: 50px;
+}
+
+.select-tutor input {
+
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	background: #0A5517;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	color: white;
 	font-size: 15px;
 }
 

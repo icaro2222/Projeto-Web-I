@@ -42,7 +42,7 @@ if (
 
 	$DisponibilidadeIdTutor = $disponibilidade->findkey();
 } else {
-	echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!";
+	//echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!"; AQUI;
 }
 
 if (isset($_POST['Agendar'])) {
@@ -104,15 +104,16 @@ if (isset($_POST['Agendar'])) {
 						<input type="time" name="hora" id="" value="<?php echo $disponibilidade->horaInicial ?>">
 					</div>
 					<!--select-->
-					<div class="botão-agendamento">
+					<div class="botão-agendamento2">
 						<input type="submit" name="Buscar" value="Busca Tutor disponível">
 					</div>
 					<!--botão-agendamento-->
 				</div>
 				<!--agendamento-->
-				<div class="agendamento">
+				
 					<!--ALTERAR--->
 					<p>* Nesse horario estará presente o seguinte tutor:</p>
+					<div class="select-tutor">
 					<select name="idTutor">
 						<?php
 						$usuarios = $usuario->findUnit($DisponibilidadeIdTutor->idTutor);
@@ -126,7 +127,7 @@ if (isset($_POST['Agendar'])) {
 					</select>
 
 					<input type="submit" name="Agendar" value="Agendar">
-				</div>
+					</div>
 			</form>
 		</div>
 		<!--container-->

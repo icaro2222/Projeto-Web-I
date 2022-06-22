@@ -126,7 +126,7 @@ footer *.container {
 
 }
 
-section:nth-of-type(2) {
+section section {
 	position: relative;
 	top: 30px;
 }
@@ -204,6 +204,7 @@ section:nth-of-type(2) {
 .meus-horarios ul {
 	width: 100%;
 	list-style: none;
+	padding: 30px;
 }
 
 .meus-horarios ul li {
