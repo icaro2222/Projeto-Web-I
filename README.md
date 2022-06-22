@@ -1,6 +1,6 @@
 # Projeto-Web-I
 Projeto desenvolvido para matéria de  Laboratório de Programação Web I
--- 
+--
 estarenos usando PHP com mysql e modelo MVC
 <img src="https://www.educabras.com/media/faculdades/image/ifbaiano.png">
 
@@ -94,8 +94,10 @@ Login/Logout | Funcionando.
     
 ---
 
-## Documento de Teste e Bugs
-- [Relatorio de correções](Document/teste-e-debang.md)
+## Documento 
+- [Relatorio de correções]([Document/teste-e-debang.md](https://github.com/web1-2022-1/sisfis/blob/main/Document/testes-e-debang.md))
+- [Teste e Bugs]([Document/teste-e-debang.md](https://github.com/web1-2022-1/sisfis/blob/main/Document/testes-e-debang.md))
+- [Manual de Instação]([Document/teste-e-debang.md](https://github.com/web1-2022-1/sisfis/blob/main/Document/testes-e-debang.md))
     
 ### Link do sistema <h3>
 

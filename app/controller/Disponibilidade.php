@@ -8,7 +8,7 @@ class Disponibilidade extends CrudDisponibilidade{
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE idDisponibilidade = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE $this->idDisponibilidade = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -24,7 +24,7 @@ class Disponibilidade extends CrudDisponibilidade{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN horaInicial AND horaFinal) LIMIT 1";
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN $this->horaInicial AND $this->horaFinal) LIMIT 1";
         $stm = DB::prepare($sql);
         $stm->bindParam(':date', $this->dia);
         $stm->bindParam(':hora', $this->horaInicial);

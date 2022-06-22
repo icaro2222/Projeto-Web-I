@@ -15,7 +15,7 @@ require_once('../../app/controller/Disponibilidade.php');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Discente3</title>
-	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
+	<link rel="stylesheet" type="text/css" <?php echo $css ?> >
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 </head>
@@ -119,7 +119,7 @@ if (isset($_POST['Agendar'])) {
 						foreach ($usuarios as $key => $value) {
 							if ($value->usuario !=  '' && $value->nivel ==  2) { ?>
 								<option value="<?php echo $value->idUsuario; ?>">
-									<?php echo $value->usuario; ?></option>
+									<?php echo $value->usuario; ?> </option>
 						<?php
 							}
 						} ?>

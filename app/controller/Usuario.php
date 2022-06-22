@@ -8,8 +8,7 @@ class Usuario extends CrudUsuario{
    
     //busca 1 item
     public function findUnit($id) {
-        $id = '"idUsuario"';
-        $sql = "SELECT * FROM $this->tabela WHERE $id = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE $this->idUsuario = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();

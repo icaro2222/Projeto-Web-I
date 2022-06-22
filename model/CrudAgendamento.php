@@ -5,7 +5,7 @@ require_once('DB/conexao.php');
 abstract class CrudAgendamento extends DB{
 
     protected $tabela;
-    public $idagendamento;
+    public $idAgendamento = '"idAgendamento"';
     public $agendamento;
     public $fkTutor;
     public $fkDiscente;
@@ -41,5 +41,5 @@ abstract class CrudAgendamento extends DB{
     public function getLivre() {
         return $this->livre;
     }
-
-}?>
+}
+?>

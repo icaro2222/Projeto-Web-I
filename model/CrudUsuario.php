@@ -5,7 +5,7 @@ require_once('DB/conexao.php');
 abstract class CrudUsuario extends DB{
 
     protected $tabela;
-    public $idUsuario;
+    public $idUsuario = '"idUsuario"';
     public $usuario;
     public $login;
     public $num_registro;

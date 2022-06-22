@@ -1,5 +1,3 @@
-
-
 <section>
 	<div class="container">
 		<div class="academiaDoCampus">
@@ -9,20 +7,14 @@
 		<?php if ($nivel == 1) {
 		?>
 			<div class="painelDeEscolha">
-				<button><a href="../home/dashboard.php?menuop=home">Regulamento</a></button>
-				<button><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></button>
-				<button><a href="../home/dashboard.php?menuop=noticias">Noticias</a></button>
-				<button type="submit"><a href="../home/dashboard.php?menuop=create">Cadastro</a></button>
+				<a href="../home/dashboard.php?menuop=home">Regulamento</a>
+				<a href="../home/dashboard.php?menuop=agendamento">Agendamento</a>
+				<a href="../home/dashboard.php?menuop=noticias">Noticias</a>
+				<a type="submit" href="../home/dashboard.php?menuop=create">Cadastro</a>
 			</div>
 			<!--painelDeEscolha-->
-			
-			<div class="painelDeEscolha">
-				<input type="submit" name="Regulamento" value="Regulamento">
-				<input type="submit" name="Agendamento" value="Agendamento">
-				<input type="submit" name="Notas" value="Notas">
-				<input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor">
 
-			</div>
+
 			<!--painelDeEscolha-->
 	</div>
 	<!--container-->
@@ -54,20 +46,14 @@
 		} elseif ($nivel == 2) { ?>
 
 			<div class="painelDeEscolha">
-				<button><a href="../home/dashboard.php?menuop=home">Regulamento</a></button>
-				<button><a href="../home/dashboard.php?menuop=create">Cadastro</a></button>
-				<button><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></button>
-				<button><a href="../home/dashboard.php?menuop=noticias">Noticias</a></button>
+				<a href="../home/dashboard.php?menuop=home">Regulamento</a>
+				<a href="../home/dashboard.php?menuop=create">Cadastro</a>
+				<a href="../home/dashboard.php?menuop=agendamento">Agendamento</a>
+				<a href="../home/dashboard.php?menuop=noticias">Noticias</a>
 
 			</div>
 
-			<div class="painelDeEscolha">
-				<input type="submit" name="Regulamento" value="Regulamento">
-				<input type="submit" name="Cadastro" value="Cadastro">
-				<input type="submit" name="Agendamento" value="Agendamento">
-				<input type="submit" name="Notas" value="Notas">
-
-			</div><!--painelDeEscolha-->
+			<!--painelDeEscolha-->
 			<?php
 			$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
 			switch ($menuop) {
@@ -90,20 +76,13 @@
 			}
 		} else { ?>
 			<div class="painelDeEscolha">
-				<button><a href="../home/dashboard.php?menuop=home">Regulamento</a></button>
-				<button><a href="../home/dashboard.php?menuop=horario">Horários</a></button>
-				<button><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></button>
-				<button><a href="../home/dashboard.php?menuop=noticias">Notícias</a></button>
+				<a href="../home/dashboard.php?menuop=home">Regulamento</a>
+				<a href="../home/dashboard.php?menuop=horario">Horários</a>
+				<a href="../home/dashboard.php?menuop=agendamento">Agendamento</a>
+				<a href="../home/dashboard.php?menuop=noticias">Notícias</a>
 
 			</div>
 
-			<div class="painelDeEscolha">
-				<input type="submit" name="Regulamento" value="Regulamento">
-				<input type="submit" name="Horários" value="Horários">
-				<input type="submit" name="Agendamento" value="Agendamento">
-				<input type="submit" name="Notas" value="Notas">
-
-			</div><!--painelDeEscolha-->
 
 			<?php
 			$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
@@ -119,14 +98,12 @@
 					include '../Discente/horario.php';
 					break;
 				case 'noticias':
-					include '../Discente/noticias.php';
+					include(__DIR__.'/../Discente/noticias.php');
 					break;
 					// case 'update_env':
 					// 	include('paginas/discente/update_env.php');
 					// 	break;
-			}
-			?>
-		<?php } ?>
+			}} ?>
 		</div>
 		<!--notas-->
 	</div>

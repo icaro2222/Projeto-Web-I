@@ -7,7 +7,7 @@ class Agendamento extends CrudAgendamento{
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE idagendamento = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE $this->idAgendamento = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -69,7 +69,7 @@ class Agendamento extends CrudAgendamento{
 
         if ($sql->rowCount() > 0 ) {
             $dado = $sql->fetch();
-            $_SESSION['idagendamento']=$dado['idagendamento'];
+            $_SESSION['idAgendamento']=$dado['idAgendamento'];
             return true;   
         }else{
             return false;
@@ -81,7 +81,7 @@ class Agendamento extends CrudAgendamento{
 
         $array = array();
 
-        $sql = "SELECT nivel FROM agendamento WHERE idagendamento = :idagendamento";
+        $sql = "SELECT nivel FROM agendamento WHERE  $this->idAgendamento = :idagendamento";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("idagendamento",$id);
         $sql->execute();
