@@ -10,7 +10,8 @@
 				<a href="../home/dashboard.php?menuop=home">Regulamento</a>
 				<a href="../home/dashboard.php?menuop=agendamento">Agendamento</a>
 				<a href="../home/dashboard.php?menuop=noticias">Noticias</a>
-				<a type="submit" href="../home/dashboard.php?menuop=create">Cadastro</a>
+				<a type="submit" href="../home/dashboard.php?menuop=cadastro-tutor">Cadastro Tutor</a>
+				<a type="submit" href="../home/dashboard.php?menuop=cadastro-discente">Cadastro Discente</a>
 			</div>
 			<!--painelDeEscolha-->
 
@@ -29,14 +30,17 @@
 					global $css;
 					include '../ADM/regulamento.php';
 					break;
-				case 'create':
-					include '../ADM/create.php';
-					break;
 				case 'agendamento':
 					include '../ADM/agendamento.php';
 					break;
 				case 'noticias':
 					include '../ADM/noticias.php';
+					break;
+				case 'cadastro-tutor':
+					include '../ADM/cadastro-tutor.php';
+					break;
+				case 'cadastro-discente':
+					include '../ADM/cadastro-discente.php';
 					break;
 					// case 'update_env':
 					// 	include('paginas/discente/update_env.php');
@@ -46,7 +50,7 @@
 
 			<div class="painelDeEscolha">
 				<a href="../home/dashboard.php?menuop=home">Regulamento</a>
-				<a href="../home/dashboard.php?menuop=create">Cadastro</a>
+				<a href="../home/dashboard.php?menuop=horario">Horário</a>
 				<a href="../home/dashboard.php?menuop=agendamento">Agendamento</a>
 				<a href="../home/dashboard.php?menuop=noticias">Noticias</a>
 
@@ -60,8 +64,8 @@
 				case 'home':
 					include '../Tutor/regulamento.php';
 					break;
-				case 'create':
-					include '../Tutor/create.php';
+				case 'horario':
+					include '../Tutor/horario.php';
 					break;
 				case 'agendamento':
 					include '../Tutor/agendamento.php';

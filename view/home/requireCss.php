@@ -11,16 +11,19 @@ if ($nivel == 1) {
     switch ($menuop) {
 
         case 'home':
-            $css = ('href= "../ADM/css/styleTela1.css"');
-            break;
-        case 'create':
-            $css = ('href="../ADM/css/styleTela4.css"');
+            $css = ('href="../ADM/css/styleTela1.css"');
             break;
         case 'agendamento':
             $css = ('href="../ADM/css/styleTela2.css"');
             break;
         case 'noticias':
             $css = ('href="../ADM/css/styleTela3.css"');
+            break;
+        case 'cadastro-tutor':
+            $css = ('href="../ADM/css/styleTela4.css"');
+            break;
+        case 'cadastro-discente':
+            $css = ('href="../ADM/css/styleTela5.css"');
             break;
     }
 } elseif ($nivel == 2) {
@@ -31,11 +34,11 @@ if ($nivel == 1) {
         case 'home':
             $css = ('href="../Tutor/css/styleTela1.css"');
             break;
-        case 'create':
-            $css = ('href="../Tutor/css/styleTela5.css"');
-            break;
-        case 'horarios':
-            $css = ('href="../Tutor/css/styleTela2.css"');
+        // case 'create':
+        //     $css = ('href="../Tutor/css/styleTela5.css"');
+        //     break;
+        case 'horario':
+            $css = ('href="../Tutor/css/styleTela6.css"');
             break;
         case 'agendamento':
             $css = ('href="../Tutor/css/styleTela3.css"');
