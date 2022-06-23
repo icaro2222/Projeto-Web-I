@@ -6,7 +6,7 @@ abstract class CrudDisponibilidade extends DB{
 
     protected $tabela;
     public $idDisponibilidade = '"idDisponibilidade"';
-    public $idTutor;
+    public $idTutor = '"fkTutor"';
     public $dia;
     public $horaInicial = '"horaInicial"';
     public $horaFinal = '"horaFinal"';

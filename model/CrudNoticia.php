@@ -5,7 +5,7 @@ require_once('DB/conexao.php');
 abstract class CrudNoticia extends DB{
 
     protected $tabela;
-    public $idNoticia;
+    public $idNoticia = '"idNoticia"';
     public $descricao;
 
     public function getDescricao(){

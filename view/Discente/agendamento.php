@@ -35,25 +35,39 @@ if (
 ) {
 
 	$dia = $_POST['dia'];
-	$hora = $_POST['hora'];
+	$horaInicial = $_POST['hora'];
+	$horaFinal = $_POST['hora'];
+
+
+	$duracao = '01:00';
+	$horaFinal = date('H:i', strtotime("{$horaInicial[0]} hours {$horaInicial[1]} minutes  + {$duracao[0]} hours {$duracao[1]} minutes "));
+
+	// echo "<br><br><br><br>".$horaInicial;
+	// echo "<br><br><br><br>".$horaFinal;
+	// echo "<br><br><br><br>". date('H:i',strtotime($horaInicial));
+	// echo "<br><br><br><br>". date('H:i',strtotime($duracao));
 
 	$disponibilidade->setDia($dia);
-	$disponibilidade->setHoraInicial($hora);
+	$disponibilidade->setHoraInicial($horaInicial);
+	$disponibilidade->setHoraFinal($horaFinal);
+	$disponibilidade->setLivre(1);
 
 	$DisponibilidadeIdTutor = $disponibilidade->findkey();
-} else {
-	//echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!"; AQUI;
+} else if(isset($_POST['Buscar'])){
+	echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!";
 }
 
 if (isset($_POST['Agendar'])) {
 
 	if (isset($_POST['idTutor'])) {
 		$dia = $_POST['dia'];
-		$hora = $_POST['hora'];
+		$horaInicial = $_POST['hora'];
+		$horaFinal = $_POST['hora'];
 		$idTutorSelecionado = $_POST['idTutor'];
 
 		$disponibilidade->setDia($dia);
-		$disponibilidade->setHoraInicial($hora);
+		$disponibilidade->setHoraInicial($horaInicial);
+		$disponibilidade->setHoraFinal($horaFinal);
 		$disponibilidade->setLivre(1);
 
 		$DisponibilidadeIdTutor = $disponibilidade->findkey();

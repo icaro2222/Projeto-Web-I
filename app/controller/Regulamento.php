@@ -33,7 +33,8 @@ class Regulamento extends CrudRegulamento {
     
     //update de itens
     public function update() {
-        $sql = "UPDATE $this->tabela SET descricao = :descricao WHERE idRegulamento = :id";
+        $idr = '"idRegulamento"';
+        $sql = "UPDATE $this->tabela SET descricao = :descricao WHERE $idr = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idRegulamento, PDO::PARAM_INT);
         $stm->bindParam(':descricao', $this->descricao);
@@ -42,8 +43,8 @@ class Regulamento extends CrudRegulamento {
     
 //deleta  1 item
     public function delete() {
-        $id = '"idRegulamento"';
-        $sql = "DELETE FROM $this->tabela WHERE $id = :id";
+        $idr = '"idRegulamento"';
+        $sql = "DELETE FROM $this->tabela WHERE $idr = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idRegulamento, PDO::PARAM_INT);
         return $stm->execute();

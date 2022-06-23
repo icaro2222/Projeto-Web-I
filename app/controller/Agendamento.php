@@ -32,7 +32,10 @@ class Agendamento extends CrudAgendamento{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (fkTutor, fkDiscente, fkDisponibilidade) VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
+        $tutor =  '"fkTutor"';
+        $discente =  '"fkDiscente"';
+        $disponibilidade =  '"fkDisponibilidade"';
+        $sql = "INSERT INTO $this->tabela ($tutor, $discente, $disponibilidade) VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':fkTutor', $this->fkTutor);
         $stm->bindParam(':fkDiscente', $this->fkDiscente);

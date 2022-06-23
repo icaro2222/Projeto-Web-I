@@ -24,17 +24,21 @@ class Disponibilidade extends CrudDisponibilidade{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN $this->horaInicial AND $this->horaFinal) LIMIT 1";
+        
+        $hora1 = '"horaInicial"';
+        $hora2 = '"horaFinal"';
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (( :horaInicial BETWEEN $hora1 AND $hora2) OR ( :horaFinal BETWEEN $hora1 AND $hora2))";
         $stm = DB::prepare($sql);
         $stm->bindParam(':date', $this->dia);
-        $stm->bindParam(':hora', $this->horaInicial);
+        $stm->bindParam(':horaInicial', $this->horaInicial);
+        $stm->bindParam(':horaFinal', $this->horaFinal);
         $stm->execute();
         return $stm->fetch();
     }
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (dia, horaInicial, horaFinal, idTutor, livre) VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre)";
+        $sql = "INSERT INTO $this->tabela (dia, $this->horaInicial, $this->horaFinal, $this->idTutor, livre) VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':dia', $this->dia);
         $stm->bindParam(':horaInicial', $this->horaInicial);
@@ -56,43 +60,10 @@ class Disponibilidade extends CrudDisponibilidade{
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE idDisponibilidade = :id";
+        $sql = "DELETE FROM $this->tabela WHERE $this->idDisponibilidade = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->iddisponibilidade, PDO::PARAM_INT);
         return $stm->execute();
-    }
-    
-    public function login($login,$senha){
-        global $pdo;
-        
-        $sql = "SELECT * FROM disDonibilidade WHERE login = :login and senha = :senha";
-        $sql = $pdo->prepare($sql);
-        $sql->bindValue('login',$login);
-        $sql->bindValue('senha',md5($senha));
-        $sql->execute();
-
-        if ($sql->rowCount() > 0 ) {
-            $dado = $sql->fetch();
-            $_SESSION['idDisponibilidade']=$dado['idDisponibilidade'];
-            return true;   
-        }else{
-            return false;
-        }
-    }
-    // exibir nome ou qualquer coisa
-    public function logged($id){
-        global $pdo;
-
-        $array = array();
-
-        $sql = "SELECT nivel FROM disponibilidade WHERE iddisponibilidade = :iddisponibilidade";
-        $sql = $pdo->prepare($sql);
-        $sql->bindValue("iddisponibilidade",$id);
-        $sql->execute();
-        if ($sql->rowCount()>0) {
-            $array= $sql->fetch();
-        }
-        return $array;
     }
 }
 ?>

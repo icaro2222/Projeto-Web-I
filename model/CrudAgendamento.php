@@ -7,9 +7,9 @@ abstract class CrudAgendamento extends DB{
     protected $tabela;
     public $idAgendamento = '"idAgendamento"';
     public $agendamento;
-    public $fkTutor;
-    public $fkDiscente;
-    public $fkDisponibilidade;
+    public $fkTutor = '"fkTutor"';
+    public $fkDiscente = '"fkDiscente';
+    public $fkDisponibilidade = '"fkDisponibilidade"';
 
     public function setNome($nome) {
         $this->agendamento = $nome;
