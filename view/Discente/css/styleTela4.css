@@ -128,7 +128,7 @@ footer *.container {
 
 .notas {
 	position: relative;
-	top: 8px;
+	top: 30px;
 	width: 100%;
 	background-color: #ECF1EC;
 	padding: 24px;
@@ -145,6 +145,11 @@ footer *.container {
 	font-size: 20px;
 	color: black;
 	padding: 10px 10px 20px 10px;
+}
+
+footer {
+	position: relative;
+	top: 20px;
 }
 
 footer .primeiroRodaPe {

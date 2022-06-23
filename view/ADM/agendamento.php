@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AdmTela2</title>
+	<title>Tutor3</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
@@ -37,6 +37,7 @@
 			<!--texto1-->
 			<div class="select">
 				<div class="select-data">
+
 					<p>Dia:</p>
 					<input type="date" name="date" id="">
 					<p>Hora Inicial:</p>
@@ -58,6 +59,62 @@
 	<!--container-->
 </section>
 
+<section>
+	<div class="container">
+		<div class="bloquear-aluno">
+			<div class="texto1">
+				<h1>Bloquear aluno:</h1>
+				<p>Selecione o aluno:</p>
+			</div>
+			<!--texto1-->
+			<div class="select-bloqueio">
+				<div class="select-bloqueio-aluno">
+					<select name="Aluno">
+						<option>Aluno</option>
+						<option>2</option>
+					</select>
+
+				</div>
+				<!--select-bloqueio-aluno-->
+				<p>Tempo:</p>
+				<div class="select-tempo-bloqueio">
+					<select name="tempo-bloqueio">
+						<option>Dias:</option>
+						<option>2</option>
+					</select>
+
+					<input type="submit" name="Agendar" value="Bloquear">
+				</div>
+				<!--agendamento-->
+			</div>
+			<!--container-->
+</section>
+
+<section>
+	<div class="container">
+		<div class="desbloquear-aluno">
+			<div class="texto2">
+				<h1>Desbloquear aluno:</h1>
+				<p>Selecione o aluno:</p>
+			</div>
+			<!--texto1-->
+			<div class="select-desbloqueio">
+				<div class="select-desbloqueio-aluno">
+					<select name="Aluno">
+						<option>Aluno</option>
+						<option>2</option>
+					</select>
+
+					<input type="submit" name="Agendar" value="Desloquear">
+
+				</div>
+				<!--select-bloqueio-aluno-->
+
+			</div>
+			<!--agendamento-->
+		</div>
+		<!--container-->
+</section>
 </body>
 
 </html>

@@ -143,7 +143,7 @@ require_once('../../app/controller/Disponibilidade.php');
 			<div class="apagar-tutor">
 				<div class="texto2">
 					<h1>Apagar Tutor:</h1>
-					<p>Selecione o tutor:</p>
+					<h2>Selecione o tutor:</h2>
 				</div>
 				<!--texto1-->
 				<div class="select-apagar">

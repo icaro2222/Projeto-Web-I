@@ -60,7 +60,7 @@ require_once('../../app/controller/Noticia.php');
 				<?php
 				$Noticias = $Noticia->findAll();
 				foreach ($Noticias as $key => $value) { ?>
-					<p><?php echo "Noticia " . $value->idNoticia . " : " . $value->descricao; ?></p>
+					<p><?php echo "* Noticia " . $value->idNoticia . " : " . $value->descricao; ?></p>
 				<?php
 				}
 				?>

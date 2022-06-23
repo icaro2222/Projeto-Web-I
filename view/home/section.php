@@ -19,8 +19,7 @@
 	</div>
 	<!--container-->
 
-	<div class="container">
-		<div class="notas">
+	
 			<?php
 
 			$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
@@ -104,8 +103,5 @@
 					// 	include('paginas/discente/update_env.php');
 					// 	break;
 			}} ?>
-		</div>
-		<!--notas-->
-	</div>
-	<!--container-->
+		
 </section>

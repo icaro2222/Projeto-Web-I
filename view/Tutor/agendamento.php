@@ -58,6 +58,63 @@
 	</div>
 	<!--container-->
 </section>
+
+<section>
+	<div class="container">
+		<div class="bloquear-aluno">
+			<div class="texto1">
+				<h1>Bloquear aluno:</h1>
+				<p>Selecione o aluno:</p>
+			</div>
+			<!--texto1-->
+			<div class="select-bloqueio">
+				<div class="select-bloqueio-aluno">
+					<select name="Aluno">
+						<option>Aluno</option>
+						<option>2</option>
+					</select>
+
+				</div>
+				<!--select-bloqueio-aluno-->
+				<p>Tempo:</p>
+				<div class="select-tempo-bloqueio">
+					<select name="tempo-bloqueio">
+						<option>Dias:</option>
+						<option>2</option>
+					</select>
+
+					<input type="submit" name="Agendar" value="Bloquear">
+				</div>
+				<!--agendamento-->
+			</div>
+			<!--container-->
+</section>
+
+<section>
+	<div class="container">
+		<div class="desbloquear-aluno">
+			<div class="texto2">
+				<h1>Desbloquear aluno:</h1>
+				<p>Selecione o aluno:</p>
+			</div>
+			<!--texto1-->
+			<div class="select-desbloqueio">
+				<div class="select-desbloqueio-aluno">
+					<select name="Aluno">
+						<option>Aluno</option>
+						<option>2</option>
+					</select>
+
+					<input type="submit" name="Agendar" value="Desloquear">
+
+				</div>
+				<!--select-bloqueio-aluno-->
+
+			</div>
+			<!--agendamento-->
+		</div>
+		<!--container-->
+</section>
 </body>
 
 </html>
