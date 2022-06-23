@@ -14,7 +14,7 @@ require_once('../../app/controller/Disponibilidade.php');
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AdmTela4</title>
+	<title>AdmTela5</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -91,7 +91,7 @@ require_once('../../app/controller/Disponibilidade.php');
 		<div class="container">
 			<form action="" method="POST">
 				<div class="add-tutor">
-					<h1>Adicionar tutor:</h1>
+					<h1>Adicionar Tutor:</h1>
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
@@ -143,7 +143,7 @@ require_once('../../app/controller/Disponibilidade.php');
 			<div class="apagar-tutor">
 				<div class="texto2">
 					<h1>Apagar Tutor:</h1>
-					<h2>Selecione o tutor:</h2>
+					<h2>Selecione o Tutor:</h2>
 				</div>
 				<!--texto1-->
 				<div class="select-apagar">

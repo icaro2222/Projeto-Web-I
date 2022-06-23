@@ -38,7 +38,7 @@ if ($nivel == 1) {
         //     $css = ('href="../Tutor/css/styleTela5.css"');
         //     break;
         case 'horario':
-            $css = ('href="../Tutor/css/styleTela6.css"');
+            $css = ('href="../Tutor/css/styleTela2.css"');
             break;
         case 'agendamento':
             $css = ('href="../Tutor/css/styleTela3.css"');

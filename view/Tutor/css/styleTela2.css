@@ -1,71 +1,90 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 
 }
-html,body{
+
+html,
+body {
 	height: 100%;
 }
-.container{
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header *.container {
 	width: 100%;
 	max-width: 1400px;
 	margin: 0 auto;
 }
-.cabecario{
+
+footer *.container {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.cabecario {
 	display: flex;
 	width: 100%;
-	height: 160px;	
+	height: 160px;
 	flex-direction: row;
 }
 
-.logo-topo{
+.logo-topo {
 	background-image: url('../../../public/img/logo if.png');
 	background-size: 100% 100%;
 	height: 100%;
 	width: 174px;
 }
-.cabecariopt2{
+
+.cabecariopt2 {
 	display: flex;
 	flex-direction: column;
 	background-color: #0A5517;
 	width: 100%;
 
 }
-.borda-cabe{
+
+.borda-cabe {
 	background-color: #01420B;
 	height: 42px;
 	width: 100%;
 	border-top: 1px solid black;
 }
 
-.cabecariopt2 h3{
+.cabecariopt2 h3 {
 	color: white;
 	padding-left: 15px;
 	padding-top: 10px;
 }
-.cabecariopt2 h1{
+
+.cabecariopt2 h1 {
 	color: white;
 	top: 10px;
 	padding-left: 28px;
 	padding-top: 20px;
 
 }
-.cabecariopt2 input{
+
+.cabecariopt2 input {
 	position: relative;
 	bottom: 30px;
-	left: 87%;
+	left: 90%;
 	color: white;
 	background-color: #0A5517;
-	width: 100px;
 	border: 0;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 15px;
 }
 
-.academiaDoCampus{
+.academiaDoCampus {
 	position: relative;
 	top: 10px;
 	height: 80px;
@@ -73,17 +92,20 @@ html,body{
 	padding: 24px;
 	border: 2px solid #B6B8B6;
 }
-.academiaDoCampus h2{
+
+.academiaDoCampus h2 {
 	color: #0A5517;
 	text-align: center;
 }
-.painelDeEscolha{
+
+.painelDeEscolha {
 	display: flex;
 	flex-direction: row;
 	height: 50px;
 	width: 100%;
 }
-.painelDeEscolha input{
+
+.painelDeEscolha a {
 	position: relative;
 	top: 20px;
 	width: 100%;
@@ -92,117 +114,143 @@ html,body{
 	border: 2px solid #B6B8B6;
 	cursor: pointer;
 	font-size: 18px;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	padding-top: 8px;
+
 }
-.painelDeEscolha input:nth-of-type(2){
+
+.painelDeEscolha a:nth-of-type(2) {
 	background-color: #A0A0A0;
 
 }
-section:nth-of-type(2){
+
+section section {
 	position: relative;
 	top: 30px;
 }
 
-.horarios{
+.horarios {
 	width: 100%;
 	background-color: #ECF1EC;
 	border: 2px solid #B6B8B6;
 }
-.horarios h2{
-	padding: 30px ;
+
+.horarios h2 {
+	padding: 30px;
 	font-size: 35px;
 }
-.horarios-pt1{
+
+.horarios-pt1 {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	height: 400px;
 	padding: 15px 40px 15px 40px;
 }
+
 .semana {
 	width: 50%;
-	
+
 }
-.semana ul{
+
+.semana ul {
 	width: 100%;
-	list-style:none ;
+	list-style: none;
 }
-.semana ul li{
+
+.semana ul li {
 	padding: 20px;
 	font-size: 20px;
 	color: black;
 	font-weight: 900;
 }
-.calendario{
+
+.calendario {
 	background-color: white;
 	width: 50%;
 	height: 100%;
 }
-.horarios-pt2{
+
+.horarios-pt2 {
 	width: 100%;
 	padding-top: 25px;
 	padding-bottom: 55px;
 
 }
-.seletor-periodo{
+
+.seletor-periodo {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 }
-.seletor-periodo .meus-horarios, .select{
+
+.seletor-periodo .meus-horarios,
+.select {
 	width: 100%;
 }
-.seletor-periodo .select{
+
+.seletor-periodo .select {
 	padding: 30px 0;
 }
 
-.horarios-pt2 .seletor-periodo select{
+.horarios-pt2 .seletor-periodo select {
 	width: 50%;
 	height: 50px;
 	text-align: center;
 }
-.meus-horarios ul{
+
+.meus-horarios ul {
 	width: 100%;
-	list-style:none ;
+	list-style: none;
+	padding: 30px;
 }
-.meus-horarios ul li{
+
+.meus-horarios ul li {
 	padding: 20px 20px 20px 59px;
 	font-size: 20px;
 	color: black;
 	font-weight: 900;
 }
+
 footer {
 	position: relative;
 	top: 45px;
 }
-footer .primeiroRodaPe{
+
+footer .primeiroRodaPe {
 
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	height: 100px;
-	background-color: #0A5517 ;
+	background-color: #0A5517;
 }
-footer .primeiroRodaPe p{
+
+footer .primeiroRodaPe p {
 	width: 50%;
-	padding: 28px 15px 15px 15px ;
+	padding: 28px 15px 15px 15px;
 	color: white;
 	font-size: 15px;
 	text-align: center;
 }
-footer .container-segundoRodaPe{
+
+footer .container-segundoRodaPe {
 
 	width: 100%;
 	height: 100px;
 }
-footer .segundoRodaPe{
+
+footer .segundoRodaPe {
 	display: flex;
 	flex-direction: row;
-	background-color: #01420B ;
+	background-color: #01420B;
 	padding: 25px;
 
 }
 
-footer .segundoRodaPe .p{
+footer .segundoRodaPe .p {
 	width: 76%;
 	color: white;
 	font-size: 15px;
@@ -210,7 +258,9 @@ footer .segundoRodaPe .p{
 	padding-top: 15px;
 
 }
-footer .segundoRodaPe .img-footer1, footer .segundoRodaPe .img-footer2{
+
+footer .segundoRodaPe .img-footer1,
+footer .segundoRodaPe .img-footer2 {
 	width: 164.6px;
 	height: 46.3px;
 	background-image: url('../../../public/img/logo-gov.png');
@@ -219,12 +269,42 @@ footer .segundoRodaPe .img-footer1, footer .segundoRodaPe .img-footer2{
 
 
 
+@media screen and (max-width: 1130px) {
+	footer .primeiroRodaPe {
+		height: 140px;
+	}
+
+	.cabecariopt2 input {
+		left: 85%;
+
+	}
+}
+
+@media screen and (max-width: 780px) {
+
+	footer .primeiroRodaPe {
+		height: 180px;
+	}
+
+}
+
+@media screen and (max-width: 660px) {
+	footer .primeiroRodaPe {
+		height: 240px;
+	}
+
+	.cabecariopt2 input {
+		left: 88%;
+
+	}
+
+}
+
 
 /* Para Hospedar */
 
 
 .disclaimer {
 
-    display: none;
+	display: none;
 }
-
