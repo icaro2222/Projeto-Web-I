@@ -21,26 +21,40 @@ require_once('../../app/controller/Noticia.php');
 
 	<?php
 	$Noticia = new Noticia;
-	if (isset($_POST['Adicionar'])) {
+	if (isset($_POST['Adicionar']) &&
+	$_POST['descricao'] != '' &&
+	$_POST['descricao'] != NULL ) {
 
 		$descricao = $_POST['descricao'];
 
 		$Noticia->setDescricao($descricao);
 
 		if ($Noticia->insert()) {
-			echo "Noticia " . $descricao . " inserido com sucesso";
+			?>
+			<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+			<?php
 		}
 	}
-	if (isset($_POST['Remover'])) {
+	if (isset($_POST['Remover']) &&
+		isset($_POST['idNoticia']) &&
+		$_POST['idNoticia'] != '' &&
+		$_POST['idNoticia'] != NULL ){
 		$idNoticia = $_POST['idNoticia'];
 
 		$Noticia->setIdNoticia($idNoticia);
 
-		if ($Noticia->delete()) {
-			echo "Noticia " . $idNoticia . " excluido com sucesso";
-		}
+		if ($Noticia->delete()) {?>
+			<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+		<?php }
 	}
-	if (isset($_POST['Salvar'])) {
+	if (isset($_POST['Salvar']) &&
+	isset($_POST['idNoticia']) &&
+	$_POST['descricao'] != '' &&
+	$_POST['descricao'] != NULL ) {
 		$descricao = $_POST['descricao'];
 		$idNoticia = $_POST['idNoticia'];
 
@@ -48,7 +62,11 @@ require_once('../../app/controller/Noticia.php');
 		$Noticia->setDescricao($descricao);
 
 		if ($Noticia->update()) {
-			echo "Noticia " . $descricao . " atualizado com sucesso";
+			?>
+			<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+			<?php
 		}
 	}
 	?>

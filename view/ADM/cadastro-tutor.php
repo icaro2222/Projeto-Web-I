@@ -51,6 +51,7 @@ require_once('../../app/controller/Disponibilidade.php');
 		$usuario->setNivel(2);
 
 		$disponibilidade->setDia($dia);
+		$disponibilidade->setIdTutor($idTutor);
 		$disponibilidade->setHoraInicial($horaInicial);
 		$disponibilidade->setHoraFinal($horaFinal);
 		$disponibilidade->setLivre($livre);
@@ -69,8 +70,11 @@ require_once('../../app/controller/Disponibilidade.php');
 
 		$usuario->setIdUsuario($idTutor);
 
-		if ($usuario->delete()) {
-			echo "Tutor " . $usuario->getIdUsuario() . " excluido com sucesso";
+		if ($usuario->delete()) { ?>
+			<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+			<?php
 		}
 	}
 
@@ -81,8 +85,11 @@ require_once('../../app/controller/Disponibilidade.php');
 		$Tutor->setIdTutor($idTutor);
 		$Tutor->setDescricao($descricao);
 
-		if ($Tutor->update()) {
-			echo "Tutor " . $descricao . " atualizado com sucesso";
+		if ($Tutor->update()) { ?>
+			<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+			<?php
 		}
 	}
 	

@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once('../../app/controller/Noticia.php');
 require_once('../../app/controller/Agendamento.php');
 require_once('../../app/controller/Disponibilidade.php');
 
@@ -32,27 +31,93 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<h1>add calendario </h1>
+						<h1>Meus horários </h1>
 						<?php
 						$Agendamento = new Agendamento;
-						$fkDisponibilidade = $Agendamento->findUnit(12);
-
-						/*
-						foreach ($Agendamentos as $key => $value) {?>
-							<p><?php echo "Dias : ".$value->fkDisponibilidade;?></p>
-						<?php
-						}*/
-
 						$HorarioAgendado = new Disponibilidade;
-						$HorarioAgendados = $HorarioAgendado->findUnit($fkDisponibilidade->idAgendamento);
 
-						foreach ($HorarioAgendados as $key => $value) { ?>
-							<p><?php echo "Dias : " . $value->dia; ?></p>
-							<p><?php echo "Horarios : " . $value->horaInicial; ?></p>
-							<p><?php echo "Horarios : " . $value->horaFinal; ?></p>
-						<?php
+						$Agendamento->fkDiscente = 14;
+						$fkDisponibilidade = $Agendamento->findkey();
+						
+						// $Agendamentos = $Agendamento->findAll();
+
+						foreach ($fkDisponibilidade as $key => $value) {
+						$HorarioAgendados = $HorarioAgendado->findUnit($value->fkDisponibilidade);
+							foreach ($HorarioAgendados as $key => $value) { ?>
+								<p><?php echo "<br>Dias : " . $value->dia; ?></p>
+								<p><?php echo "Horarios Inicial: " . $value->horaInicial; ?></p>
+								<p><?php echo "Horarios Final: " . $value->horaFinal; ?></p>
+							<?php
+							}
 						}
 						?>
+						
+					</div>
+					<!--calendario-->
+				</div>
+				<!--horarios-pt1-->
+
+				<h2>Horários da Academia:</h2>
+				<div>
+					<div class="semana">
+					</div>
+					<!--semana-->
+					<div class="calendario">
+						<!--CALENDARIOOOOOOO
+					-->
+						<h1>add calendario </h1>
+
+						<table>
+							<thead>
+								<tr>
+									<th>Dom  .</th>
+									<th>Seg  .</th>
+									<th>Ter  .</th>
+									<th>Quar .</th>
+									<th>Quin .</th>
+									<th>Sex  .</th>
+									<th>Sab  .</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+									<td>6</td>
+									<td>7</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+									<td>11</td>
+									<td>12</td>
+									<td>13</td>
+									<td>14</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+									<td>11</td>
+									<td>12</td>
+									<td>13</td>
+									<td>14</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+									<td>11</td>
+									<td>12</td>
+									<td>13</td>
+									<td>14</td>
+								</tr>
+							</tbody>
+						</table>
 						
 					</div>
 					<!--calendario-->

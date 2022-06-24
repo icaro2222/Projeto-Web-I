@@ -25,8 +25,11 @@ require_once('../../app/controller/Regulamento.php');
 
 		$regulamento->setDescricao($descricao);
 
-		if ($regulamento->insert()) {
-			echo "regulamento " . $descricao . " inserido com sucesso";
+		if ($regulamento->insert()) { ?>
+			<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+			<?php
 		}
 	}
 	if (isset($_POST['Remover'])) {
@@ -35,9 +38,11 @@ require_once('../../app/controller/Regulamento.php');
 
 		$regulamento->setIdRegulamento($idRegulamento);
 
-		echo "<br>";
-		if ($regulamento->delete()) {
-			echo "regulamento " . $idRegulamento . " excluido com sucesso";
+		if ($regulamento->delete()) { ?>
+		<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+		<?php
 		}
 	}
 	if (isset($_POST['Salvar'])) {
@@ -47,8 +52,11 @@ require_once('../../app/controller/Regulamento.php');
 		$regulamento->setIdRegulamento($idRegulamento);
 		$regulamento->setDescricao($descricao);
 
-		if ($regulamento->update()) {
-			echo "regulamento " . $descricao . " atualizado com sucesso";
+		if ($regulamento->update()) { ?>
+			<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+			<?php
 		}
 	}
 	?>

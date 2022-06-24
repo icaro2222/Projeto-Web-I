@@ -5,11 +5,11 @@ require_once('DB/conexao.php');
 abstract class CrudAgendamento extends DB{
 
     protected $tabela;
-    public $idAgendamento = '"idAgendamento"';
+    public $idAgendamento;
     public $agendamento;
-    public $fkTutor = '"fkTutor"';
-    public $fkDiscente = '"fkDiscente';
-    public $fkDisponibilidade = '"fkDisponibilidade"';
+    public $fkTutor;
+    public $fkDiscente;
+    public $fkDisponibilidade;
 
     public function setNome($nome) {
         $this->agendamento = $nome;

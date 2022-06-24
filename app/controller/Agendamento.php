@@ -23,11 +23,13 @@ class Agendamento extends CrudAgendamento{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT fkDisponibilidade FROM $this->tabela WHERE fkDiscente = :fkDiscente LIMIT 1";
+        $fkDd = '"fkDisponibilidade"';
+        $fkDt = '"fkDiscente"';
+        $sql = "SELECT $fkDd FROM $this->tabela WHERE $fkDt = :fkDiscente GROUP BY $fkDd";
         $stm = DB::prepare($sql);
         $stm->bindParam(':fkDiscente', $this->fkDiscente);
         $stm->execute();
-        return $stm->fetch();
+        return $stm->fetchall();
     }
     
      //faz insert   
