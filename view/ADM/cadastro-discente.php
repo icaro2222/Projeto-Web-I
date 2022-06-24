@@ -48,13 +48,21 @@ require_once('../../app/controller/Usuario.php');
 		}
 	}
 
-	if (isset($_POST['Apagar'])) {
+	if (isset($_POST['Apagar']) &&
+		isset($_POST['idDiscente']) &&
+		$_POST['idDiscente'] != ''	 &&
+		$_POST['idDiscente'] != null
+		) {
 		$idDiscente = $_POST['idDiscente'];
 
 		$usuario->setIdUsuario($idDiscente);
 
-		if ($usuario->delete()) {
-			echo "Tutor " . $usuario->getIdUsuario() . " excluido com sucesso";
+		if ($usuario->delete())  {
+			?>
+					<div class="model">
+						<img src="../../public/img/sucess.gif" alt="">
+					</div>
+			<?php
 		}
 	}
 
@@ -79,7 +87,7 @@ require_once('../../app/controller/Usuario.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome"></textarea>
+							<textarea name="nome" require></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>

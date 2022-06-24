@@ -32,6 +32,16 @@ class Usuario extends CrudUsuario{
         return $stm->fetch();
     }
     
+    //busca todos os itens
+    public function findultimo() {
+        $idu = '"idUsuario"';
+        $sql = "SELECT MAX($idu) FROM $this->tabela WHERE nivel = :nivel";
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':nivel', $this->nivel);
+        $stm->execute();
+        return $stm->fetch();
+    }
+    
     //busca senha
     public function findkey() {
         $sql = "SELECT usuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
@@ -69,7 +79,8 @@ class Usuario extends CrudUsuario{
 //deleta  1 item
     public function delete() {
         $id = '"idUsuario"';
-        $sql = "DELETE FROM $this->tabela WHERE $id = :id";
+        $cascade = '"CASCADE"';
+        $sql = "DELETE FROM $this->tabela WHERE $id = :id $cascade";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idUsuario, PDO::PARAM_INT);
         return $stm->execute();

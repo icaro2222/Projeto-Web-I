@@ -73,7 +73,7 @@ if (isset($_POST['Agendar'])) {
 		$DisponibilidadeIdTutor = $disponibilidade->findkey();
 
 		$agendamento->fkTutor = $idTutorSelecionado;
-		$agendamento->fkDiscente = 14;
+		$agendamento->fkDiscente = $_SESSION['idUsuario'];
 		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
 
 		if ($agendamento->insert()) { ?>
@@ -129,23 +129,15 @@ if (isset($_POST['Agendar'])) {
 					-->
 						<h1>Dias e Horários Disponíveis </h1>
 						<?php
-						$Agendamento = new Agendamento;
 						$HorarioAgendado = new Disponibilidade;
 
-						$Agendamento->fkDiscente = 14;
-						$fkDisponibilidade = $Agendamento->findkey();
-						
-						// $Agendamentos = $Agendamento->findAll();
-
-						foreach ($fkDisponibilidade as $key => $value) {
-						$HorarioAgendados = $HorarioAgendado->findUnit($value->fkDisponibilidade);
+						$HorarioAgendados = $HorarioAgendado->findAll();
 							foreach ($HorarioAgendados as $key => $value) { ?>
-								<p><?php echo "<br>Dias : " . $value->dia; ?></p>
-								<p><?php echo "Horarios Inicial: " . $value->horaInicial; ?></p>
-								<p><?php echo "Horarios Final: " . $value->horaFinal; ?></p>
+								<p><?php echo "<br>Dia : " . $value->dia; ?></p>
+								<p><?php echo "Horario Inicial: " . $value->horaInicial; ?></p>
+								<p><?php echo "Horario Final: " . $value->horaFinal; ?></p>
 							<?php
 							}
-						}
 						?>
 						
 					</div>

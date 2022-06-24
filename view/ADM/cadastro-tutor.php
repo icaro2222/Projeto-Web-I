@@ -30,19 +30,22 @@ require_once('../../app/controller/Disponibilidade.php');
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
 		$_POST['login'] != '' &&
-		$_POST['date'] != '' &&
-		$_POST['timeInicial'] != '' &&
-		$_POST['timeFinal'] != ''
+		$_POST['date0'] != '' &&
+		$_POST['timeInicial0'] != '' &&
+		$_POST['timeFinal0'] != ''
 	) {
 
 		$nome = $_POST['nome'];
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
 
-		$dia = $_POST['date'];
-		$horaInicial = $_POST['timeInicial'];
-		$horaFinal = $_POST['timeFinal'];
-		$idTutor = 44;
+		if (isset($_POST['cont'])) {
+			$cont =  $_POST['cont'];
+		}else{
+			$cont =  1;
+		}
+
+
 		$livre = 1;
 
 		$usuario->setNome($nome);
@@ -50,22 +53,38 @@ require_once('../../app/controller/Disponibilidade.php');
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(2);
 
-		$disponibilidade->setDia($dia);
-		$disponibilidade->setIdTutor($idTutor);
-		$disponibilidade->setHoraInicial($horaInicial);
-		$disponibilidade->setHoraFinal($horaFinal);
-		$disponibilidade->setLivre($livre);
+		if ($usuario->insert()) {
+			
+			$contArray = array();
+			
+			while($cont > 0){
+				$cont--;
+				$dia = $_POST['date'.$cont];
+				$horaInicial = $_POST['timeInicial'.$cont];
+				$horaFinal = $_POST['timeFinal'.$cont];
 
-		if ($usuario->insert() && $disponibilidade->insert()) {
-	?>
-			<div class="model">
-				<img src="../../public/img/sucess.gif" alt="">
-			</div>
-	<?php
+			$disponibilidade->setDia($dia);
+			$disponibilidade->setHoraInicial($horaInicial);
+			$disponibilidade->setHoraFinal($horaFinal);
+			$disponibilidade->setLivre($livre);
+
+			$usuario->nivel = 2;
+			$idTutor = $usuario->findultimo();
+			$disponibilidade->setIdTutor($idTutor->max);
+			$disponibilidade->insert();
+			}
+		?>
+				<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+		<?php
 		}
 	}
 
-	if (isset($_POST['Apagar'])) {
+	if (isset($_POST['Apagar']) &&
+	isset($_POST['idTutor']) &&
+	$_POST['idTutor'] != ''	 &&
+	$_POST['idTutor'] != null) {
 		$idTutor = $_POST['idTutor'];
 
 		$usuario->setIdUsuario($idTutor);
@@ -100,9 +119,9 @@ require_once('../../app/controller/Disponibilidade.php');
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
 
-		$dia = $_POST['date'];
-		$horaInicial = $_POST['timeInicial'];
-		$horaFinal = $_POST['timeFinal'];
+		$dia = $_POST['date0'];
+		$horaInicial = $_POST['timeInicial0'];
+		$horaFinal = $_POST['timeFinal0'];
 		$idTutor = 44;
 		$livre = 1;
 
@@ -139,11 +158,11 @@ require_once('../../app/controller/Disponibilidade.php');
 						<div class="select">
 							<div class="select-data">
 								<p>Dia:</p>
-								<input type="date" name="date" id="" value="<?php echo $dia; ?>" >
+								<input type="date" name="date<?php echo $cont; ?>" id="" value="<?php echo $dia; ?>" >
 								<p>Hora Inicial:</p>
-								<input type="time" name="timeInicial" id="" value="<?php echo $horaInicial; ?>" >
+								<input type="time" name="timeInicial<?php echo $cont; ?>" id="" value="<?php echo $horaInicial; ?>" >
 								<p>Hora Final:</p>
-								<input type="time" name="timeFinal" id="" value="<?php echo $horaFinal; ?>" >
+								<input type="time" name="timeFinal<?php echo $cont; ?>" id="" value="<?php echo $horaFinal; ?>" >
 							</div>
 							<!--select-min-->
 						</div>
@@ -156,11 +175,11 @@ require_once('../../app/controller/Disponibilidade.php');
 						<div class="select">
 							<div class="select-data">
 								<p>Dia:</p>
-								<input type="date" name="date" id="" value="<?php echo $dia; ?>">
+								<input type="date" name="date0" id="" value="<?php echo $dia.$cont; ?>">
 								<p>Hora Inicial:</p>
-								<input type="time" name="timeInicial" id="" value="<?php echo $horaInicial; ?>" >
+								<input type="time" name="timeInicial0" id="" value="<?php echo $horaInicial.$cont; ?>" >
 								<p>Hora Final:</p>
-								<input type="time" name="timeFinal" id="" value="<?php echo $horaFinal; ?>">
+								<input type="time" name="timeFinal0" id="" value="<?php echo $horaFinal.$cont; ?>">
 								<div>
 									<input type="hidden" name="cont" value="<?php echo $cont+1; ?>">
 									<button type="submit" name="Adicionar">
@@ -216,11 +235,11 @@ require_once('../../app/controller/Disponibilidade.php');
 						<div class="select">
 							<div class="select-data">
 								<p>Dia:</p>
-								<input type="date" name="date" id="">
+								<input type="date" name="date0" id="">
 								<p>Hora Inicial:</p>
-								<input type="time" name="timeInicial" id="">
+								<input type="time" name="timeInicial0" id="">
 								<p>Hora Final:</p>
-								<input type="time" name="timeFinal" id="">
+								<input type="time" name="timeFinal0" id="">
 								<div>
 									<input type="hidden" name="cont" value="1">
 									<button type="submit" name="Adicionar">
