@@ -85,8 +85,101 @@ require_once('../../app/controller/Disponibilidade.php');
 			echo "Tutor " . $descricao . " atualizado com sucesso";
 		}
 	}
-	?>
+	
+	if (
+		isset($_POST['Adicionar'])) {
 
+		$nome = $_POST['nome'];
+		$senha = $_POST['senha'];
+		$login = $_POST['login'];
+
+		$dia = $_POST['date'];
+		$horaInicial = $_POST['timeInicial'];
+		$horaFinal = $_POST['timeFinal'];
+		$idTutor = 44;
+		$livre = 1;
+
+		?>
+		<section>
+		<div class="container">
+			<form action="" method="POST">
+				<div class="add-tutor">
+					<h1>Adicionar Tutor:</h1>
+					<div class="add-tutor-cadast">
+						<div class="cap1">
+							<p>Nome:</p>
+							<textarea name="nome"><?php echo $nome; ?></textarea>
+						</div>
+						<div class="cap2">
+							<p>Matricula:</p>
+							<textarea name="matricula"><?php echo $nome; ?></textarea>
+						</div>
+						<div class="cap3">
+							<p>Digite o Login:</p>
+							<textarea name="login"><?php echo $nome; ?></textarea>
+						</div>
+						<div class="cap4">
+							<p>Digite a senha:</p>
+							<textarea name="senha"><?php echo $nome; ?></textarea>
+						</div>
+					</div>
+					<!--add-tutor-cadast-->
+					<h2>Selecione os horarios do instrutor:</h2>
+					<div class="add-tutor-horari">
+						<?php 
+						$cont = $_POST['cont'];
+						while(0 < $cont){ ?>
+						<div class="select">
+							<div class="select-data">
+								<p>Dia:</p>
+								<input type="date" name="date" id="" value="<?php echo $dia; ?>" >
+								<p>Hora Inicial:</p>
+								<input type="time" name="timeInicial" id="" value="<?php echo $horaInicial; ?>" >
+								<p>Hora Final:</p>
+								<input type="time" name="timeFinal" id="" value="<?php echo $horaFinal; ?>" >
+							</div>
+							<!--select-min-->
+						</div>
+						<!--select-->
+						<?php
+						$cont--;
+						} 
+						$cont = $_POST['cont'];
+						?>
+						<div class="select">
+							<div class="select-data">
+								<p>Dia:</p>
+								<input type="date" name="date" id="" value="<?php echo $dia; ?>">
+								<p>Hora Inicial:</p>
+								<input type="time" name="timeInicial" id="" value="<?php echo $horaInicial; ?>" >
+								<p>Hora Final:</p>
+								<input type="time" name="timeFinal" id="" value="<?php echo $horaFinal; ?>">
+								<div>
+									<input type="hidden" name="cont" value="<?php echo $cont+1; ?>">
+									<button type="submit" name="Adicionar">
+									<img src="../../public/img/adicionar.png" height="32px">
+									</button>
+								</div>
+								
+							</div>
+							<!--select-min-->
+						</div>
+						<!--select-->
+						<div class="botão-agendamento">
+							<input type="submit" name="Cadastrar" value="Cadastrar">
+						</div>
+						<!--botão-agendamento-->
+					</div>
+					<!--add-tutor-horari-->
+				</div>
+				<!--add-tutor-->
+			</form>
+		</div>
+		<!--container-->
+	</section>
+	<?php
+		}else {
+	?>
 	<section>
 		<div class="container">
 			<form action="" method="POST">
@@ -121,6 +214,13 @@ require_once('../../app/controller/Disponibilidade.php');
 								<input type="time" name="timeInicial" id="">
 								<p>Hora Final:</p>
 								<input type="time" name="timeFinal" id="">
+								<div>
+									<input type="hidden" name="cont" value="1">
+									<button type="submit" name="Adicionar">
+									<img src="../../public/img/adicionar.png" height="32px">
+									</button>
+								</div>
+								
 							</div>
 							<!--select-min-->
 						</div>
@@ -137,7 +237,8 @@ require_once('../../app/controller/Disponibilidade.php');
 		</div>
 		<!--container-->
 	</section>
-
+	<?php } ?>
+	
 	<section>
 		<div class="container">
 			<div class="apagar-tutor">
