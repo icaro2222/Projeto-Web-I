@@ -7,6 +7,10 @@ ini_set("display_errors", 1);
 
 require_once(__DIR__.'/../login/verificalogin.php');
 
+//       Puxar as configurações  
+
+require_once(__DIR__.'/../../model/DB/variaveis.php');
+
 //       Verifica a pagina que está e coloca o CSS especifico da pagina.
 
 require_once(__DIR__.'/requireCss.php');

@@ -22,6 +22,11 @@ define('USER','zhxqqnaojtwbpu');
 define('PASS','5147bd0fc1127ed10f697b76e341d823c15cc4814db88c2c3b6d601218f7f8e3');
 define('BASE','d9p5jd8s400ip5');
 
+#Caminhos absolutos
+$dirInt="Projeto_Web_I_Oficial/IFHelth-Beta/";
+define('DIRPAGE',"http://{$_SERVER['HTTP_HOST']}/{$dirInt}");
 
+$bar=(substr($_SERVER['DOCUMENT_ROOT'],-1)=='/Projeto_Web_I_Oficial/IFHelth-Beta/')?"":"/Projeto_Web_I_Oficial/IFHelth-Beta/";
+define('DIRREQ',"{$_SERVER['DOCUMENT_ROOT']}{$bar}{$dirInt}");
 
 ?>

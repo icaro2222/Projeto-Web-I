@@ -16,11 +16,13 @@ require_once('../../app/controller/Disponibilidade.php');
 	<title>Discente2</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.css';?>">
+	<link rel="stylesheet" href="<?php echo DIRPAGE.'public/css/calendario.css';?>">
 </head>
 
 <body>
 
-	<section>
+<section>
 		<div class="container">
 			<div class="horarios">
 				<h2>Horários da Academia:</h2>
@@ -36,7 +38,7 @@ require_once('../../app/controller/Disponibilidade.php');
 						$Agendamento = new Agendamento;
 						$HorarioAgendado = new Disponibilidade;
 
-						$Agendamento->fkDiscente = 14;
+						$Agendamento->fkDiscente = $_SESSION['idUsuario'];
 						$fkDisponibilidade = $Agendamento->findkey();
 						
 						// $Agendamentos = $Agendamento->findAll();
@@ -65,60 +67,8 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<h1>add calendario </h1>
-
-						<table>
-							<thead>
-								<tr>
-									<th>Dom  .</th>
-									<th>Seg  .</th>
-									<th>Ter  .</th>
-									<th>Quar .</th>
-									<th>Quin .</th>
-									<th>Sex  .</th>
-									<th>Sab  .</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>2</td>
-									<td>3</td>
-									<td>4</td>
-									<td>5</td>
-									<td>6</td>
-									<td>7</td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>9</td>
-									<td>10</td>
-									<td>11</td>
-									<td>12</td>
-									<td>13</td>
-									<td>14</td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>9</td>
-									<td>10</td>
-									<td>11</td>
-									<td>12</td>
-									<td>13</td>
-									<td>14</td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>9</td>
-									<td>10</td>
-									<td>11</td>
-									<td>12</td>
-									<td>13</td>
-									<td>14</td>
-								</tr>
-							</tbody>
-						</table>
 						
+					<div class="calendar"></div>
 					</div>
 					<!--calendario-->
 				</div>
@@ -154,7 +104,7 @@ require_once('../../app/controller/Disponibilidade.php');
 		<!--container-->
 
 	</section>
-
+<script src="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.js'; ?>"></script>
+<script src="<?php echo DIRPAGE.'public/js/calendario.js'; ?>"></script>
 </body>
-
 </html>

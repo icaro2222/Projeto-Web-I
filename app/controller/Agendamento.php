@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../model/CrudAgendamento.php");
+require_once(__DIR__."/../../model/CrudAgendamento.php");
 
 class Agendamento extends CrudAgendamento{
     protected $tabela = 'agendamento';
