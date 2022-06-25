@@ -62,6 +62,19 @@ class Disponibilidade extends CrudDisponibilidade{
         $stm->bindParam(':horaFinal', $this->horaFinal);
         $stm->bindParam(':idTutor', $this->idTutor, PDO::PARAM_INT);
         $stm->bindParam(':livre', $this->livre);
+
+        $start = new \DateTime($this->dia.' '.$this->horaInicial, new \DateTimeZone('America/Sao_Paulo'));
+        $end = new \DateTime($this->dia.' '.$this->horaFinal, new \DateTimeZone('America/Sao_Paulo'));
+        
+        $start1 = $start->format("Y-m-d H:i:s");
+        $end1 = $end->format("Y-m-d H:i:s");
+ 
+        $this->livre = "tatakae";
+
+        $sql = 'INSERT INTO events ("start", "end") VALUES (:horaInicial, :horaFinal)';
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':horaInicial', $start1);
+        $stm->bindParam(':horaFinal', $end1);
         return $stm->execute();
     }
     
