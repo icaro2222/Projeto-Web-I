@@ -96,7 +96,7 @@ Login/Logout | Funcionando.
     
 ### Link do sistema <h3>
 
-Acesse: https://ifhealthsisfis.herokuapp.com/
+Acesse: https://sisfis.herokuapp.com/
     
 Dados de login de administrador:
 

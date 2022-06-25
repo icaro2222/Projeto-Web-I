@@ -79,8 +79,8 @@ class Usuario extends CrudUsuario{
 //deleta  1 item
     public function delete() {
         $id = '"idUsuario"';
-        $cascade = '"CASCADE"';
-        $sql = "DELETE FROM $this->tabela WHERE $id = :id $cascade";
+        // $cascade = '"CASCADE"';
+        $sql = "DELETE FROM $this->tabela WHERE $id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idUsuario, PDO::PARAM_INT);
         return $stm->execute();

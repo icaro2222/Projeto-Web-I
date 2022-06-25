@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require_once('../../model/DB/variaveis.php');
-
 require_once('../../app/controller/Agendamento.php');
 require_once('../../app/controller/Disponibilidade.php');
 
@@ -35,42 +34,7 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<h1>Meus horários </h1>
-						<?php
-						$Agendamento = new Agendamento;
-						$HorarioAgendado = new Disponibilidade;
-
-						$Agendamento->fkDiscente = $_SESSION['idUsuario'];
-						$fkDisponibilidade = $Agendamento->findkey();
-						
-						// $Agendamentos = $Agendamento->findAll();
-
-						foreach ($fkDisponibilidade as $key => $value) {
-						$HorarioAgendados = $HorarioAgendado->findUnit($value->fkDisponibilidade);
-							foreach ($HorarioAgendados as $key => $value) { ?>
-								<p><?php echo "<br>Dias : " . $value->dia; ?></p>
-								<p><?php echo "Horarios Inicial: " . $value->horaInicial; ?></p>
-								<p><?php echo "Horarios Final: " . $value->horaFinal; ?></p>
-							<?php
-							}
-						}
-						?>
-						
-					</div>
-					<!--calendario-->
-				</div>
-				<!--horarios-pt1-->
-
-				<h2>Horários da Academia:</h2>
-				<div>
-					<div class="semana">
-					</div>
-					<!--semana-->
-					<div class="calendario">
-						<!--CALENDARIOOOOOOO
-					-->
-						
-					<div class="calendar"></div>
+						<div class="calendar"></div>
 					</div>
 					<!--calendario-->
 				</div>

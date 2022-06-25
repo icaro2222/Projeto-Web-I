@@ -2,9 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once('../../app/controller/Noticia.php');
-require_once('../../app/controller/Agendamento.php');
-require_once('../../app/controller/Disponibilidade.php');
+require_once(__DIR__.'/../../app/controller/Agendamento.php');
+require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 
 ?>
 
@@ -17,6 +16,8 @@ require_once('../../app/controller/Disponibilidade.php');
 	<title>Discente2</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo '../../public/js/fullcalendar/lib/main.min.css';?>">
+	<link rel="stylesheet" href="<?php echo '../../public/css/calendario.css';?>">
 </head>
 
 <body>
@@ -32,28 +33,7 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<h1>add calendario </h1>
-						<?php
-						$Agendamento = new Agendamento;
-						$fkDisponibilidade = $Agendamento->findUnit(12);
-
-						/*
-						foreach ($Agendamentos as $key => $value) {?>
-							<p><?php echo "Dias : ".$value->fkDisponibilidade;?></p>
-						<?php
-						}*/
-
-						$HorarioAgendado = new Disponibilidade;
-						$HorarioAgendados = $HorarioAgendado->findUnit($fkDisponibilidade->idAgendamento);
-
-						foreach ($HorarioAgendados as $key => $value) { ?>
-							<p><?php echo "Dias : " . $value->dia; ?></p>
-							<p><?php echo "Horarios : " . $value->horaInicial; ?></p>
-							<p><?php echo "Horarios : " . $value->horaFinal; ?></p>
-						<?php
-						}
-						?>
-						
+						<div class="calendar"></div>
 					</div>
 					<!--calendario-->
 				</div>
@@ -89,7 +69,8 @@ require_once('../../app/controller/Disponibilidade.php');
 		<!--container-->
 
 	</section>
-
+<script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
+<script src="<?php echo '../../public/js/calendario.js'; ?>"></script>
 </body>
 
 </html>

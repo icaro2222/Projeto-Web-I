@@ -21,7 +21,10 @@ require_once('../../app/controller/Noticia.php');
 
 	<?php
 	$Noticia = new Noticia;
-	if (isset($_POST['Adicionar'])) {
+	if (isset($_POST['Adicionar']) &&
+		$_POST['descricao'] != ''  &&
+		$_POST['descricao'] != null 
+		) {
 
 		$descricao = $_POST['descricao'];
 
@@ -40,7 +43,10 @@ require_once('../../app/controller/Noticia.php');
 			echo "Noticia " . $idNoticia . " excluido com sucesso";
 		}
 	}
-	if (isset($_POST['Salvar'])) {
+	if (isset($_POST['Salvar']) &&
+		$_POST['descricao'] != ''  &&
+		$_POST['descricao'] != null 
+		) {
 		$descricao = $_POST['descricao'];
 		$idNoticia = $_POST['idNoticia'];
 

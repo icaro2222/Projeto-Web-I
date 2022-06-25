@@ -59,7 +59,6 @@ class Discente extends CrudDiscente{
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         return $stm->execute();
-    }
-    
+    }  
 }
 ?>

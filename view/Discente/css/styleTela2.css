@@ -146,7 +146,7 @@ section section {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	height: 400px;
+	height: 740px;
 	padding: 15px 40px 15px 40px;
 }
 
@@ -169,7 +169,7 @@ section section {
 
 .calendario {
 	background-color: white;
-	width: 50%;
+	width: 80%;
 	height: 100%;
 }
 

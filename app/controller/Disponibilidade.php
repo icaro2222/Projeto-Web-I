@@ -18,8 +18,10 @@ class Disponibilidade extends CrudDisponibilidade{
     //busca json
 
     public function findjson() {
+        // $idD = '"idDisponibilidade"';
         $sql = "SELECT * FROM events";
         $stm = DB::prepare($sql);
+        // $stm->bindParam(':id', $this->idDisponibilidade, PDO::PARAM_INT);
         $stm->execute();
         $f = $stm->fetchall(\PDO::FETCH_ASSOC);
         return json_encode($f);
