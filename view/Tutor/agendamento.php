@@ -59,10 +59,29 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 		) {
 
 		$bloqueio->idDiscente = $_POST['idDiscente'];
-		$bloqueio->tempo = $_POST['tempo'];
 		$bloqueio->idTutor = $_SESSION['idUsuario'];
+		$bloqueio->tempo = $_POST['tempo'];
 
 		if($bloqueio->insert()){
+		?>
+				<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+		<?php
+		}
+	}
+
+	if (
+		isset($_POST['Desbloquear']) &&
+		isset($_POST['idDiscente']) &&
+		$_POST['idDiscente'] != '' &&
+		$_POST['idDiscente'] != null
+		) {
+
+			$bloqueio->idDiscente = $_POST['idDiscente'];
+			$bloqueio->bloqueio = true;
+
+		if($bloqueio->desbloqueiarDiscente()){
 		?>
 				<div class="model">
 					<img src="../../public/img/sucess.gif" alt="">
@@ -215,9 +234,11 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 			<!--texto1-->
 			<div class="select-desbloqueio">
 				<div class="select-desbloqueio-aluno">
+					<form action="" method="POST">
 				<select name="idDiscente">
 					<?php
-					$usuarios = $usuario->findAll();
+					$usuarios = $usuario->findAllBloqueio();
+					var_dump($usuarios);
 					foreach ($usuarios as $key => $value) {
 						if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
 							<option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>
@@ -226,8 +247,8 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 					} ?>
 				</select>
 
-					<input type="submit" name="Agendar" value="Desloquear">
-
+					<input type="submit" name="Desbloquear" value="Desbloquear">
+					</form>
 				</div>
 				<!--select-bloqueio-aluno-->
 

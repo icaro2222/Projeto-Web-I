@@ -31,8 +31,8 @@ class Bloqueio extends ModelBloqueio {
         $idD = '"idDiscente"';
         $idT = '"idTutor"';
         $tempo = '"tempo"';
-        $sql = "INSERT INTO $this->tabela ($idD, $idT, $tempo) 
-        VALUES (:idDiscente, :idTutor, :tempo)";
+        $sql = "INSERT INTO $this->tabela ($idD, $idT, $tempo, bloqueio) 
+        VALUES (:idDiscente, :idTutor, :tempo, 'false')";
         $stm = DB::prepare($sql);
         $stm->bindParam(':idDiscente', $this->idDiscente);
         $stm->bindParam(':idTutor', $this->idTutor);
@@ -53,6 +53,22 @@ class Bloqueio extends ModelBloqueio {
         $stm = DB::prepare($sql);
         $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
         $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
+        $stm->bindParam(':bloqueio', $this->bloqueio);
+        return $stm->execute();
+    }
+
+    //update de itens
+    public function desbloqueiarDiscente() {
+        $idD = '"idDiscente"';
+        $idT = '"idTutor"';
+        $tempo = '"tempo"';
+
+        $sql = "UPDATE $this->tabela 
+        SET bloqueio = :bloqueio 
+        WHERE $idD = :idd";
+
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
         $stm->bindParam(':bloqueio', $this->bloqueio);
         return $stm->execute();
     }
