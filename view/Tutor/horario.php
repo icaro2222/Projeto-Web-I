@@ -33,7 +33,7 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<div class="calendar"></div>
+						<div class="calendarTutor"></div>
 					</div>
 					<!--calendario-->
 				</div>
