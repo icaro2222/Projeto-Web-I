@@ -68,7 +68,7 @@
 					include '../Tutor/horario.php';
 					break;
 				case 'agendamento':
-					include '../Tutor/agendamento.php';
+					include '../Tutor/agendamento/agendamento.php';
 					break;
 				case 'noticias':
 					include '../Tutor/noticias.php';

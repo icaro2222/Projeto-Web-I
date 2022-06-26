@@ -18,10 +18,29 @@ class Disponibilidade extends CrudDisponibilidade{
     //busca json
 
     public function findjson() {
-        // $idD = '"idDisponibilidade"';
         $sql = "SELECT * FROM events";
         $stm = DB::prepare($sql);
-        // $stm->bindParam(':id', $this->idDisponibilidade, PDO::PARAM_INT);
+        $stm->execute();
+        $f = $stm->fetchall(\PDO::FETCH_ASSOC);
+        return json_encode($f);
+    }
+    
+
+    //busca json
+
+    public function findjsonkey() {
+        $idD = '"idDisponibilidade"';
+        $idDisc = '"fkDiscente"';
+        $idF = '"fkDisponibilidade"';
+        $sql = "SELECT e.* FROM events e
+        INNER JOIN disponibilidade d
+        ON d.fkevents = e.id
+        JOIN agendamento a
+        ON a.$idF = d.$idD
+        WHERE a.$idDisc = :id";
+
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':id', $this->idDisponibilidade, PDO::PARAM_INT);
         $stm->execute();
         $f = $stm->fetchall(\PDO::FETCH_ASSOC);
         return json_encode($f);
@@ -68,10 +87,12 @@ class Disponibilidade extends CrudDisponibilidade{
         
         $start1 = $start->format("Y-m-d H:i:s");
         $end1 = $end->format("Y-m-d H:i:s");
- 
-        $this->livre = "tatakae";
 
-        $sql = 'INSERT INTO events ("start", "end") VALUES (:horaInicial, :horaFinal)';
+        $title = "'Livre'";        
+        $color = "'green'";     
+
+        $sql = 'INSERT INTO events (title, color, "start", "end") 
+        VALUES ('.$title.','. $color.', :horaInicial, :horaFinal)';
         $stm = DB::prepare($sql);
         $stm->bindParam(':horaInicial', $start1);
         $stm->bindParam(':horaFinal', $end1);

@@ -163,7 +163,6 @@ section section {
 
 .select {
 	display: flex;
-	flex-direction: column;
 	padding: 50px;
 }
 
@@ -314,13 +313,4 @@ footer .segundoRodaPe .img-footer2 {
 
 	}
 
-}
-
-
-/* Para Hospedar */
-
-
-.disclaimer {
-
-	display: none;
 }

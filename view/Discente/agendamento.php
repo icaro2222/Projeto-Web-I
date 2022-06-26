@@ -17,7 +17,8 @@ require_once('../../app/controller/Disponibilidade.php');
 	<title>Discente3</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?> >
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="<?php echo '../../public/js/fullcalendar/lib/main.min.css';?>">
+	<link rel="stylesheet" href="<?php echo '../../public/css/calendario.css';?>">
 </head>
 
 <?php
@@ -110,6 +111,7 @@ if (isset($_POST['Agendar'])) {
 			</div>
 			<!--texto1-->
 			<form action="" method="POST">
+
 				<!--ALTERARRRARARARA-->
 				<div class="select">
 					<p>Data e hora do agendamento:</p>
@@ -122,7 +124,49 @@ if (isset($_POST['Agendar'])) {
 						<input type="submit" name="Buscar" value="Busca Tutor disponível">
 					</div>
 					<!--botão-agendamento-->
+					<?php
+					if (isset($_POST['Buscar']) &&
+					$DisponibilidadeIdTutor->idTutor != '' 
+					) {?>
+							
+						<!--ALTERAR--->
+						<div class="select-tutor">
+						<select name="idTutor">
+							<?php
+							$usuarios = $usuario->findUnit($DisponibilidadeIdTutor->idTutor);
+							foreach ($usuarios as $key => $value) {
+								if ($value->usuario !=  '' && $value->nivel ==  2) { ?>
+									<option value="<?php echo $value->idUsuario; ?>">
+										<?php echo $value->usuario; ?> </option>
+							<?php
+								}
+							} ?>
+						</select>
+						<input type="submit" name="Agendar" value="Agendar">
+						</div>
+
+						<?php
+					}
+					?>
+				</div>
+			</form>
 					
+			<div class="horarios">
+
+				<h2>Horários da Academia:</h2>
+				<div class="horarios-pt1">
+					<div class="semana">
+					</div>
+					<!--semana-->
+					<div class="calendario">
+						<!--CALENDARIOOOOOOO
+					-->
+						<div class="calendar"></div>
+					</div>
+					<!--calendario-->
+				</div>
+				<!--horarios-pt1-->
+			</div>
 					<!--semana-->
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
@@ -144,29 +188,11 @@ if (isset($_POST['Agendar'])) {
 					<!--calendario-->
 				</div>
 				<!--agendamento-->
-				
-					<!--ALTERAR--->
-					<p>* Nesse horario estará presente o seguinte tutor:</p>
-					<div class="select-tutor">
-					<select name="idTutor">
-						<?php
-						$usuarios = $usuario->findUnit($DisponibilidadeIdTutor->idTutor);
-						foreach ($usuarios as $key => $value) {
-							if ($value->usuario !=  '' && $value->nivel ==  2) { ?>
-								<option value="<?php echo $value->idUsuario; ?>">
-									<?php echo $value->usuario; ?> </option>
-						<?php
-							}
-						} ?>
-					</select>
-
-					<input type="submit" name="Agendar" value="Agendar">
-					</div>
-			</form>
 		</div>
 		<!--container-->
 </section>
 
 </body>
-
+<script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
+<script src="<?php echo '../../public/js/calendarioDiscente.js'; ?>"></script>
 </html>

@@ -23,7 +23,7 @@
             // change the day's background color just for fun
             info.dayEl.style.backgroundColor = 'green';
         },
-        events: '../Discente/json.php',
+        events: '../Discente/jsonDis.php',
     });
     calendar.render();
     
