@@ -194,5 +194,5 @@ if (isset($_POST['Agendar'])) {
 
 </body>
 <script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
-<script src="<?php echo '../../public/js/calendarioDiscente.js'; ?>"></script>
+<script src="<?php echo '../../public/js/calendario.js'; ?>"></script>
 </html>

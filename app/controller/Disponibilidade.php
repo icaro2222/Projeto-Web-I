@@ -74,14 +74,6 @@ class Disponibilidade extends CrudDisponibilidade{
         $horaF = '"horaFinal"';
         $idT  = '"idTutor"';
 
-        $sql = "INSERT INTO $this->tabela (dia, $horaI, $horaF, $idT, livre) VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre)";
-        $stm = DB::prepare($sql);
-        $stm->bindParam(':dia', $this->dia);
-        $stm->bindParam(':horaInicial', $this->horaInicial);
-        $stm->bindParam(':horaFinal', $this->horaFinal);
-        $stm->bindParam(':idTutor', $this->idTutor, PDO::PARAM_INT);
-        $stm->bindParam(':livre', $this->livre);
-
         $start = new \DateTime($this->dia.' '.$this->horaInicial, new \DateTimeZone('America/Sao_Paulo'));
         $end = new \DateTime($this->dia.' '.$this->horaFinal, new \DateTimeZone('America/Sao_Paulo'));
         
@@ -96,6 +88,19 @@ class Disponibilidade extends CrudDisponibilidade{
         $stm = DB::prepare($sql);
         $stm->bindParam(':horaInicial', $start1);
         $stm->bindParam(':horaFinal', $end1);
+        $stm->execute();
+
+        usleep(100);
+
+        $select = '(SELECT MAX(id) FROM events)';
+        $sql = "INSERT INTO $this->tabela (dia, $horaI, $horaF, $idT, livre, fkevents) 
+        VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre, $select)";
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':dia', $this->dia);
+        $stm->bindParam(':horaInicial', $this->horaInicial);
+        $stm->bindParam(':horaFinal', $this->horaFinal);
+        $stm->bindParam(':idTutor', $this->idTutor, PDO::PARAM_INT);
+        $stm->bindParam(':livre', $this->livre);
         return $stm->execute();
     }
     

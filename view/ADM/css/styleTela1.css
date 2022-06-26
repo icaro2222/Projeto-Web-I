@@ -6,14 +6,24 @@
 
 }
 
+textarea {
+	text-align: justify;
+	padding: 10px;
+	font-size: 24px;
+}
+
 html,
 body {
 	height: 100%;
 }
 
+body {
+	background-color: #edffeb;
+}
+
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1042px;
 	margin: 0 auto;
 }
 
@@ -177,7 +187,6 @@ section:nth-of-type(2) {
 }
 
 .texto-add-regulamento textarea {
-	text-align: center;
 	width: 100%;
 	height: 200px;
 	resize: none;
@@ -259,14 +268,12 @@ section:nth-of-type(2) {
 
 section:nth-of-type(3) {
 	position: relative;
-	top: 40px;
+	top: 50px;
 }
 
 footer {
 	position: relative;
-	top: 10px;
-
-
+	top: 20px;
 }
 
 footer .primeiroRodaPe {

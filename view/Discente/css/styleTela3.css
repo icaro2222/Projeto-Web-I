@@ -161,6 +161,10 @@ section section {
 	top: 25px;
 }
 
+.calendario {
+	background-color: #e5ffef;
+}
+
 .select {
 	display: flex;
 	padding: 50px;

@@ -71,6 +71,6 @@ require_once('../../app/controller/Disponibilidade.php');
 
 	</section>
 <script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
-<script src="<?php echo '../../public/js/calendario.js'; ?>"></script>
+<script src="<?php echo '../../public/js/calendarioDiscente.js'; ?>"></script>
 </body>
 </html>

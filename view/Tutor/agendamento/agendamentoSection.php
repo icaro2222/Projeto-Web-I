@@ -40,8 +40,8 @@
     <form action="" method="POST">
 <div class="agendamento">
     <div class="texto1">
-        <h1>Agende seu horário:</h1>
-        <p>Data e hora do agendamento:</p>
+        <h1>Adicione mais um horário:</h1>
+        <p>Data e hora:</p>
     </div>
     <!--texto1-->
     <div class="select">
@@ -58,7 +58,7 @@
     </div>
     <!--select-->
     <div class="botão-agendamento">
-        <input type="submit" name="Agendar" value="Agendar">
+        <input type="submit" name="Agendar" value="Adicionar">
     </div>
     <!--botão-agendamento-->
 </div>
@@ -81,7 +81,7 @@
         <div class="select-bloqueio-aluno">
         <select name="idDiscente">
             <?php
-            $usuarios = $usuario->findAll();
+            $usuarios = $usuario->findAllDesbloqueio();
             foreach ($usuarios as $key => $value) {
                 if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
                     <option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>
@@ -126,7 +126,6 @@
         <select name="idDiscente">
             <?php
             $usuarios = $usuario->findAllBloqueio();
-            var_dump($usuarios);
             foreach ($usuarios as $key => $value) {
                 if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
                     <option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>

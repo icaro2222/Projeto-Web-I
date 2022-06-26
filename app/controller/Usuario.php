@@ -38,6 +38,22 @@ class Usuario extends CrudUsuario{
         return $stm->fetchAll();
     }
     
+
+    //busca todos os itens
+    public function findAllDesbloqueio() {
+        $idD = '"idDiscente"';
+        $idU = '"idUsuario"';
+
+        $sql = "SELECT * FROM $this->tabela AS u
+        INNER JOIN bloqueio AS b
+        ON b.$idD = u.$idU
+        WHERE b.bloqueio = 'true'";
+
+        $stm = DB::prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll();
+    }
+    
     //busca todos os itens
     public function findAtual() {
         $sql = "SELECT idUsuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
