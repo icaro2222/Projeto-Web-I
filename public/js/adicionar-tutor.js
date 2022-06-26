@@ -6,18 +6,7 @@ function adicionar(){
     var cont = document.querySelector('.cont').value;
 
     // var cont1 = "ocument.querySelector('#cont').value";
-
-    alert(cont);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    alert(cont); 
     
     // var recebeLink = $(this).attr('cont');  /* Cria variavel nome e depois Pega pelo atributo name do link*/
 	// //alert(nome);  // Mensagem de alerta

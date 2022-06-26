@@ -34,7 +34,7 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<div class="calendar"></div>
+						<div class="calendarDiscente"></div>
 					</div>
 					<!--calendario-->
 				</div>
@@ -71,6 +71,6 @@ require_once('../../app/controller/Disponibilidade.php');
 
 	</section>
 <script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
-<script src="<?php echo '../../public/js/calendarioDiscente.js'; ?>"></script>
+<script src="<?php echo '../../public/js/calendario.js'; ?>"></script>
 </body>
 </html>

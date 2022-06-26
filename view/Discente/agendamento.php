@@ -31,8 +31,10 @@ if (
 	isset($_POST['Buscar']) &&
 	isset($_POST['dia']) &&
 	$_POST['dia'] != "" &&
+	$_POST['dia'] != null &&
+	isset($_POST['hora']) &&
 	$_POST['hora'] != "" &&
-	isset($_POST['hora'])
+	$_POST['hora'] != null
 ) {
 
 	$dia = $_POST['dia'];
@@ -125,8 +127,16 @@ if (isset($_POST['Agendar'])) {
 					</div>
 					<!--botão-agendamento-->
 					<?php
-					if (isset($_POST['Buscar']) &&
-					$DisponibilidadeIdTutor->idTutor != '' 
+					if (
+						isset($_POST['Buscar']) &&
+						isset($_POST['dia']) &&
+						$_POST['dia'] != "" &&
+						$_POST['dia'] != null &&
+						isset($_POST['hora']) &&
+						$_POST['hora'] != "" &&
+						$_POST['hora'] != null &&
+						$DisponibilidadeIdTutor->idTutor != ''  &&
+						$DisponibilidadeIdTutor->idTutor != null
 					) {?>
 							
 						<!--ALTERAR--->
@@ -161,7 +171,7 @@ if (isset($_POST['Agendar'])) {
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<div class="calendar"></div>
+						<div class="calendarTutor"></div>
 					</div>
 					<!--calendario-->
 				</div>
