@@ -160,7 +160,13 @@ if (isset($_POST['Agendar'])) {
 					?>
 				</div>
 			</form>
-					
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="agendamento">
 			<div class="horarios">
 
 				<h2>Horários da Academia:</h2>
@@ -176,30 +182,11 @@ if (isset($_POST['Agendar'])) {
 					<!--calendario-->
 				</div>
 				<!--horarios-pt1-->
-			</div>
-					<!--semana-->
-					<div class="calendario">
-						<!--CALENDARIOOOOOOO
-					-->
-						<h1>Dias e Horários Disponíveis </h1>
-						<?php
-						$HorarioAgendado = new Disponibilidade;
 
-						$HorarioAgendados = $HorarioAgendado->findAll();
-							foreach ($HorarioAgendados as $key => $value) { ?>
-								<p><?php echo "<br>Dia : " . $value->dia; ?></p>
-								<p><?php echo "Horario Inicial: " . $value->horaInicial; ?></p>
-								<p><?php echo "Horario Final: " . $value->horaFinal; ?></p>
-							<?php
-							}
-						?>
-						
-					</div>
-					<!--calendario-->
-				</div>
-				<!--agendamento-->
-		</div>
-		<!--container-->
+			</div>
+			<!--agendamento-->
+	</div>
+	<!--container-->
 </section>
 
 </body>
