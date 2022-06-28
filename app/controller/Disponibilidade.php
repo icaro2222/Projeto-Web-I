@@ -21,7 +21,7 @@ class Disponibilidade extends CrudDisponibilidade{
         $end = '"end"';
         $date = date('Y-m-d H:m:s');
         $date = "CAST('$date' AS date)";
-        $sql = "SELECT * FROM events WHERE $end => $date ";
+        $sql = "SELECT * FROM events WHERE $end >= $date ";
         $stm = DB::prepare($sql);
         $stm->execute();
         $f = $stm->fetchall(\PDO::FETCH_ASSOC);
@@ -45,7 +45,7 @@ class Disponibilidade extends CrudDisponibilidade{
         JOIN agendamento a
         ON a.$idF = d.$idD
         WHERE a.$idDisc = :id AND 
-        $end => $date";
+        $end >= $date";
 
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idDisponibilidade, PDO::PARAM_INT);
