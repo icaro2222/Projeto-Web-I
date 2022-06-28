@@ -10,6 +10,7 @@
         
         $bloqueio->idDiscente = $_SESSION['idUsuario'];
         $bloqueio->idTutor = $_SESSION['idUsuario'];
+        $bloqueio->bloqueio = true;
         $on = $bloqueio->findUnit();
         
         if ($on) {?>

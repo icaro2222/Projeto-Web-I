@@ -10,11 +10,15 @@ class Bloqueio extends ModelBloqueio {
     public function findUnit() {
         $idD = '"idDiscente"';
         $idT = '"idTutor"';
+
         $sql = "SELECT bloqueio FROM $this->tabela 
-        WHERE  $idD = :idd AND $idT = :idt ";
+        WHERE  $idD = :idd AND $idT = :idt 
+        AND bloqueio = :bloqueio";
+        
         $stm = DB::prepare($sql);
         $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
         $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
+        $stm->bindParam(':bloqueio', $this->bloqueio);
         $stm->execute();
         if ($stm->rowCount() > 0) {
             return true;
