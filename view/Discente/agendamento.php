@@ -55,6 +55,54 @@ if (
 	echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!";
 }
 
+if (isset($_GET['idAgendar'])) {
+	
+	$idAgendar = $_GET['idAgendar'];
+	$start = $_GET['start'];
+	if(isset($_POST['DeletarAgendar'])){
+		
+		$disponibilidade->idDisponibilidade = $idAgendar;
+		if ($disponibilidade->delete()) { ?>
+				
+			<div class="modal">
+				<form action="" method="GET">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="hidden" name="menuop" value="agendamento">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+	
+			<?php		
+			} else {?>
+		
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!</h3>
+			</form>
+		</div>
+	
+		<?php	
+		}
+	}else{
+		?>
+
+		<div class="modal">
+			<form action="" method="POST">
+				<div class="container">
+					<div class="agendamento">
+						<input type="hidden" value="<?php echo $idAgendar;?> "><br>
+						<h2>Você Deseja Excluir Essse Agendamento ?</h2>
+						<h2><?php echo $start;?></h2>
+						<input type="submit" name="DeletarAgendar" value="Sim" width="150px">
+					</div>
+				</div>
+			</form>
+		</div>
+	<?php
+	}
+}
 if (isset($_POST['Agendar'])) {
 
 	if (isset($_POST['idTutor'])) {

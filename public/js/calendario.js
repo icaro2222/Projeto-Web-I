@@ -8,6 +8,10 @@
             var event =  '../Discente/jsonDis.php';
         }else if(perfil == 'Tutor'){
             var event =  '../Discente/json.php';
+        }else if(perfil == 'Tutor1'){
+            var event =  '../Discente/json.php';
+        }else if(perfil == 'Discente1'){
+            var event =  '../Discente/json.php';
         }
 
         let calendarEl=doc.querySelector(div);
@@ -48,13 +52,19 @@
                 alert('Current view: ' + info.view.type);*/
             },
                 
-            events: event
+            events: event,
 
-            // eventClick: function(info) {
-            //     if(perfil == 'Tutor'){
-            //         win.location.href=`/view/manager/editar?id=${info.event.id}`;
-            //     }
-            // }
+            eventClick: function(info) {
+                if(perfil == 'Tutor'){
+                    // win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=agendamento&idAgendar=${info.event.id}&start=${info.event.start}`;
+                }else if(perfil == 'Discente'){
+                    win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=agendamento&idAgendar=${info.event.id}&start=${info.event.start}`;
+                }else if(perfil == 'Tutor1'){
+                    win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=horario&idAgendar=${info.event.id}&start=${info.event.start}`;
+                }else if(perfil == 'Discente1'){
+                    win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=horario&idAgendar=${info.event.id}&start=${info.event.start}`;
+                }
+            }
         });
         calendar.render();
     }
@@ -63,6 +73,10 @@
         getCalendar('Discente','.calendarDiscente');
     }else if(doc.querySelector('.calendarTutor')){
         getCalendar('Tutor','.calendarTutor');
+    }else if(doc.querySelector('.calendarDiscente1')){
+        getCalendar('Discente1','.calendarDiscente1');
+    }else if(doc.querySelector('.calendarTutor1')){
+        getCalendar('Tutor1','.calendarTutor1');
     }
 
 })(window,document);

@@ -34,26 +34,46 @@ class Agendamento extends CrudAgendamento{
     
      //faz insert   
     public function insert() {
-        $tutor =  '"fkTutor"';
-        $discente =  '"fkDiscente"';
-        $disponibilidade =  '"fkDisponibilidade"';
-        $sqlVerificador = "SELECT * FROM $this->tabela
-        WHERE $discente = $this->fkDiscente AND $disponibilidade = $this->fkDisponibilidade";
         
-        $stm = DB::prepare($sqlVerificador);
-        $stm->execute();
-        if ($stm->rowCount() > 0 ) {
+        $discente =  '"fkDiscente"';
+        $idAgendamento = '"idAgendamento"';
+        $fkDisponibilidade = '"fkDisponibilidade"';
 
-        return false;
+        $sql = "SELECT COUNT($idAgendamento) FROM $this->tabela 
+        WHERE $fkDisponibilidade = :fkDisponibilidade 
+        AND  $discente = $this->fkDiscente";
+
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
+        // $stm->execute();$stm->rowCount() > 0
+
+        if (1 == 0 ) {
+
+            return false;
 
         }else{
-            $sql = "INSERT INTO $this->tabela ($tutor, $discente, $disponibilidade) 
-            VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
-            $stm = DB::prepare($sql);
-            $stm->bindParam(':fkTutor', $this->fkTutor);
-            $stm->bindParam(':fkDiscente', $this->fkDiscente);
-            $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
-            return $stm->execute();
+
+            $tutor =  '"fkTutor"';
+            $disponibilidade =  '"fkDisponibilidade"';
+            $sqlVerificador = "SELECT * FROM $this->tabela
+            WHERE $discente = $this->fkDiscente AND $disponibilidade = $this->fkDisponibilidade";
+            
+            $stm = DB::prepare($sqlVerificador);
+            $stm->execute();
+            
+            if ($stm->rowCount() > 0 ) {
+
+                return false;
+
+            }else{
+                $sql = "INSERT INTO $this->tabela ($tutor, $discente, $disponibilidade) 
+                VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
+                $stm = DB::prepare($sql);
+                $stm->bindParam(':fkTutor', $this->fkTutor);
+                $stm->bindParam(':fkDiscente', $this->fkDiscente);
+                $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
+                return $stm->execute();
+            }
         }
     }
     

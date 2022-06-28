@@ -21,7 +21,68 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 </head>
 
 <body>
+<?php
+if (isset($_GET['idAgendar'])) {
+	
+	$idAgendar = $_GET['idAgendar'];
+	$start = $_GET['start'];
+	if(isset($_POST['DeletarAgendar'])){
 
+		$disponibilidade = new Disponibilidade;
+		
+		$disponibilidade->idDisponibilidade = $idAgendar;
+		if ($disponibilidade->delete()) { ?>
+				
+			<div class="modal">
+				<form action="" method="GET">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="hidden" name="menuop" value="horario">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+	
+			<?php		
+			} else {?>
+		
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!</h3>
+			</form>
+		</div>
+	
+		<?php	
+		}
+	}else{
+		?>
+
+		<div class="modal">
+			<form action="" method="POST">
+				<div class="container">
+				<div class="horarios">
+					<h2>Horários da Academia:</h2>
+					<div class="horarios-pt1">
+						<div class="semana">
+						</div>
+						<!--semana-->
+						<div class="calendario">
+							<!--CALENDARIOOOOOOO-->
+						<input type="hidden" value="<?php echo $idAgendar;?> "><br>
+						<h2>Você Deseja Excluir Essse Agendamento ?</h2>
+						<h2><?php echo $start;?></h2>
+						<input type="submit" name="DeletarAgendar" value="Sim" width="150px">
+						</div>
+						<!--calendario-->
+					</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	<?php
+	}
+}
+?>
 	<section>
 		<div class="container">
 			<div class="horarios">
@@ -32,7 +93,7 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 					<!--semana-->
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO-->
-						<div class="calendarTutor"></div>
+						<div class="calendarTutor1"></div>
 					</div>
 					<!--calendario-->
 				</div>
