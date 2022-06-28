@@ -45,11 +45,6 @@ if (
 	$duracao = '01:00';
 	$horaFinal = date('H:i', strtotime("{$horaInicial[0]} hours {$horaInicial[1]} minutes  + {$duracao[0]} hours {$duracao[1]} minutes "));
 
-	// echo "<br><br><br><br>".$horaInicial;
-	// echo "<br><br><br><br>".$horaFinal;
-	// echo "<br><br><br><br>". date('H:i',strtotime($horaInicial));
-	// echo "<br><br><br><br>". date('H:i',strtotime($duracao));
-
 	$disponibilidade->setDia($dia);
 	$disponibilidade->setHoraInicial($horaInicial);
 	$disponibilidade->setHoraFinal($horaFinal);
@@ -80,20 +75,26 @@ if (isset($_POST['Agendar'])) {
 		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
 
 		if ($agendamento->insert()) { ?>
-			<style>
-				.modal img {
-					display: block;
-				}
-			</style>
-			<?php
-			sleep(2);
-			?>
-			<style>
-				.modal img {
-					display: block;
-				}
-			</style>
-<?php
+		
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+
+			<?php		
+			} else {?>
+		
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>Você já possui agendamento nesse horário !!!</h3>
+			</form>
+		</div>
+
+		<?php	
 		}
 	} else {
 		echo "<br>Seleione um tutor!!!!";
@@ -102,9 +103,6 @@ if (isset($_POST['Agendar'])) {
 
 ?>
 
-<div class="modal">
-	<img src="../../public/img/sucess.gif" alt="" srcset="">
-</div>
 <section>
 	<div class="container">
 		<div class="agendamento">
@@ -118,8 +116,8 @@ if (isset($_POST['Agendar'])) {
 				<div class="select">
 					<p>Data e hora do agendamento:</p>
 					<div class="select-data">
-						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>">
-						<input type="time" name="hora" id="" value="<?php echo $disponibilidade->horaInicial ?>">
+						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>" required>
+						<input type="time" name="hora" id="" value="<?php echo $disponibilidade->horaInicial ?>" required>
 					</div>
 					<!--select-->
 					<div class="botão-agendamento2">
@@ -135,6 +133,7 @@ if (isset($_POST['Agendar'])) {
 						isset($_POST['hora']) &&
 						$_POST['hora'] != "" &&
 						$_POST['hora'] != null &&
+						isset($DisponibilidadeIdTutor->idTutor) &&
 						$DisponibilidadeIdTutor->idTutor != ''  &&
 						$DisponibilidadeIdTutor->idTutor != null
 					) {?>
@@ -150,7 +149,8 @@ if (isset($_POST['Agendar'])) {
 										<?php echo $value->usuario; ?> </option>
 							<?php
 								}
-							} ?>
+							} 
+							?>
 						</select>
 						<input type="submit" name="Agendar" value="Agendar">
 						</div>

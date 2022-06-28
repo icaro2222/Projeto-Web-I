@@ -32,7 +32,7 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 					<!--semana-->
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO-->
-						<div class="calendarTutor"></div>
+						<div class="calendarDiscente"></div>
 					</div>
 					<!--calendario-->
 				</div>
@@ -42,9 +42,6 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 					<div class="seletor-periodo">
 						<div class="meus-horarios">
 							<h2>Meus Horários:</h2>
-							<?php
-							// include(__DIR__."/horarioTutor.php");
-							?>
 						</div>
 						<!--h2-->
 					</div>
@@ -61,7 +58,7 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 
 	</section>
 <script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
-<script src="<?php echo '../../public/js/calendario.js'; ?>"></script>
+<script src="<?php echo '/calendario1.js'; ?>"></script>
 </body>
 
 </html>

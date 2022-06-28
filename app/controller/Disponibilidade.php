@@ -70,38 +70,54 @@ class Disponibilidade extends CrudDisponibilidade{
     
      //faz insert   
     public function insert() {
-        $horaI = '"horaInicial"';
-        $horaF = '"horaFinal"';
-        $idT  = '"idTutor"';
 
-        $start = new \DateTime($this->dia.' '.$this->horaInicial, new \DateTimeZone('America/Sao_Paulo'));
-        $end = new \DateTime($this->dia.' '.$this->horaFinal, new \DateTimeZone('America/Sao_Paulo'));
-        
-        $start1 = $start->format("Y-m-d H:i:s");
-        $end1 = $end->format("Y-m-d H:i:s");
-
-        $title = "'Livre'";        
-        $color = "'green'";     
-
-        $sql = 'INSERT INTO events (title, color, "start", "end") 
-        VALUES ('.$title.','. $color.', :horaInicial, :horaFinal)';
+        $hora1 = '"horaInicial"';
+        $hora2 = '"horaFinal"';
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (( :horaInicial BETWEEN $hora1 AND $hora2) OR ( :horaFinal BETWEEN $hora1 AND $hora2))";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':horaInicial', $start1);
-        $stm->bindParam(':horaFinal', $end1);
-        $stm->execute();
-
-        usleep(100);
-
-        $select = '(SELECT MAX(id) FROM events)';
-        $sql = "INSERT INTO $this->tabela (dia, $horaI, $horaF, $idT, livre, fkevents) 
-        VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre, $select)";
-        $stm = DB::prepare($sql);
-        $stm->bindParam(':dia', $this->dia);
+        $stm->bindParam(':date', $this->dia);
         $stm->bindParam(':horaInicial', $this->horaInicial);
         $stm->bindParam(':horaFinal', $this->horaFinal);
-        $stm->bindParam(':idTutor', $this->idTutor, PDO::PARAM_INT);
-        $stm->bindParam(':livre', $this->livre);
-        return $stm->execute();
+        $stm->execute();
+
+        if ($stm->rowCount() > 0 ) {
+
+            return false;
+        
+        }else{
+            $horaI = '"horaInicial"';
+            $horaF = '"horaFinal"';
+            $idT  = '"idTutor"';
+
+            $start = new \DateTime($this->dia.' '.$this->horaInicial, new \DateTimeZone('America/Sao_Paulo'));
+            $end = new \DateTime($this->dia.' '.$this->horaFinal, new \DateTimeZone('America/Sao_Paulo'));
+            
+            $start1 = $start->format("Y-m-d H:i:s");
+            $end1 = $end->format("Y-m-d H:i:s");
+
+            $title = "'Livre'";        
+            $color = "'green'";     
+
+            $sql = 'INSERT INTO events (title, color, "start", "end") 
+            VALUES ('.$title.','. $color.', :horaInicial, :horaFinal)';
+            $stm = DB::prepare($sql);
+            $stm->bindParam(':horaInicial', $start1);
+            $stm->bindParam(':horaFinal', $end1);
+            $stm->execute();
+
+            usleep(100);
+
+            $select = '(SELECT MAX(id) FROM events)';
+            $sql = "INSERT INTO $this->tabela (dia, $horaI, $horaF, $idT, livre, fkevents) 
+            VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre, $select)";
+            $stm = DB::prepare($sql);
+            $stm->bindParam(':dia', $this->dia);
+            $stm->bindParam(':horaInicial', $this->horaInicial);
+            $stm->bindParam(':horaFinal', $this->horaFinal);
+            $stm->bindParam(':idTutor', $this->idTutor, PDO::PARAM_INT);
+            $stm->bindParam(':livre', $this->livre);
+            return $stm->execute();
+        }
     }
     
     //update de itens

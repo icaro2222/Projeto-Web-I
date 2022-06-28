@@ -12,8 +12,8 @@
 
     <form action="./view/login/logar.php" method="POST">
         <!-- <h3>Login</h3> -->
-        <input type="text" id="email" name="login" placeholder="Digite seu usuario">
-        <input type="password" id="password" name="senha" placeholder="Digite sua senha">
+        <input type="text" id="email" name="login" placeholder="Digite seu usuario" required>
+        <input type="password" id="password" name="senha" placeholder="Digite sua senha" required>
 
         <input type="submit" value="entrar">
     </form>

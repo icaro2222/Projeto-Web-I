@@ -48,11 +48,11 @@
         <div class="select-data">
 
             <p>Dia:</p>
-            <input type="date" name="date" id="">
+            <input type="date" name="date" id="" required>
             <p>Hora Inicial:</p>
-            <input type="time" name="timeInicial" id="">
+            <input type="time" name="timeInicial" id="" required>
             <p>Hora Final:</p>
-            <input type="time" name="timeFinal" id="">
+            <input type="time" name="timeFinal" id="" required>
         </div>
         <!--select-min-->
     </div>

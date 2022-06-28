@@ -37,12 +37,24 @@ class Agendamento extends CrudAgendamento{
         $tutor =  '"fkTutor"';
         $discente =  '"fkDiscente"';
         $disponibilidade =  '"fkDisponibilidade"';
-        $sql = "INSERT INTO $this->tabela ($tutor, $discente, $disponibilidade) VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
-        $stm = DB::prepare($sql);
-        $stm->bindParam(':fkTutor', $this->fkTutor);
-        $stm->bindParam(':fkDiscente', $this->fkDiscente);
-        $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
-        return $stm->execute();
+        $sqlVerificador = "SELECT * FROM $this->tabela
+        WHERE $discente = $this->fkDiscente AND $disponibilidade = $this->fkDisponibilidade";
+        
+        $stm = DB::prepare($sqlVerificador);
+        $stm->execute();
+        if ($stm->rowCount() > 0 ) {
+
+        return false;
+
+        }else{
+            $sql = "INSERT INTO $this->tabela ($tutor, $discente, $disponibilidade) 
+            VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
+            $stm = DB::prepare($sql);
+            $stm->bindParam(':fkTutor', $this->fkTutor);
+            $stm->bindParam(':fkDiscente', $this->fkDiscente);
+            $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
+            return $stm->execute();
+        }
     }
     
     //update de itens

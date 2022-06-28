@@ -26,11 +26,26 @@ if (
     $disponibilidade->setIdTutor($_SESSION['idUsuario']);
     if($disponibilidade->insert()){
     ?>
-            <div class="model">
-                <img src="../../public/img/sucess.gif" alt="">
-            </div>
+    <div class="modal">
+        <form action="" method="POST">
+            <img src="../../public/img/sucess.gif" alt="" srcset="">
+            <input type="submit" value="fecha">
+        </form>
+    </div>
+
     <?php
-    }
+    } else {?>
+		
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>Você já possui agendamento nesse horário !!!</h3>
+			</form>
+		</div>
+
+		<?php	
+		}
 }
 
 if (
@@ -43,9 +58,13 @@ if (
 
     if($bloqueio->insert()){
     ?>
-            <div class="model">
-                <img src="../../public/img/sucess.gif" alt="">
-            </div>
+    <div class="modal">
+        <form action="" method="POST">
+            <img src="../../public/img/sucess.gif" alt="" srcset="">
+            <input type="submit" value="fecha">
+        </form>
+    </div>
+
     <?php
     }
 }
@@ -62,9 +81,13 @@ if (
 
     if($bloqueio->desbloqueiarDiscente()){
     ?>
-            <div class="model">
-                <img src="../../public/img/sucess.gif" alt="">
-            </div>
+    <div class="modal">
+        <form action="" method="POST">
+            <img src="../../public/img/sucess.gif" alt="" srcset="">
+            <input type="submit" value="fecha">
+        </form>
+    </div>
+
     <?php
     }
 }
@@ -79,9 +102,13 @@ if (
 
     if($bloqueio->update()){
     ?>
-            <div class="model">
-                <img src="../../public/img/sucess.gif" alt="">
-            </div>
+    <div class="modal">
+        <form action="" method="POST">
+            <img src="../../public/img/sucess.gif" alt="" srcset="">
+            <input type="submit" value="fecha">
+        </form>
+    </div>
+
     <?php
     }
 }

@@ -40,12 +40,12 @@ require_once('../../app/controller/Disponibilidade.php');
 				</div>
 				<!--horarios-pt1-->
 
-				<div class="horarios-pt2">
+				<!-- <div class="horarios-pt2">
 					<div class="seletor-periodo">
 						<div class="meus-horarios">
 							<h2>Meus Horários:</h2>
 						</div>
-						<!--h2-->
+						h2
 						<div class="select">
 							<select name="select">
 								<option value="valor1">Periodo 1</option>
@@ -53,17 +53,17 @@ require_once('../../app/controller/Disponibilidade.php');
 								<option value="valor3">Periodo 2</option>
 							</select>
 						</div>
-						<!--select-->
+						select
 					</div>
-					<!--seletor-periodo-->
+					seletor-periodo
 					<div class="meus-horarios">
 						<ul>
 							<input type="date" name="" id="">
 						</ul>
 					</div>
-					<!--meus-horarios-->
+					meus-horarios
 				</div>
-				<!--horarios-pt2-->
+				horarios-pt2 -->
 			</div>
 			<!--horarios-->
 		</div>

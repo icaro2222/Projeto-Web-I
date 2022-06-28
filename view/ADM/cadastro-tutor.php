@@ -72,11 +72,13 @@ require_once('../../app/controller/Disponibilidade.php');
 			$idTutor = $usuario->findultimo();
 			$disponibilidade->setIdTutor($idTutor->max);
 			$disponibilidade->insert();
-			}
-		?>
-				<div class="model">
-					<img src="../../public/img/sucess.gif" alt="">
-				</div>
+			}?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
 		<?php
 		}
 	}
@@ -89,11 +91,14 @@ require_once('../../app/controller/Disponibilidade.php');
 
 		$usuario->setIdUsuario($idTutor);
 
-		if ($usuario->delete()) { ?>
-			<div class="model">
-					<img src="../../public/img/sucess.gif" alt="">
-				</div>
-			<?php
+		if ($usuario->delete()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 
@@ -104,11 +109,14 @@ require_once('../../app/controller/Disponibilidade.php');
 		$Tutor->setIdTutor($idTutor);
 		$Tutor->setDescricao($descricao);
 
-		if ($Tutor->update()) { ?>
-			<div class="model">
-					<img src="../../public/img/sucess.gif" alt="">
-				</div>
-			<?php
+		if ($Tutor->update()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 	
@@ -122,7 +130,6 @@ require_once('../../app/controller/Disponibilidade.php');
 		$dia = $_POST['date0'];
 		$horaInicial = $_POST['timeInicial0'];
 		$horaFinal = $_POST['timeFinal0'];
-		$idTutor = 44;
 		$livre = 1;
 
 		?>
@@ -134,19 +141,19 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome"><?php echo $nome; ?></textarea>
+							<textarea name="nome" required><?php echo $nome; ?></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula"><?php echo $nome; ?></textarea>
+							<textarea name="matricula" required><?php echo $nome; ?></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login"><?php echo $nome; ?></textarea>
+							<textarea name="login" required><?php echo $nome; ?></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha"><?php echo $nome; ?></textarea>
+							<textarea name="senha" required><?php echo $nome; ?></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->
@@ -158,11 +165,11 @@ require_once('../../app/controller/Disponibilidade.php');
 						<div class="select">
 							<div class="select-data">
 								<p>Dia:</p>
-								<input type="date" name="date<?php echo $cont; ?>" id="" value="<?php echo $dia; ?>" >
+								<input type="date" name="date<?php echo $cont; ?>" id="" value="<?php echo $dia; ?>" required >
 								<p>Hora Inicial:</p>
-								<input type="time" name="timeInicial<?php echo $cont; ?>" id="" value="<?php echo $horaInicial; ?>" >
+								<input type="time" name="timeInicial<?php echo $cont; ?>" id="" value="<?php echo $horaInicial; ?>"  required>
 								<p>Hora Final:</p>
-								<input type="time" name="timeFinal<?php echo $cont; ?>" id="" value="<?php echo $horaFinal; ?>" >
+								<input type="time" name="timeFinal<?php echo $cont; ?>" id="" value="<?php echo $horaFinal; ?>"  required>
 							</div>
 							<!--select-min-->
 						</div>
@@ -175,11 +182,11 @@ require_once('../../app/controller/Disponibilidade.php');
 						<div class="select">
 							<div class="select-data">
 								<p>Dia:</p>
-								<input type="date" name="date0" id="" value="<?php echo $dia.$cont; ?>">
+								<input type="date" name="date0" id="" value="<?php echo $dia.$cont; ?>" required>
 								<p>Hora Inicial:</p>
-								<input type="time" name="timeInicial0" id="" value="<?php echo $horaInicial.$cont; ?>" >
+								<input type="time" name="timeInicial0" id="" value="<?php echo $horaInicial.$cont; ?>"  required>
 								<p>Hora Final:</p>
-								<input type="time" name="timeFinal0" id="" value="<?php echo $horaFinal.$cont; ?>">
+								<input type="time" name="timeFinal0" id="" value="<?php echo $horaFinal.$cont; ?>" required>
 								<div>
 									<input type="hidden" name="cont" value="<?php echo $cont+1; ?>">
 									<button type="submit" name="Adicionar">
@@ -214,19 +221,19 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome"></textarea>
+							<textarea name="nome" required></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula"></textarea>
+							<textarea name="matricula" required></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login"></textarea>
+							<textarea name="login" required></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha"></textarea>
+							<textarea name="senha" required></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->
@@ -235,11 +242,11 @@ require_once('../../app/controller/Disponibilidade.php');
 						<div class="select">
 							<div class="select-data">
 								<p>Dia:</p>
-								<input type="date" name="date0" id="">
+								<input type="date" name="date0" id="" required>
 								<p>Hora Inicial:</p>
-								<input type="time" name="timeInicial0" id="">
+								<input type="time" name="timeInicial0" id="" required>
 								<p>Hora Final:</p>
-								<input type="time" name="timeFinal0" id="">
+								<input type="time" name="timeFinal0" id="" required>
 								<div>
 									<input type="hidden" name="cont" value="1">
 									<button type="submit" name="Adicionar">

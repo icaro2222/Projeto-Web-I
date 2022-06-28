@@ -39,12 +39,14 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(3);
 
-		if ($usuario->insert()) {
-	?>
-			<div class="model">
-				<img src="../../public/img/sucess.gif" alt="">
+		if ($usuario->insert()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
 			</div>
-	<?php
+		<?php
 		}
 	}
 
@@ -57,12 +59,14 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 
 		$usuario->setIdUsuario($idDiscente);
 
-		if ($usuario->delete())  {
-			?>
-					<div class="model">
-						<img src="../../public/img/sucess.gif" alt="">
-					</div>
-			<?php
+		if ($usuario->delete())  {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 
@@ -73,8 +77,14 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 		$Tutor->setidDiscente($idDiscente);
 		$Tutor->setDescricao($descricao);
 
-		if ($Tutor->update()) {
-			echo "Tutor " . $descricao . " atualizado com sucesso";
+		if ($Tutor->update()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 	?>
@@ -87,19 +97,19 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome" require></textarea>
+							<textarea name="nome"  required></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula"></textarea>
+							<textarea name="matricula" required></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login"></textarea>
+							<textarea name="login" required></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha"></textarea>
+							<textarea name="senha" required></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->
