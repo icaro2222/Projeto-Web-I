@@ -12,7 +12,7 @@
         $bloqueio->idTutor = $_SESSION['idUsuario'];
         $on = $bloqueio->findUnit();
         
-        if ($on->bloqueio) {?>
+        if ($on) {?>
         <form action="" method="POST">
         <input type="submit" name="on-off" value="false">
         <?php
