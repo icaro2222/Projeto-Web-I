@@ -9,7 +9,7 @@ abstract class ModelBloqueio extends DB{
     public $idTutor;
     public $idDiscente;
     public $tempo;
-    public $bloqueio = true;
+    public $bloqueio = false;
 
     public function gettempo(){
         return $this->tempo;

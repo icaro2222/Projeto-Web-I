@@ -78,7 +78,7 @@ if (
     ) {
 
         $bloqueio->idDiscente = $_POST['idDiscente'];
-        $bloqueio->bloqueio = true;
+        $bloqueio->bloqueio = 'false';
 
     if($bloqueio->desbloqueiarDiscente()){
     ?>

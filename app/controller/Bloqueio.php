@@ -32,7 +32,7 @@ class Bloqueio extends ModelBloqueio {
         $idT = '"idTutor"';
         $tempo = '"tempo"';
         $sql = "INSERT INTO $this->tabela ($idD, $idT, $tempo, bloqueio) 
-        VALUES (:idDiscente, :idTutor, :tempo, 'false')";
+        VALUES (:idDiscente, :idTutor, :tempo, 'true')";
         $stm = DB::prepare($sql);
         $stm->bindParam(':idDiscente', $this->idDiscente);
         $stm->bindParam(':idTutor', $this->idTutor);

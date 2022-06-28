@@ -105,6 +105,8 @@ if (isset($_POST['Agendar'])) {
 
 <section>
 	<div class="container">
+		<?php
+		if ($usuario->findBloqueio($_SESSION['idUsuario'])) {?>
 		<div class="agendamento">
 			<div class="texto1">
 				<h1>Agende seu horário:</h1>
@@ -135,7 +137,8 @@ if (isset($_POST['Agendar'])) {
 						$_POST['hora'] != null &&
 						isset($DisponibilidadeIdTutor->idTutor) &&
 						$DisponibilidadeIdTutor->idTutor != ''  &&
-						$DisponibilidadeIdTutor->idTutor != null
+						$DisponibilidadeIdTutor->idTutor != null &&
+						$usuario->findAllDesbloqueioKey($DisponibilidadeIdTutor->idTutor) == true
 					) {?>
 							
 						<!--ALTERAR--->
@@ -161,6 +164,20 @@ if (isset($_POST['Agendar'])) {
 				</div>
 			</form>
 		</div>
+		<?php
+		}else{
+			?>
+		
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/falha.gif" alt="" srcset="">
+					<h2>Desculpe, mas você está bloqueado !!!</h2><br>
+					<h2>PROCURE A COORDENAÇÃO!!!</h2><br>
+				</form>
+			</div>
+
+			<?php	
+		} ?>
 	</div>
 </section>
 
