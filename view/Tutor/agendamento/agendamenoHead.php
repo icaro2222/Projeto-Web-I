@@ -41,6 +41,7 @@ if (
 				<img src="../../public/img/falha.gif" alt="" srcset="">
 				<input type="submit" value="fecha">
 				<h3>Você já possui agendamento nesse horário !!!</h3>
+				<h3>Ou Data INVÁLIDA !!!</h3>
 			</form>
 		</div>
 

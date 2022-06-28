@@ -18,7 +18,10 @@ class Disponibilidade extends CrudDisponibilidade{
     //busca json
 
     public function findjson() {
-        $sql = "SELECT * FROM events";
+        $end = '"end"';
+        $date = date('Y-m-d H:m:s');
+        $date = "CAST('$date' AS date)";
+        $sql = "SELECT * FROM events WHERE $end => $date ";
         $stm = DB::prepare($sql);
         $stm->execute();
         $f = $stm->fetchall(\PDO::FETCH_ASSOC);
@@ -32,12 +35,17 @@ class Disponibilidade extends CrudDisponibilidade{
         $idD = '"idDisponibilidade"';
         $idDisc = '"fkDiscente"';
         $idF = '"fkDisponibilidade"';
+        $end = '"end"';
+        $date = date('Y-m-d H:m:s');
+        $date = "CAST('$date' AS date)";
+
         $sql = "SELECT e.* FROM events e
         INNER JOIN disponibilidade d
         ON d.fkevents = e.id
         JOIN agendamento a
         ON a.$idF = d.$idD
-        WHERE a.$idDisc = :id";
+        WHERE a.$idDisc = :id AND 
+        $end => $date";
 
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idDisponibilidade, PDO::PARAM_INT);
@@ -73,14 +81,17 @@ class Disponibilidade extends CrudDisponibilidade{
 
         $hora1 = '"horaInicial"';
         $hora2 = '"horaFinal"';
-        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (( :horaInicial BETWEEN $hora1 AND $hora2) OR ( :horaFinal BETWEEN $hora1 AND $hora2))";
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND 
+        (( :horaInicial BETWEEN $hora1 AND $hora2) OR 
+        ( :horaFinal BETWEEN $hora1 AND $hora2))";
         $stm = DB::prepare($sql);
         $stm->bindParam(':date', $this->dia);
         $stm->bindParam(':horaInicial', $this->horaInicial);
         $stm->bindParam(':horaFinal', $this->horaFinal);
         $stm->execute();
 
-        if ($stm->rowCount() > 0 ) {
+        if ($stm->rowCount() > 0 ||  
+        strtotime('2022-06-29') > strtotime(date('Y-m-d'))) {
 
             return false;
         

@@ -4,9 +4,13 @@ ini_set("display_errors", 1);
 
 require_once(__DIR__.'/model/DB/variaveis.php');
 
+if (strtotime('2022-06-29') > strtotime(date('Y-m-d'))) {
+	echo date('Y-m-d H-m-s');
+	
+}
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	
@@ -24,4 +28,4 @@ require_once(__DIR__.'/model/DB/variaveis.php');
 <script src="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.js'; ?>"></script>
 <script src="<?php echo DIRPAGE.'public/js/calendario.js'; ?>"></script>
 </body>
-</html>
+</html> -->
