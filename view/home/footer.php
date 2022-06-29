@@ -1,6 +1,6 @@
 
 	<footer>
-		<div class="container">
+		
 			<div class="primeiroRodaPe">
 				<p>Instituto Federal de Educação, Ciência e Tecnologia Baiano – Campus Guanambi
 					Zona Rural - Distrito de Ceraíma, Bahia - CEP: 46430-000</p>
@@ -25,8 +25,7 @@
 				<!--segundoRodaPe-->
 			</div>
 			<!--container-segundoRodaPe-->
-		</div>
-		<!--container-->
+		
 	</footer>
 
 </html>

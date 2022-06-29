@@ -28,8 +28,7 @@ require_once('../../app/controller/Disponibilidade.php');
 			<div class="horarios">
 				<h2>Horários da Academia:</h2>
 				<div class="horarios-pt1">
-					<div class="semana">
-					</div>
+					
 					<!--semana-->
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO

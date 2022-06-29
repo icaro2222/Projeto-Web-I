@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -14,25 +12,25 @@
 
 <body>
 	<header>
-		<div class="container">
-			<div class="cabecario">
-				<div class="logo-topo">
 
-				</div>
-				<!--logo-topo-->
-				<div class="cabecariopt2">
-					<h3>Instituto Federal de Educação, Ciência e Tecnologia Baiano</h1>
-						<h1>Campus Guanambi</h1>
-						<form action="../login/logout.php">
-							<input type="submit" name="Sair" value="Sair"></form>
-						<div class="borda-cabe">
-						</div>
-						<!--borda-cabe-->
+		<div class="cabecario">
+			<div class="logo-topo">
 
-				</div>
-				<!--cabecariopt2 -->
 			</div>
-			<!--cabecario-->
+			<!--logo-topo-->
+			<div class="cabecariopt2">
+				<h3>Instituto Federal de Educação, Ciência e Tecnologia Baiano</h1>
+					<h1>Campus Guanambi</h1>
+					<form action="../login/logout.php">
+						<input type="submit" name="Sair" value="Sair">
+					</form>
+					<div class="borda-cabe">
+					</div>
+					<!--borda-cabe-->
+
+			</div>
+			<!--cabecariopt2 -->
 		</div>
-		<!--contaiver-->
+		<!--cabecario-->
+
 	</header>

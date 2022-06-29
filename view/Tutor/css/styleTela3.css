@@ -11,9 +11,13 @@ body {
 	height: 100%;
 }
 
+body {
+	background-color: #edffeb;
+}
+
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1042px;
 	margin: 0 auto;
 }
 
@@ -152,7 +156,8 @@ footer *.container {
 .texto1-bt input {
 	position: relative;
 	left: 150px;
-
+	width: 80px;
+	height: 30px;
 	cursor: pointer;
 
 	background: #0A5517;
@@ -404,6 +409,49 @@ footer .segundoRodaPe .img-footer2 {
 	background-size: 100% 100%;
 }
 
+.modal-sucesso {
+	position: absolute;
+	text-align: center;
+	z-index: 1;
+	left: 40%;
+
+}
+
+.modal-sucesso input {
+	cursor: pointer;
+	width: 80px;
+	height: 50px;
+	background-color: #000000;
+	color: white;
+	position: relative;
+	bottom: 231px;
+	font-size: 20px;
+
+}
+
+.modal-falha {
+	position: absolute;
+	left: 33.3%;
+
+	background-color: #ffffff;
+	z-index: 1;
+}
+
+
+
+.modal-falha input {
+	cursor: pointer;
+	width: 80px;
+	height: 50px;
+	background-color: #000000;
+	color: white;
+	position: relative;
+	bottom: 368px;
+	font-size: 20px;
+
+
+}
+
 
 
 @media screen and (max-width: 1130px) {
@@ -425,6 +473,8 @@ footer .segundoRodaPe .img-footer2 {
 		left: 60%;
 
 	}
+
+
 }
 
 @media screen and (max-width: 780px) {
@@ -443,6 +493,36 @@ footer .segundoRodaPe .img-footer2 {
 
 	}
 
+	.modal-falha {
+
+		left: 15%;
+
+	}
+
+	.modal-falha img {
+		max-width: 50%;
+		max-height: 50%;
+	}
+
+	.modal-falha input {
+		bottom: 100px;
+	}
+
+	.select-data {
+		flex-direction: column;
+	}
+
+	.select {
+		text-align: center;
+	}
+
+	.select-data input {
+		position: initial;
+		width: auto;
+		height: auto;
+	}
+
+
 }
 
 @media screen and (max-width: 660px) {
@@ -452,7 +532,7 @@ footer .segundoRodaPe .img-footer2 {
 
 	.cabecariopt2 input {
 		left: 88%;
-
+		bottom: 0;
 	}
 
 	.select-tempo-bloqueio input {
@@ -463,6 +543,14 @@ footer .segundoRodaPe .img-footer2 {
 	.select-desbloqueio input {
 		left: 30%;
 
+	}
+
+	.texto1-bt input {
+		position: relative;
+		left: 30%;
+
+		top: 50px;
+		cursor: pointer;
 	}
 
 }

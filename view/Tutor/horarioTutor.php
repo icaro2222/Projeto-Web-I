@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once(__DIR__.'/../../app/controller/Agendamento.php');
-require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
+require_once(__DIR__ . '/../../app/controller/Agendamento.php');
+require_once(__DIR__ . '/../../app/controller/Disponibilidade.php');
 
 ?>
 
@@ -13,11 +13,11 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Discente2</title>
+	<title>Discente</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo '../../public/js/fullcalendar/lib/main.min.css';?>">
-	<link rel="stylesheet" href="<?php echo '../../public/css/calendario.css';?>">
+	<link rel="stylesheet" href="<?php echo '../../public/js/fullcalendar/lib/main.min.css'; ?>">
+	<link rel="stylesheet" href="<?php echo '../../public/css/calendario.css'; ?>">
 </head>
 
 <body>
@@ -40,13 +40,11 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 
 				<div class="horarios-pt2">
 					<div class="seletor-periodo">
-						<div class="meus-horarios">
-							<h2>Meus Horários:</h2>
-						</div>
+
 						<!--h2-->
 					</div>
 					<!--seletor-periodo-->
-					
+
 
 					<!--meus-horarios-->
 				</div>
@@ -57,8 +55,8 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 		<!--container-->
 
 	</section>
-<script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
-<script src="<?php echo '/calendario1.js'; ?>"></script>
+	<script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
+	<script src="<?php echo '/calendario1.js'; ?>"></script>
 </body>
 
 </html>

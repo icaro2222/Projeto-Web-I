@@ -26,7 +26,7 @@ if (
     $disponibilidade->setIdTutor($_SESSION['idUsuario']);
     if($disponibilidade->insert()){
     ?>
-    <div class="modal">
+    <div class="modal-sucesso">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">
@@ -36,11 +36,11 @@ if (
     <?php
     } else {?>
 		
-		<div class="modal">
+		<div class="modal-falha">
 			<form action="" method="POST">
 				<img src="../../public/img/falha.gif" alt="" srcset="">
 				<input type="submit" value="fecha">
-				<h3>Você já possui agendamento nesse horário !!!</h3>
+				<h1>Você já possui agendamento nesse horário !!!</h1>
 				<h3>Ou Data INVÁLIDA !!!</h3>
 			</form>
 		</div>
@@ -59,7 +59,7 @@ if (
 
     if($bloqueio->insert()){
     ?>
-    <div class="modal">
+    <div class="modal-sucesso">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">
@@ -82,7 +82,7 @@ if (
 
     if($bloqueio->desbloqueiarDiscente()){
     ?>
-    <div class="modal">
+    <div class="modal-sucesso">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">
@@ -103,7 +103,7 @@ if (
 
     if($bloqueio->update()){
     ?>
-    <div class="modal">
+    <div class="modal-sucesso">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">

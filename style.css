@@ -1,17 +1,17 @@
 #logo {
-    align-items: flex-end;
-    position: absolute;
+    align-items: flex-start;
     background-color: rgba(231, 233, 235, 0.4);
-    height: 200px;
-    width: 200px;
-    padding: 400;
-    position: absolute;
+    border-radius: 8%;
+    height: 150px;
+    width: 150px;
+
+
 }
 
 /*eae*/
 #header {
-    margin-left: 100px;
-    margin-top: 100px;
+    margin-left: 3%;
+    margin-top: 3%;
 }
 
 body,
@@ -86,11 +86,13 @@ form div {
 
 body {
     background-image: url('public/img/academia.jpg');
-    background-size: 100%;
+    background-size: 100% 100%;
     border-radius: 15px;
-    height: 260px;
+    width: 100%;
+    height: 1200px;
     padding-right: 10px;
     margin-right: 5px;
+    background-repeat: no-repeat;
 }
 
 form {
@@ -150,6 +152,31 @@ form input[type=password]:focus {
 }
 
 
+@media screen and (max-width:800px) {
+    .logogo {
+
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+    #logo {
+        max-height: 200px;
+        height: 400px;
+        width: 200px;
+    
+    
+    }
+    
+    form {
+        
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        
+    }
+}
+
+
 
 
 /* Para Hospedar */
@@ -159,4 +186,3 @@ form input[type=password]:focus {
 
     display: none;
 }
-

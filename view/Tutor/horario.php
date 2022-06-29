@@ -88,8 +88,7 @@ if (isset($_GET['idAgendar'])) {
 			<div class="horarios">
 				<h2>Horários da Academia:</h2>
 				<div class="horarios-pt1">
-					<div class="semana">
-					</div>
+					
 					<!--semana-->
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO-->
@@ -102,7 +101,7 @@ if (isset($_GET['idAgendar'])) {
 				<div class="horarios-pt2">
 					<div class="seletor-periodo">
 						<div class="meus-horarios">
-							<h2>Meus Horários:</h2>
+							
 							<?php
 							// include(__DIR__."/horarioTutor.php");
 							?>

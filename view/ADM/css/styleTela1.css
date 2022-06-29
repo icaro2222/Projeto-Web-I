@@ -343,6 +343,12 @@ footer .segundoRodaPe .img-footer2 {
 	footer .primeiroRodaPe {
 		height: 180px;
 	}
+	.painelDeEscolha a {
+		
+		font-size: 15px;
+		font-weight: bold;
+	
+	}
 
 }
 
@@ -353,6 +359,7 @@ footer .segundoRodaPe .img-footer2 {
 
 	.cabecariopt2 input {
 		left: 88%;
+		bottom: 0;
 
 	}
 

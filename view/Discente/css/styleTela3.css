@@ -11,9 +11,13 @@ body {
 	height: 100%;
 }
 
+body {
+	background-color: #edffeb;
+}
+
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1042px;
 	margin: 0 auto;
 }
 
@@ -126,7 +130,7 @@ footer *.container {
 
 }
 
-section section {
+section section:nth-of-type(1) {
 	position: relative;
 	top: 30px;
 }
@@ -174,7 +178,13 @@ section section {
 .select-data {
 	padding-top: 20px;
 	padding-left: 31px;
+	padding-right: 15px;
 
+}
+
+.select-data input {
+	position: relative;
+	top: -16px;
 }
 
 .botão-agendamento {
@@ -191,12 +201,12 @@ section section {
 	border-radius: 4px;
 	color: white;
 	left: 50px;
-	top: 40px;
+	top: 2px;
 	font-size: 15px;
 }
 
 .botão-agendamento2 {
-	height: 130px;
+	width: 33.3%;
 }
 
 .botão-agendamento2 input {
@@ -209,7 +219,7 @@ section section {
 	border-radius: 4px;
 	color: white;
 	left: 32px;
-	top: 40px;
+	top: 2px;
 	font-size: 15px;
 }
 
@@ -231,9 +241,61 @@ section section {
 	font-size: 15px;
 }
 
+section:nth-of-type(2) {
+	position: relative;
+	top: 40px;
+}
+
+.horarios {
+	width: 100%;
+	background-color: #ECF1EC;
+}
+
+.horarios h2 {
+	padding: 30px;
+	font-size: 35px;
+}
+
+.horarios-pt1 {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 680px;
+	padding: 15px 40px 15px 40px;
+}
+
+.semana {
+	width: 50%;
+
+}
+
+.semana ul {
+	width: 100%;
+	list-style: none;
+}
+
+.semana ul li {
+	padding: 20px;
+	font-size: 20px;
+	color: black;
+	font-weight: 900;
+}
+
+.calendario {
+	background-color: #e5ffef;
+	width: 100%;
+	height: 90%;
+	text-align: center;
+}
+
+.calendarTutor {
+	max-height: 585px;
+	height: 100%;
+}
+
 footer {
 	position: relative;
-	top: 45px;
+	top: 50px;
 }
 
 footer .primeiroRodaPe {
@@ -256,7 +318,7 @@ footer .primeiroRodaPe p {
 footer .container-segundoRodaPe {
 
 	width: 100%;
-	height: 100px;
+
 }
 
 footer .segundoRodaPe {
@@ -310,7 +372,23 @@ footer .segundoRodaPe .img-footer2 {
 
 	.cabecariopt2 input {
 		left: 88%;
+		bottom: 0;
+	}
+
+	.select {
+		flex-direction: column;
+		text-align: center;
 
 	}
+
+	.botão-agendamento2 {
+		width: 100%;
+	}
+
+	.botão-agendamento2 input {
+		position: initial;
+	}
+
+
 
 }

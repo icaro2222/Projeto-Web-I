@@ -8,9 +8,13 @@
 html,body{
 	height: 100%;
 }
-.container{
+body {
+	background-color: #edffeb;
+}
+
+.container {
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1042px;
 	margin: 0 auto;
 }
 .cabecario{

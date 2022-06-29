@@ -11,9 +11,13 @@ body {
 	height: 100%;
 }
 
+body {
+	background-color: #edffeb;
+}
+
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1042px;
 	margin: 0 auto;
 }
 
@@ -168,8 +172,14 @@ section section {
 }
 
 .calendario {
-	background-color: white;
-	width: 80%;
+	background-color: #e5ffef;
+	width: 100%;
+	height: 90%;
+	text-align: center;
+}
+
+.calendarTutor1 {
+	max-height: 639px;
 	height: 100%;
 }
 
@@ -239,7 +249,7 @@ footer .primeiroRodaPe p {
 footer .container-segundoRodaPe {
 
 	width: 100%;
-	height: 100px;
+
 }
 
 footer .segundoRodaPe {
@@ -285,6 +295,7 @@ footer .segundoRodaPe .img-footer2 {
 	footer .primeiroRodaPe {
 		height: 180px;
 	}
+	
 
 }
 
@@ -295,6 +306,7 @@ footer .segundoRodaPe .img-footer2 {
 
 	.cabecariopt2 input {
 		left: 88%;
+		bottom: 0;
 
 	}
 

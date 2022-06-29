@@ -17,9 +17,13 @@ body {
 	height: 100%;
 }
 
+body {
+	background-color: #edffeb;
+}
+
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1042px;
 	margin: 0 auto;
 }
 
@@ -346,6 +350,7 @@ footer .segundoRodaPe .img-footer2 {
 
 	.cabecariopt2 input {
 		left: 88%;
+		bottom: 0;
 
 	}
 
