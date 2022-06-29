@@ -25,8 +25,14 @@ require_once('../../app/controller/Regulamento.php');
 
 		$regulamento->setDescricao($descricao);
 
-		if ($regulamento->insert()) {
-			echo "regulamento " . $descricao . " inserido com sucesso";
+		if ($regulamento->insert()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+			<?php
 		}
 	}
 	if (isset($_POST['Remover'])) {
@@ -34,8 +40,14 @@ require_once('../../app/controller/Regulamento.php');
 
 		$regulamento->setIdRegulamento($idRegulamento);
 
-		if ($regulamento->delete()) {
-			echo "regulamento " . $idRegulamento . " excluido com sucesso";
+		if ($regulamento->delete()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+			<?php
 		}
 	}
 	if (isset($_POST['Salvar'])) {
@@ -45,8 +57,14 @@ require_once('../../app/controller/Regulamento.php');
 		$regulamento->setIdRegulamento($idRegulamento);
 		$regulamento->setDescricao($descricao);
 
-		if ($regulamento->update()) {
-			echo "regulamento " . $descricao . " atualizado com sucesso";
+		if ($regulamento->update()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+			<?php
 		}
 	}
 	?>
