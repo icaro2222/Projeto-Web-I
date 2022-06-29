@@ -105,7 +105,7 @@ if (
     ?>
     <div class="modal-sucesso">
         <form action="" method="POST">
-            <img src="../../public/img/sucess.gif" alt="" srcset="">
+            <img src="../../public/img/sucess.gif" alt="">
             <input type="submit" value="fecha">
         </form>
     </div>
