@@ -136,7 +136,8 @@ class Usuario extends CrudUsuario{
         $stm->bindParam(':endereco', $this->endereco);
         $stm->bindParam(':senha', $this->senha);
         $stm->bindParam(':nivel', $this->nivel);
-        return $stm->execute();
+        $stm->execute();
+        return self::getInstance()->lastInsertId() ;
     }
     
     //update de itens

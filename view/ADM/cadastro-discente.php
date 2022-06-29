@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require_once(__DIR__.'/../../app/controller/Usuario.php');
+require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 
 ?>
 
@@ -22,6 +23,7 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 
 	<?php
 	$usuario = new Usuario;
+	$bloqueio = new Bloqueio;
 
 	if (
 		isset($_POST['Cadastrar']) &&
@@ -38,8 +40,13 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(3);
+		$id = $usuario->insert();
+		
+		if($id != null) {
+			$bloqueio->idTutor = $_SESSION['idUsuario'];
+			$bloqueio->idDiscente = $id;
 
-		if ($usuario->insert()) {?>
+			if ($bloqueio->insert()) {?>
 			<div class="modal">
 				<form action="" method="POST">
 					<img src="../../public/img/sucess.gif" alt="" srcset="">
@@ -47,6 +54,7 @@ require_once(__DIR__.'/../../app/controller/Usuario.php');
 				</form>
 			</div>
 		<?php
+		}
 		}
 	}
 

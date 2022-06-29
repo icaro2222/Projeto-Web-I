@@ -4,6 +4,7 @@ ini_set("display_errors", 1);
 
 require_once('../../app/controller/Usuario.php');
 require_once('../../app/controller/Disponibilidade.php');
+require_once('../../app/controller/Bloqueio.php');
 
 ?>
 
@@ -24,6 +25,7 @@ require_once('../../app/controller/Disponibilidade.php');
 	<?php
 	$usuario = new Usuario;
 	$disponibilidade = new Disponibilidade;
+	$bloqueio = new Bloqueio;
 
 	if (
 		isset($_POST['Cadastrar']) &&
@@ -52,8 +54,9 @@ require_once('../../app/controller/Disponibilidade.php');
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(2);
-
-		if ($usuario->insert()) {
+		$id = $usuario->insert();
+		var_dump($id);
+		if ($id != null) {
 			
 			$contArray = array();
 			
@@ -71,8 +74,13 @@ require_once('../../app/controller/Disponibilidade.php');
 			$usuario->nivel = 2;
 			$idTutor = $usuario->findultimo();
 			$disponibilidade->setIdTutor($idTutor->max);
+			
 			$disponibilidade->insert();
-			}?>
+
+			$bloqueio->idTutor = $_SESSION['idUsuario'];
+			$bloqueio->idDiscente = $id;
+			}
+			if ($bloqueio->insert()) {?>
 			<div class="modal">
 				<form action="" method="POST">
 					<img src="../../public/img/sucess.gif" alt="" srcset="">
@@ -80,6 +88,7 @@ require_once('../../app/controller/Disponibilidade.php');
 				</form>
 			</div>
 		<?php
+		}
 		}
 	}
 
