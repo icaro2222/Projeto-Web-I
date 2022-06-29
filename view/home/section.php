@@ -31,7 +31,7 @@
 					include '../ADM/regulamento.php';
 					break;
 				case 'agendamento':
-					include '../ADM/agendamento.php';
+					include '../ADM/agendamento/agendamento.php';
 					break;
 				case 'noticias':
 					include '../ADM/noticias.php';
