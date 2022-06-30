@@ -88,7 +88,7 @@ if (isset($_GET['idAgendar'])) {
 	}else{
 		?>
 
-		<div class="modal">
+		<div class="modal-excluir">
 			<form action="" method="POST">
 				<div class="container">
 					<div class="agendamento">
@@ -134,7 +134,7 @@ if (isset($_POST['Agendar'])) {
 			<?php		
 			} else {?>
 		
-		<div class="modal">
+		<div class="modal-falha">
 			<form action="" method="POST">
 				<img src="../../public/img/falha.gif" alt="" srcset="">
 				<input type="submit" value="fecha">
@@ -216,7 +216,7 @@ if (isset($_POST['Agendar'])) {
 		}else{
 			?>
 		
-			<div class="modal">
+			<div class="modal-falha">
 				<form action="" method="POST">
 					<img src="../../public/img/falha.gif" alt="" srcset="">
 					<h2>Desculpe, mas você está bloqueado !!!</h2><br>
