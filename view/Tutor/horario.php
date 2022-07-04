@@ -21,30 +21,32 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 </head>
 
 <body>
+	
+
+<section>
+	
 <?php
 if (isset($_GET['idAgendar'])) {
 	
+	$disponibilidade = new Disponibilidade;
 	$idAgendar = $_GET['idAgendar'];
 	$start = $_GET['start'];
 	if(isset($_POST['DeletarAgendar'])){
-
-		$disponibilidade = new Disponibilidade;
 		
 		$disponibilidade->idDisponibilidade = $idAgendar;
 		if ($disponibilidade->delete()) { ?>
 				
-			<div class="modal">
-				<form action="" method="GET">
+			<div class="modal-agendamento">
+				<form action="" method="POST">
 					<img src="../../public/img/sucess.gif" alt="" srcset="">
-					<input type="hidden" name="menuop" value="horario">
 					<input type="submit" value="fecha">
 				</form>
 			</div>
-	
+			
 			<?php		
 			} else {?>
 		
-		<div class="modal">
+		<div class="modal-falha-agendamento">
 			<form action="" method="POST">
 				<img src="../../public/img/falha.gif" alt="" srcset="">
 				<input type="submit" value="fecha">
@@ -54,27 +56,17 @@ if (isset($_GET['idAgendar'])) {
 	
 		<?php	
 		}
-	}else{
+	}else if(!isset($_POST['Não'])){
 		?>
-
-		<div class="modal">
+		<div class="modal-excluir">
 			<form action="" method="POST">
 				<div class="container">
-				<div class="horarios">
-					<h2>Horários da Academia:</h2>
-					<div class="horarios-pt1">
-						<div class="semana">
-						</div>
-						<!--semana-->
-						<div class="calendario">
-							<!--CALENDARIOOOOOOO-->
+					<div class="horarios">
 						<input type="hidden" value="<?php echo $idAgendar;?> "><br>
 						<h2>Você Deseja Excluir Essse Agendamento ?</h2>
 						<h2><?php echo $start;?></h2>
 						<input type="submit" name="DeletarAgendar" value="Sim" width="150px">
-						</div>
-						<!--calendario-->
-					</div>
+						<input type="submit" name="Não" value="Nao" width="150px">
 					</div>
 				</div>
 			</form>
@@ -83,6 +75,7 @@ if (isset($_GET['idAgendar'])) {
 	}
 }
 ?>
+</section>
 	<section>
 		<div class="container">
 			<div class="horarios">

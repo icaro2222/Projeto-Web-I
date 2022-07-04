@@ -22,7 +22,58 @@ require_once('../../app/controller/Disponibilidade.php');
 </head>
 
 <body>
-
+<section>
+	
+<?php
+if (isset($_GET['idAgendar'])) {
+	
+	$idAgendar = $_GET['idAgendar'];
+	$start = $_GET['start'];
+	if(isset($_POST['DeletarAgendar'])){
+		
+		$disponibilidade->idDisponibilidade = $idAgendar;
+		if ($disponibilidade->delete()) { ?>
+				
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+	
+			<?php		
+			} else {?>
+		
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!</h3>
+			</form>
+		</div>
+	
+		<?php	
+		}
+	}else if(!isset($_POST['Não'])){
+		?>
+		<div class="modal-excluir">
+			<form action="" method="POST">
+				<div class="container">
+					<div class="horarios">
+						<input type="hidden" value="<?php echo $idAgendar;?> "><br>
+						<h2>Você Deseja Excluir Essse Agendamento ?</h2>
+						<h2><?php var_dump($start);?></h2>
+						<input type="submit" name="DeletarAgendar" value="Sim" width="150px">
+						<input type="submit" name="Não" value="Nao" width="150px">
+					</div>
+				</div>
+			</form>
+		</div>
+	<?php
+	}
+}
+?>
+</section>
 <section>
 		<div class="container">
 			<div class="horarios">

@@ -62,3 +62,99 @@
 	font-size: 20px;
 
 }
+
+.modal-agendamento img{
+	border-radius: 100%;
+}
+
+.modal-agendamento {
+	cursor: pointer;
+	width: 80px;
+	height: 50px;
+	border-radius: 10px;
+    left: 27rem;
+    z-index: 4;
+	color: white;
+	position: absolute;
+	bottom: -125px;
+	font-size: 20px;
+
+}
+
+
+.modal-agendamento input {
+	cursor: pointer;
+	width: 80px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #000000;
+	color: white;
+	position: relative;
+	bottom: 231px;
+	font-size: 20px;
+
+}
+.modal-falha-agendamento label{
+	color: crimson;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.modal-falha-agendamento {
+	cursor: pointer;
+	width: 80px;
+	height: 50px;
+	border-radius: 10px;
+    left: 23rem;
+    z-index: 4;
+	color: white;
+	position: absolute;
+	bottom: -125px;
+	font-size: 20px;
+
+}
+
+
+.modal-falha-agendamento input {
+	cursor: pointer;
+	width: 80px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #000000;
+	color: white;
+	position: relative;
+	bottom: 231px;
+	font-size: 20px;
+
+}
+
+.modal-excluir label{
+	color: crimson;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.modal-excluir {
+	width: 580px;
+	border-radius: 10px;
+    left: 15rem;
+	top: 8rem;
+    z-index: 3;
+	border-radius: 10px;
+	color: rgb(255, 0, 0);
+	position: absolute;
+	font-size: 20px;
+
+}
+
+
+.modal-excluir input {
+	cursor: pointer;
+	width: 285px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #024616;
+	color: rgb(255, 255, 255);
+	position: relative;
+	bottom: 231px;
+	font-size: 20px;
+
+}
