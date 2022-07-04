@@ -40,8 +40,9 @@ if (
 			<form action="" method="POST">
 				<img src="../../public/img/falha.gif" alt="" srcset="">
 				<input type="submit" value="fecha">
-				<h1>Você já possui agendamento nesse horário !!!</h1>
-				<h3>Ou Data INVÁLIDA !!!</h3>
+                <Label><h2>Você já possui agendamento nesse horário !!!</h2></Label>
+                <Label><h2>           Ou Data INVÁLIDA !!!</h2></Label>
+				
 			</form>
 		</div>
 

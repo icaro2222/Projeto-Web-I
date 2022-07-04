@@ -434,29 +434,6 @@ footer .segundoRodaPe .img-footer2 {
 
 }
 
-.modal-falha {
-	position: absolute;
-	left: 33.3%;
-
-	background-color: #ffffff;
-	z-index: 1;
-}
-
-
-
-.modal-falha input {
-	cursor: pointer;
-	width: 80px;
-	height: 50px;
-	background-color: #000000;
-	color: white;
-	position: relative;
-	bottom: 368px;
-	font-size: 20px;
-
-
-}
-
 
 
 @media screen and (max-width: 1130px) {

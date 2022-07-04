@@ -94,7 +94,7 @@ class Disponibilidade extends CrudDisponibilidade{
         $stm->execute();
 
         if ($stm->rowCount() > 0 ||  
-        strtotime("$this->dia") < strtotime(date('Y-m-d'))) {
+        strtotime("$this->dia") <= strtotime(date('Y-m-d'))) {
 
             return false;
         
