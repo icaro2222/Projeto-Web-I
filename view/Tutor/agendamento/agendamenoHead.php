@@ -56,8 +56,9 @@ if (
     $bloqueio->idDiscente = $_POST['idDiscente'];
     $bloqueio->idTutor = $_SESSION['idUsuario'];
     $bloqueio->tempo = $_POST['tempo'];
+    $bloqueio->bloqueio = 'true';
 
-    if($bloqueio->insert()){
+    if($bloqueio->update()){
     ?>
     <div class="modal-sucesso">
         <form action="" method="POST">

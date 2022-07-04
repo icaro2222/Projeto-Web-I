@@ -14,9 +14,6 @@
 				<a type="submit" href="../home/dashboard.php?menuop=cadastro-tutor">Cadastro Tutor</a>
 			</div>
 			<!--painelDeEscolha-->
-
-
-			<!--painelDeEscolha-->
 	</div>
 	<!--container-->
 
@@ -42,9 +39,6 @@
 				case 'cadastro-discente':
 					include '../ADM/cadastro-discente.php';
 					break;
-					// case 'update_env':
-					// 	include('paginas/discente/update_env.php');
-					// 	break;
 			}
 		} elseif ($nivel == 2) { ?>
 
@@ -73,9 +67,6 @@
 				case 'noticias':
 					include '../Tutor/noticias.php';
 					break;
-					// case 'update_env':
-					// 	include('paginas/Tutor/update_env.php');
-					// 	break;
 			}
 		} else { ?>
 			<div class="painelDeEscolha">
@@ -103,9 +94,6 @@
 				case 'noticias':
 					include(__DIR__.'/../Discente/noticias.php');
 					break;
-					// case 'update_env':
-					// 	include('paginas/discente/update_env.php');
-					// 	break;
 			}} ?>
 		
 </section>

@@ -15,9 +15,9 @@
 	<header>
 
 		<div class="cabecario">
-			<div class="logo-topo">
-
-			</div>
+			
+			<a href="/view/home/dashboard.php"><div class="logo-topo"></div></a>
+			
 			<!--logo-topo-->
 			<div class="cabecariopt2">
 				<h3>Instituto Federal de Educação, Ciência e Tecnologia Baiano</h1>

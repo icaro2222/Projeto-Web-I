@@ -57,24 +57,26 @@ class Bloqueio extends ModelBloqueio {
         $idD = '"idDiscente"';
         $idT = '"idTutor"';
         $sql = "SELECT bloqueio FROM $this->tabela 
-        WHERE  $idD = :idd AND $idT = :idt ";
+        WHERE  $idD = :idd"; 
+        // AND $idT = :idt 
         $stm = DB::prepare($sql);
         $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
-        $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
+        // $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
         $stm->execute();
         
         if ($stm->rowCount() > 0) {
             $sql = "UPDATE $this->tabela 
             SET bloqueio = :bloqueio 
-            WHERE $idD = :idd AND $idT = :idt";
+            WHERE $idD = :idd ";
+            // AND $idT = :idt"
     
             $stm = DB::prepare($sql);
             $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
-            $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
+            // $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
             $stm->bindParam(':bloqueio', $this->bloqueio);
             return $stm->execute();
         }else{
-            return false;
+            return $this->insert();
         }
 
     }

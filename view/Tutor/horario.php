@@ -37,8 +37,9 @@ if (isset($_GET['idAgendar'])) {
 		if ($disponibilidade->delete()) { ?>
 				
 			<div class="modal-agendamento">
-				<form action="" method="POST">
+				<form action="" method="">
 					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="hidden" name="menuop" value="horario">
 					<input type="submit" value="fecha">
 				</form>
 			</div>
