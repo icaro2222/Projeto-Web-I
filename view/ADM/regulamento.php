@@ -75,14 +75,34 @@ require_once('../../app/controller/Regulamento.php');
 	<section>
 		<div class="container">
 			<div class="regulamento">
-				<h1>Regulamento</h1>
+				<h1>Regulamentos</h1>
+				<form action="" method="POST" >
+				<table>
+					<thead>
+						<tr>
+							<th>Descrição</th>
+							<th>Editar</th>
+							<th>Excluir</th>
+						</tr>
+					</thead>
 				<?php
 				$regulamentos = $regulamento->findAll();
 				foreach ($regulamentos as $key => $value) { ?>
-					<p><?php echo "<h3>* Regulamento " . $value->idRegulamento . ":</h3></br>" . $value->descricao; ?></p>
+					<tbody>
+						<tr>
+							<td><?php echo "<br><h3>" . $value->descricao; ?>
+							
+							<input type="hidden" name="idRegulamento" value="<?php echo $value->idRegulamento; ?>">
+							
+							<td><button><a href=""><br>Editar</a></button></td>
+							<td><button name="Remover"><br>Excluit</button></td></td>
+						</tr>
+					</tbody>
 				<?php
 				}
 				?>
+				</table>
+				</form>
 			</div>
 			<!--notas-->
 		</div>

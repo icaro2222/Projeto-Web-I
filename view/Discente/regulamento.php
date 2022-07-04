@@ -23,16 +23,22 @@ require_once('../../app/controller/Regulamento.php');
 	<section>
 		<div class="container">
 			<div class="notas">
-				<h1>Regulamento</h1>
+							<th><h1>Regulamento</h1></th>
+				<table>
 				<?php
 				$regulamento = new Regulamento;
 				$regulamentos = $regulamento->findAll();
 				$cont = 0;
 				foreach ($regulamentos as $key => $value) { ?>
-					<p><?php $cont++;echo $cont." : ".$value->descricao; ?></p>
+					<tbody>
+						<tr>
+							<td><p><?php $cont++;echo $cont." : ".$value->descricao; ?></p></td>
+						</tr>
+					</tbody>
 				<?php
 				}
 				?>
+				</table>
 			</div>
 			<!--notas-->
 		</div>

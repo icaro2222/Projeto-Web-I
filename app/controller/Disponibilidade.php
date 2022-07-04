@@ -118,12 +118,14 @@ class Disponibilidade extends CrudDisponibilidade{
             $stm->bindParam(':horaInicial', $start1);
             $stm->bindParam(':horaFinal', $end1);
             $stm->execute();
+            $id = self::getInstance()->lastInsertId();
 
             usleep(100);
 
-            $select = '(SELECT MAX(id) FROM events)';
+            // $select = '(SELECT MAX(id) FROM events)';
+            
             $sql = "INSERT INTO $this->tabela (dia, $horaI, $horaF, $idT, livre, fkevents) 
-            VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre, $select)";
+            VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre, $id)";
             $stm = DB::prepare($sql);
             $stm->bindParam(':dia', $this->dia);
             $stm->bindParam(':horaInicial', $this->horaInicial);

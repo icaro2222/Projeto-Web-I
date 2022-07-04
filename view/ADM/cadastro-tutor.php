@@ -29,12 +29,24 @@ require_once('../../app/controller/Bloqueio.php');
 
 	if (
 		isset($_POST['Cadastrar']) &&
+		isset($_POST['nome']) &&
+		isset($_POST['senha']) &&
+		isset($_POST['login']) &&
+		isset($_POST['date0']) &&
+		isset($_POST['timeInicial0']) &&
+		isset($_POST['timeFinal0']) &&
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
 		$_POST['login'] != '' &&
 		$_POST['date0'] != '' &&
 		$_POST['timeInicial0'] != '' &&
-		$_POST['timeFinal0'] != ''
+		$_POST['timeFinal0'] != '' &&
+		$_POST['nome'] != null &&
+		$_POST['senha'] != null &&
+		$_POST['login'] != null &&
+		$_POST['date0'] != null &&
+		$_POST['timeInicial0'] != null &&
+		$_POST['timeFinal0'] != null
 	) {
 
 		$nome = $_POST['nome'];
@@ -55,7 +67,8 @@ require_once('../../app/controller/Bloqueio.php');
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(2);
 		$id = $usuario->insert();
-		if ($id != null) {
+
+		if ($id != null && $id != false) {
 			
 			$contArray = array();
 			
@@ -88,6 +101,15 @@ require_once('../../app/controller/Bloqueio.php');
 			</div>
 		<?php
 		}
+		}else{?>
+			<div class="modal-falha">
+				<form action="" method="POST">
+					<img src="../../public/img/falha.gif" alt="" srcset="">
+					<Label>Login Já Existente, Use outro !!!</Label>
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 
@@ -229,19 +251,19 @@ require_once('../../app/controller/Bloqueio.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome" required></textarea>
+							<textarea name="nome" min="2" minlength="5" maxlength="42" required></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula" required></textarea>
+							<textarea name="matricula" min="2" minlength="5" maxlength="16" required></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login" required></textarea>
+							<textarea name="login" min="2" minlength="5" maxlength="12" required></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha" required></textarea>
+							<textarea name="senha" min="2" minlength="8" maxlength="12" required></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->

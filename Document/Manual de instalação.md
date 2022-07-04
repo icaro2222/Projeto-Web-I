@@ -12,16 +12,19 @@ Acesse o código do sistema e no caminho .../model/bd mude o usuário, a senha e
 
 # Para rodar o site
 
-- Faça o download do arquivo .zip no [Readme](https://github.com/web1-2022-1/sisfis/blob/main/README.md);
+- Instale o Apache;
+- Instale o Php;
+- Instale o PostgreSQL;
+- Clone o repositório;
 - Adicione o arquivo na pasta do apache (htdocs no windows, www no Linux);
 - Extraia os arquivos do .zip;
 - Entre na pasta "model";
 - Entre na pasta "DB";
 - Acessar o arquivo "Variáveis";
-- Modificar a linha 20 trocando ```define('HOST','ifbaiano');``` para ```define('HOST','localhost');```;
-- Modificar a linha 21 trocando ```define('USER','ifbaiano');``` para ```define('USER','usuário do seu banco de dados');```;
-- Modificar a linha 22 trocando ```define('PASS','ifbaiano');``` para ```define('PASS','Senha do seu banco de dados');```;
-- Modificar a linha 23 trocando ```define('BASE','ifbaiano');``` para ```define('BASE','banco de dados que está sendo utilizado');```;
+- - Modificar a linha 20 trocando ```define('HOST','ifbaiano');``` para ```define('HOST','localhost');```;
+- - Modificar a linha 21 trocando ```define('USER','ifbaiano');``` para ```define('USER','usuário do seu banco de dados');```;
+- - Modificar a linha 22 trocando ```define('PASS','ifbaiano');``` para ```define('PASS','Senha do seu banco de dados');```;
+- - Modificar a linha 23 trocando ```define('BASE','ifbaiano');``` para ```define('BASE','banco de dados que está sendo utilizado');```;
 
 
 ## Instalando e configurando o Apache 2.4.41 no Linux

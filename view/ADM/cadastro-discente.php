@@ -27,9 +27,15 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 
 	if (
 		isset($_POST['Cadastrar']) &&
+		isset($_POST['nome']) &&
+		isset($_POST['senha']) &&
+		isset($_POST['login']) &&
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
-		$_POST['login'] != ''
+		$_POST['login'] != '' &&
+		$_POST['nome'] != null &&
+		$_POST['senha'] != null &&
+		$_POST['login'] != null
 		) {
 
 		$nome = $_POST['nome'];
@@ -42,7 +48,7 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 		$usuario->setNivel(3);
 		$id = $usuario->insert();
 		
-		if($id != null) {
+		if($id != null && $id != false) {
 			$bloqueio->idTutor = $_SESSION['idUsuario'];
 			$bloqueio->idDiscente = $id;
 
@@ -55,6 +61,15 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 			</div>
 		<?php
 		}
+		}else{?>
+			<div class="modal-falha">
+				<form action="" method="POST">
+					<img src="../../public/img/falha.gif" alt="" srcset="">
+					<label for="">Login Já Existente, Tende outro !!!</label>
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 
@@ -105,19 +120,19 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome"  required></textarea>
+							<textarea name="nome" min="2" minlength="5" maxlength="42" required></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula" required></textarea>
+							<textarea name="matricula"  min="2" minlength="5" maxlength="16" required></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login" required></textarea>
+							<textarea name="login"  min="2" minlength="5" maxlength="12" required></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha" required></textarea>
+							<textarea type="password" name="senha" minlength="8" maxlength="12" required></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->

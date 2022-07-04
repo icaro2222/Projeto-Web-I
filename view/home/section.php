@@ -8,7 +8,7 @@
 		?>
 			<div class="painelDeEscolha">
 				<a href="../home/dashboard.php?menuop=home">Regulamento</a>
-				<a href="../home/dashboard.php?menuop=agendamento">Agendamento</a>
+				<a href="../home/dashboard.php?menuop=agendamento">Bloquear Aluno</a>
 				<a href="../home/dashboard.php?menuop=noticias">Noticias</a>
 				<a type="submit" href="../home/dashboard.php?menuop=cadastro-discente">Cadastro Discente</a>
 				<a type="submit" href="../home/dashboard.php?menuop=cadastro-tutor">Cadastro Tutor</a>

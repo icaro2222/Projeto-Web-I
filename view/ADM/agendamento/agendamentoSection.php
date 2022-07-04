@@ -25,19 +25,15 @@
 
         </div>
         <!--select-bloqueio-aluno-->
-        <p>Tempo:</p>
+        <div class="texto1">
+            <p>Tempo:</p>
+        </div>
+        <div>
+            <label for="">Quantidade de dias:</label>
+            <input type="number" name="tempo" id="" value="1" minlength="2" maxlength="2" max="30" min="1">
         <div class="select-tempo-bloqueio">
-            <select name="tempo">
-                <option value="1">1 dia</option>
-                <option value="2">2 dias</option>
-                <option value="3">3 dias</option>
-                <option value="4">5 dias</option>
-                <option value="5">1 semana</option>
-                <option value="6">2 semana</option>
-                <option value="7">1 mês</option>
-            </select>
-
         <input type="submit" name="Bloquear" value="Bloquear">
+    </div>
     </div>
     <!--agendamento-->
 </form>

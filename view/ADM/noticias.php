@@ -83,14 +83,30 @@ require_once('../../app/controller/Noticia.php');
 	<section>
 		<div class="container">
 			<div class="notas">
-				<h1>Notícias</h1>
+				<table>
+					<thead>
+						<tr>
+							<th><h1>Notícias</h1></th>
+							<th>Editar</th>
+							<th>Excluir</th>
+						</tr>
+					</thead>
 				<?php
 				$Noticias = $Noticia->findAll();
 				foreach ($Noticias as $key => $value) { ?>
-					<p><?php echo "* Noticia " . $value->idNoticia . " : " . $value->descricao; ?></p>
+					<tbody>
+						<tr>
+							<td><?php echo $value->descricao; ?></td>
+							<input type="hidden" name="idNoticia" 
+							value="<?php echo $value->idNoticia; ?>">
+							<td><input type="submit" name="Remover" value="Excluir"></td>
+							<td><input type="submit" name="Salvar" value="Editar"></td>
+						</tr>
+					</tbody>
 				<?php
 				}
 				?>
+				</table>
 			</div>
 			<!--notas-->
 		</div>
@@ -141,7 +157,7 @@ require_once('../../app/controller/Noticia.php');
 						</div>
 						<!--apagar1-->
 						<div class="apagar2">
-							<textarea name="descricao"></textarea>
+							<textarea name="descricao" minlength="2" required></textarea>
 							<div class="apagar3">
 								<input type="submit" name="Remover" value="Remover">
 								<input type="submit" name="Salvar" value="Salvar">

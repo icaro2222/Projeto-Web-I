@@ -26,7 +26,7 @@ if (
     $disponibilidade->setIdTutor($_SESSION['idUsuario']);
     if($disponibilidade->insert()){
     ?>
-    <div class="modal-sucesso">
+    <div class="modal">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">
@@ -59,7 +59,7 @@ if (
 
     if($bloqueio->insert()){
     ?>
-    <div class="modal-sucesso">
+    <div class="modal">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">
@@ -82,7 +82,7 @@ if (
 
     if($bloqueio->desbloqueiarDiscente()){
     ?>
-    <div class="modal-sucesso">
+    <div class="modal">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">
@@ -103,7 +103,7 @@ if (
 
     if($bloqueio->update()){
     ?>
-    <div class="modal-sucesso">
+    <div class="modal">
         <form action="" method="POST">
             <img src="../../public/img/sucess.gif" alt="" srcset="">
             <input type="submit" value="fecha">

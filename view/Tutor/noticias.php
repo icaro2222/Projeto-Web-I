@@ -104,7 +104,7 @@ require_once('../../app/controller/Noticia.php');
 					<h2>Digite aqui a nova notícia:</h2>
 					<form action="" method="POST">
 						<div class="texto-add-nota">
-							<textarea name="descricao" required></textarea>
+							<textarea name="descricao" minlength="10" required></textarea>
 							<div class="tad-btt">
 								<input type="submit" name="Adicionar" value="Adicionar">
 							</div>

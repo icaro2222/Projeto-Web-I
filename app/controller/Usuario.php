@@ -127,17 +127,29 @@ class Usuario extends CrudUsuario{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (login, usuario, num_registro, endereco, senha, nivel) 
-                    VALUES (:login, :usuario, :num_registro, :endereco, :senha, :nivel)";
-        $stm = DB::prepare($sql);
-        $stm->bindParam(':login', $this->login);
-        $stm->bindParam(':usuario', $this->usuario);
-        $stm->bindParam(':num_registro', $this->num_registro);
-        $stm->bindParam(':endereco', $this->endereco);
-        $stm->bindParam(':senha', $this->senha);
-        $stm->bindParam(':nivel', $this->nivel);
-        $stm->execute();
-        return self::getInstance()->lastInsertId() ;
+
+
+        $sql = "SELECT * FROM $this->tabela WHERE login = :login";
+        $sql = DB::prepare($sql);
+        $sql->bindParam(':login', $this->login);
+        $sql->execute();
+        
+        if($sql->rowCount() < 1){
+
+            $sql = "INSERT INTO $this->tabela (login, usuario, num_registro, endereco, senha, nivel) 
+                        VALUES (:login, :usuario, :num_registro, :endereco, :senha, :nivel)";
+            $stm = DB::prepare($sql);
+            $stm->bindParam(':login', $this->login);
+            $stm->bindParam(':usuario', $this->usuario);
+            $stm->bindParam(':num_registro', $this->num_registro);
+            $stm->bindParam(':endereco', $this->endereco);
+            $stm->bindParam(':senha', $this->senha);
+            $stm->bindParam(':nivel', $this->nivel);
+            $stm->execute();
+            return self::getInstance()->lastInsertId() ;
+        }else{
+            return false;
+        }
     }
     
     //update de itens

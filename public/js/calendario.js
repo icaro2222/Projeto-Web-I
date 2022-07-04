@@ -58,11 +58,11 @@
                 if(perfil == 'Tutor'){
                     // win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=agendamento&idAgendar=${info.event.id}&start=${info.event.start}`;
                 }else if(perfil == 'Discente'){
-                    win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=agendamento&idAgendar=${info.event.id}&start=${info.event.start}`;
+                    win.location.href=`/view/home/dashboard.php?menuop=agendamento&idAgendar=${info.event.id}&start=${info.event.start}`;
                 }else if(perfil == 'Tutor1'){
-                    win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=horario&idAgendar=${info.event.id}&start=${info.event.start}`;
+                    win.location.href=`/view/home/dashboard.php?menuop=horario&idAgendar=${info.event.id}&start=${info.event.start}`;
                 }else if(perfil == 'Discente1'){
-                    win.location.href=`/Projeto_Web_I_Oficial/IFHelth-Beta/view/home/dashboard.php?menuop=horario&idAgendar=${info.event.id}&start=${info.event.start}`;
+                    win.location.href=`/view/home/dashboard.php?menuop=horario&idAgendar=${info.event.id}&start=${info.event.start}`;
                 }
             }
         });
