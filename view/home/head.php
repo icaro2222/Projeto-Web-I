@@ -22,6 +22,9 @@
 			<div class="cabecariopt2">
 				<h3>Instituto Federal de Educação, Ciência e Tecnologia Baiano</h1>
 					<h1>Campus Guanambi</h1>
+						<div class="cabecario-usuario">
+							<!-- <img src="../../public/img/usuario-removebg-preview.png" alt=""> -->
+						</div>
 					<form action="../login/logout.php">
 						<input type="submit" name="Sair" value="Sair">
 					</form>

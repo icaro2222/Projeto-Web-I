@@ -1,4 +1,36 @@
 
+
+
+
+
+
+
+
+
+
+.cabecario-usuario img {
+	position: relative;
+	width: 60px;
+	bottom: 20px;
+	left: 87%;
+	color: white;
+	background-color: #0A5517;
+	border: 0;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
 .modal img{
 	border-radius: 100%;
 }
