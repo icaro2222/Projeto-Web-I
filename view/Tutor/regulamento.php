@@ -2,6 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+
+
 require_once('../../app/controller/Regulamento.php');
 
 ?>
@@ -11,79 +13,42 @@ require_once('../../app/controller/Regulamento.php');
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tutor1</title>
-	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
+	<title>Discente1</title>
+	<link rel="stylesheet" type="text/css" <?php echo $css ?> >
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-	<?php
-	$regulamento = new Regulamento;
-	if (isset($_POST['Adicionar'])) {
-		$descricao = $_POST['descricao'];
-
-		$regulamento->setDescricao($descricao);
-
-		if ($regulamento->insert()) {?>
-			<div class="modal">
-				<form action="" method="POST">
-					<img src="../../public/img/sucess.gif" alt="" srcset="">
-					<input type="submit" value="fecha">
-				</form>
-			</div>
-			<?php
-		}
-	}
-	if (isset($_POST['Remover'])) {
-		$idRegulamento = $_POST['idRegulamento'];
-
-		$regulamento->setIdRegulamento($idRegulamento);
-
-		if ($regulamento->delete()) {?>
-			<div class="modal">
-				<form action="" method="POST">
-					<img src="../../public/img/sucess.gif" alt="" srcset="">
-					<input type="submit" value="fecha">
-				</form>
-			</div>
-			<?php
-		}
-	}
-	if (isset($_POST['Salvar'])) {
-		$descricao = $_POST['descricao'];
-		$idRegulamento = $_POST['idRegulamento'];
-
-		$regulamento->setIdRegulamento($idRegulamento);
-		$regulamento->setDescricao($descricao);
-
-		if ($regulamento->update()) {?>
-			<div class="modal">
-				<form action="" method="POST">
-					<img src="../../public/img/sucess.gif" alt="" srcset="">
-					<input type="submit" value="fecha">
-				</form>
-			</div>
-			<?php
-		}
-	}
-	?>
 	<section>
 		<div class="container">
 			<div class="notas">
-				<h1>Regulamento</h1>
-				<?php
-				$regulamentos = $regulamento->findAll();
-				foreach ($regulamentos as $key => $value) { ?>
-					<p><?php echo $value->descricao; ?></p>
+				<table>
+					<thead>
+							<th><h1>Regulamento</h1></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+					<?php
+					$regulamento = new Regulamento;
+					$regulamentos = $regulamento->findAll();
+					$cont = 0;
+					foreach ($regulamentos as $key => $value) { ?>
+						<tr>
+							<td><p><?php $cont++;echo $cont." : ".$value->descricao; ?></p></td>
+						</tr>
 				<?php
 				}
 				?>
+					</tbody>
+				</table>
 			</div>
 			<!--notas-->
 		</div>
 		<!--container-->
 	</section>
+
 </body>
 
 </html>

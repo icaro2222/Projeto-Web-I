@@ -1,8 +1,22 @@
 
+* {
+	border-radius: 7px;
+}
+
+td button, input{
+	color: white;
+	font-weight: 700;
+	background-color: #0A5517;
+}
 
 
+footer div{
+	border-radius: 0%;
+}
 
-
+section {
+	
+}
 
 
 

@@ -21,14 +21,26 @@ require_once('../../app/controller/Noticia.php');
     <section>
         <div class="container">
             <div class="notas">
-                <h1>Notícias</h1>
-                <?php
-                $Noticia = new Noticia;
-                $Noticias = $Noticia->findAll();
-                foreach ($Noticias as $key => $value) { ?>
-                    <p><?php echo "Noticia " . $value->idNoticia . " : " . $value->descricao; ?></p>
-                <?php
-                } ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><h1>Notícias</h1></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $Noticia = new Noticia;
+                        $Noticias = $Noticia->findAll();
+                        foreach ($Noticias as $key => $value) { ?>
+                        <tr>
+
+                            <td><p><?php echo "Noticia " . $value->idNoticia . " : " . $value->descricao; ?></p></td>
+
+                        </tr>
+                                <?php
+                            } ?>
+                    </tbody>
+                </table>
             </div>
             <!--notas-->
         </div>

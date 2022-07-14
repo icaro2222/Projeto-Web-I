@@ -56,7 +56,7 @@ if (isset($_GET['idAgendar'])) {
 		</div>
 	
 		<?php	
-		}
+		}//
 	}else if(!isset($_POST['Não'])){
 		?>
 		<div class="modal-excluir">

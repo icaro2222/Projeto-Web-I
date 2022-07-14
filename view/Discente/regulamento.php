@@ -23,21 +23,25 @@ require_once('../../app/controller/Regulamento.php');
 	<section>
 		<div class="container">
 			<div class="notas">
-							<th><h1>Regulamento</h1></th>
 				<table>
-				<?php
-				$regulamento = new Regulamento;
-				$regulamentos = $regulamento->findAll();
-				$cont = 0;
-				foreach ($regulamentos as $key => $value) { ?>
+					<thead>
+							<th><h1>Regulamento</h1></th>
+						</tr>
+					</thead>
 					<tbody>
+						<tr>
+					<?php
+					$regulamento = new Regulamento;
+					$regulamentos = $regulamento->findAll();
+					$cont = 0;
+					foreach ($regulamentos as $key => $value) { ?>
 						<tr>
 							<td><p><?php $cont++;echo $cont." : ".$value->descricao; ?></p></td>
 						</tr>
-					</tbody>
 				<?php
 				}
 				?>
+					</tbody>
 				</table>
 			</div>
 			<!--notas-->

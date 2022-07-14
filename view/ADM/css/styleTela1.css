@@ -57,7 +57,7 @@ footer *.container {
 .cabecariopt2 {
 	display: flex;
 	flex-direction: column;
-	background-color: #0A5517;
+	background-color: #01420B;
 	width: 100%;
 
 }
@@ -102,11 +102,20 @@ footer *.container {
 	background-color: #ECF1EC;
 	padding: 24px;
 	border: 2px solid #B6B8B6;
+	border-radius: 10px;
 }
 
 .academiaDoCampus h2 {
 	color: #0A5517;
 	text-align: center;
+}
+
+.barrinhaESQ{
+	border-radius: 10px 0px 0px 10px;
+}
+
+.barrinhaDIR{
+	border-radius: 0px 10px 10px 0px;
 }
 
 .painelDeEscolha {
@@ -144,12 +153,16 @@ footer *.container {
 	background-color: #ECF1EC;
 	padding: 24px;
 	border: 2px solid #B6B8B6;
+	border-radius: 10px;
 }
 
 .regulamento h1 {
 	padding-left: 10px;
 	padding-bottom: 20px;
 	font-size: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 6em;
 }
 
 .regulamento p {
@@ -158,17 +171,35 @@ footer *.container {
 	padding: 0px 10px 10px 20px;
 }
 
+/*definindo a edentação da tabela*/
+.tabelareg{
+	padding: 40px;
+}
+
+/*botão da tabela*/
+.botaoreg{
+	background-color: #0A5517;
+	width: 50px;
+	border-radius: 7px;
+}
+
+/*o texto precisa ficar alinhado no centro do botão*/
+.txtbotaoreg{
+	color: white;
+	margin-bottom: 7px;
+}
+
 section:nth-of-type(2) {
 	position: relative;
 	top: 40px;
 }
 
 .editar-regulamento {
-
 	width: 100%;
 	background-color: #ECF1EC;
 	padding: 24px;
 	border: 2px solid #B6B8B6;
+	border-radius: 10px;
 }
 
 .editar-regulamento h1 {
@@ -191,7 +222,7 @@ section:nth-of-type(2) {
 	height: 200px;
 	resize: none;
 	padding-bottom: 10px;
-
+	border-radius: 10px;
 }
 
 .tad-btt {
@@ -246,6 +277,7 @@ section:nth-of-type(2) {
 	height: 200px;
 	resize: none;
 	padding-bottom: 10px;
+	border-radius: 10px;
 }
 
 .apagar3 {
@@ -363,13 +395,4 @@ footer .segundoRodaPe .img-footer2 {
 
 	}
 
-}
-
-
-/* Para Hospedar */
-
-
-.disclaimer {
-
-	display: none;
 }

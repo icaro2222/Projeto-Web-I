@@ -1,0 +1,17 @@
+# Algumas alterações foram realizadas:
+
+  ADMIN->
+  Regulamento: Foi acrescentada a opção de excluir e editar o regulamento, logo ao lado dos mesmos.
+  
+  Bloquear aluno: O tempo referente ao bloqueio do aluno, foi modificado.
+  
+  Notícias: Mesma proposta do regulamento.
+  
+  cadastro discente: Foram corrigidos o cadastro de dois usuários iguais; Apenas os caracteres definidos 
+  como parâmetro de tamanho, podem ser cadastrados; Não é possível cadastrar o campo em branco.
+  
+  Cadastro tutor: Mesma proposta de discente.
+  
+  
+  DISCENTE-> 
+  Agendamento: Retorna o nome do tutor, se o mesmo estiver agendado.

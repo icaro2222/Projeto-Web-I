@@ -83,30 +83,43 @@ require_once('../../app/controller/Noticia.php');
 	<section>
 		<div class="container">
 			<div class="notas">
-				<table>
-					<thead>
-						<tr>
-							<th><h1>Notícias</h1></th>
-							<th>Editar</th>
-							<th>Excluir</th>
-						</tr>
-					</thead>
-				<?php
-				$Noticias = $Noticia->findAll();
-				foreach ($Noticias as $key => $value) { ?>
-					<tbody>
-						<tr>
-							<td><?php echo $value->descricao; ?></td>
-							<input type="hidden" name="idNoticia" 
-							value="<?php echo $value->idNoticia; ?>">
-							<td><input type="submit" name="Remover" value="Excluir"></td>
-							<td><input type="submit" name="Salvar" value="Editar"></td>
-						</tr>
-					</tbody>
-				<?php
-				}
-				?>
-				</table>
+				<form action="" method="POST" >
+					<table>
+						<thead>
+							<tr>
+								<th><h1>Notícias</h1></th>
+								<th>Editar</th>
+								<th>Excluir</th>
+							</tr>
+						</thead>
+					<?php
+					$Noticias = $Noticia->findAll();
+					foreach ($Noticias as $key => $value) { ?>
+						<!-- <tbody>
+							<tr>
+								<td><?php echo $value->descricao; ?></td>
+								<input type="hidden" name="idNoticia" value="<?php echo $value->idNoticia; ?>">
+								<td><input type="submit" name="Remover" value="Excluir"></td>
+								<td><input type="submit" name="Salvar" value="Editar"></td>
+							</tr>
+						</tbody> -->
+						<tbody>
+							<tr>
+								<td><?php echo "<br><h3>" . $value->descricao; ?>
+								
+								<input type="hidden" name="idNoticia" value="<?php echo $value->idNoticia; ?>">
+								
+								<div class="apagar3">
+								<td><input type="submit" name="Editar" value="Editar"></td>
+								<td><input type="submit" name="Remover" value="Remover"></td>
+								</div>
+							</tr>
+						</tbody>
+					<?php
+					}
+					?>
+					</table>
+				</form>
 			</div>
 			<!--notas-->
 		</div>
@@ -144,7 +157,7 @@ require_once('../../app/controller/Noticia.php');
 				<div class="apagar-edd">
 					<form action="" method="POST">
 						<div class="apagar1">
-							<h1>Apagar ou editar notícias:</h1>
+							<h1>Editar notícias:</h1>
 							<p>Selecione a notícia:</p>
 							<select name="idNoticia" id="idNoticia">
 								<?php
@@ -159,7 +172,6 @@ require_once('../../app/controller/Noticia.php');
 						<div class="apagar2">
 							<textarea name="descricao" minlength="2" required></textarea>
 							<div class="apagar3">
-								<input type="submit" name="Remover" value="Remover">
 								<input type="submit" name="Salvar" value="Salvar">
 							</div>
 						</div>

@@ -75,12 +75,11 @@ require_once('../../app/controller/Regulamento.php');
 	<section>
 		<div class="container">
 			<div class="regulamento">
-				<h1>Regulamentos</h1>
 				<form action="" method="POST" >
 				<table>
 					<thead>
 						<tr>
-							<th>Descrição</th>
+							<th><h1>Regulamentos</h1></th>
 							<th>Editar</th>
 							<th>Excluir</th>
 						</tr>
@@ -94,8 +93,10 @@ require_once('../../app/controller/Regulamento.php');
 							
 							<input type="hidden" name="idRegulamento" value="<?php echo $value->idRegulamento; ?>">
 							
-							<td><button><a href=""><br>Editar</a></button></td>
-							<td><button name="Remover"><br>Excluit</button></td></td>
+							<div class="apagar3">
+							<td><input type="submit" name="Editar" value="Editar"></td>
+							<td><input type="submit" name="Remover" value="Remover"></td>
+							</div>
 						</tr>
 					</tbody>
 				<?php
@@ -139,7 +140,7 @@ require_once('../../app/controller/Regulamento.php');
 				<div class="apagar-edd">
 					<form action="" method="POST">
 						<div class="apagar1">
-							<h1>Apagar ou editar regulamentos:</h1>
+							<h1>Editar regulamentos:</h1>
 							<p>Selecione o regulamento:</p>
 							<select name="idRegulamento" id="idRegulamento">
 								<?php
@@ -154,8 +155,7 @@ require_once('../../app/controller/Regulamento.php');
 						<div class="apagar2">
 							<textarea name="descricao" ></textarea>
 							<div class="apagar3">
-								<input type="submit" name="Remover" value="Remover">
-								<input type="submit" name="Salvar" value="Salvar">
+								<input type="submit" name="Salvar" value="Salvar" min="2" minlength="2" required>
 							</div>
 						</div>
 						<!--apagar2-->
